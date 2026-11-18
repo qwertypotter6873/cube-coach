@@ -15,7 +15,23 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
+from track_video import SEXY_MOVE_STATE  # noqa: E402
+
+from cubecoach.cube import apply  # noqa: E402
+
 OUT = ROOT / "reports" / "browser_sample_runs.json"
+TRUTH = "".join(str("WRGYOB".index(c)) for c in SEXY_MOVE_STATE)  # 사람이 읽은 처음 상태 (앱 숫자 표기)
+
+
+def stacked_diff(o: dict) -> int | None:
+    """받은 회전을 받은 순서대로 읽은 상태 위에 얹었을 때(예전 방식) 화면 상태(dataset.cube)와 몇 칸 다른가."""
+    if not o.get("scanned") or len(o.get("cube") or "") != 54:
+        return None
+    st = "".join("WRGYOB"[int(c)] for c in o["scanned"])
+    alg = " ".join("URFDLB"[c] + ["", "", "2", "'"][k] for _, c, k in o["moves"])  # 가운데 색 c 의 면 = 표준 배색의 c번째 면
+    stacked = "".join(str("WRGYOB".index(c)) for c in (apply(st, alg) if alg else st))
+    return sum(a != b for a, b in zip(stacked, o["cube"]))
 SEGS = {"hold_8.2_19.5": (8.2, 19.5), "sexy_19.5_26.5": (19.5, 26.5), "regrip_26.5_34.5": (26.5, 34.5), "fufu_34.5_46": (34.5, 46.0)}
 KEY = "지금_기본(늘_엄격, relaxWithin 0)"
 
@@ -28,12 +44,13 @@ def main() -> None:
         o = r["out"] if isinstance(r["out"], dict) else json.loads(r["out"])
         mv = o["moves"]
         runs.append({
-            "run": r["run"], "scan_ok": bool(o.get("scanned")), "scan_t": o.get("scanT"), "fps": o.get("fps"),
+            "run": r["run"], "scan_ok": bool(o.get("scanned")), "scan_correct": o.get("scanned") == TRUTH, "scan_t": o.get("scanT"), "fps": o.get("fps"),
             "errors": len(o.get("errs") or []), "moves_total": len(mv),
             **{k: sum(1 for m in mv if a <= m[0] < b) for k, (a, b) in SEGS.items()},
             # 떨어뜨릴 때 돌아간 흰 면 한 번 (13초쯤)을 잡았나
             "drop_turn_found": any(12.5 <= m[0] <= 15.0 and m[1] == 0 and m[2] == 1 for m in mv),
             "inserted_turns": len(o.get("backs") or []),
+            "stacked_vs_screen_diff": stacked_diff(o),  # 0이 아니면 예전 방식으로는 화면이 추적기와 어긋났다
             "state_check": " ".join(x for x in r["check"].splitlines() if x.startswith("확인")),
             "mode": o.get("mode"), "level": o.get("level"), "moves": mv,
         })
@@ -57,7 +74,7 @@ def main() -> None:
         truth["참고_같은_빌드_내부_함수로_연_실행"] = direct
     OUT.write_text(json.dumps(truth, ensure_ascii=False, indent=1))
     for x in runs:
-        print(x["run"], x["scan_t"], x["moves_total"], [x[k] for k in SEGS], x["drop_turn_found"], x["inserted_turns"], x["state_check"][:60])
+        print(x["run"], x["scan_t"], x["scan_correct"], x["moves_total"], [x[k] for k in SEGS], x["drop_turn_found"], x["inserted_turns"], x["stacked_vs_screen_diff"], x["state_check"][:40])
 
 
 if __name__ == "__main__":

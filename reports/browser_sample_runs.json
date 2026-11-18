@@ -10,6 +10,7 @@
   {
    "run": 1,
    "scan_ok": true,
+   "scan_correct": true,
    "scan_t": 7.71,
    "fps": 30,
    "errors": 0,
@@ -20,6 +21,7 @@
    "fufu_34.5_46": 2,
    "drop_turn_found": false,
    "inserted_turns": 2,
+   "stacked_vs_screen_diff": 28,
    "state_check": "확인 통과: 화면·코치 상태 = 추적기 상태. 회전 24개, 앞에 끼워 넣은 회전 2개",
    "mode": "camera",
    "level": "observe",
@@ -149,6 +151,7 @@
   {
    "run": 2,
    "scan_ok": true,
+   "scan_correct": true,
    "scan_t": 7.69,
    "fps": 30,
    "errors": 0,
@@ -159,6 +162,7 @@
    "fufu_34.5_46": 0,
    "drop_turn_found": false,
    "inserted_turns": 4,
+   "stacked_vs_screen_diff": 33,
    "state_check": "확인 통과: 화면·코치 상태 = 추적기 상태. 회전 26개, 앞에 끼워 넣은 회전 4개",
    "mode": "camera",
    "level": "observe",
@@ -298,6 +302,7 @@
   {
    "run": 3,
    "scan_ok": true,
+   "scan_correct": true,
    "scan_t": 7.7,
    "fps": 31,
    "errors": 0,
@@ -308,6 +313,7 @@
    "fufu_34.5_46": 2,
    "drop_turn_found": false,
    "inserted_turns": 2,
+   "stacked_vs_screen_diff": 28,
    "state_check": "확인 통과: 화면·코치 상태 = 추적기 상태. 회전 24개, 앞에 끼워 넣은 회전 2개",
    "mode": "camera",
    "level": "observe",
@@ -437,6 +443,7 @@
   {
    "run": 4,
    "scan_ok": true,
+   "scan_correct": true,
    "scan_t": 7.7,
    "fps": 30,
    "errors": 0,
@@ -447,6 +454,7 @@
    "fufu_34.5_46": 2,
    "drop_turn_found": false,
    "inserted_turns": 4,
+   "stacked_vs_screen_diff": 38,
    "state_check": "확인 통과: 화면·코치 상태 = 추적기 상태. 회전 21개, 앞에 끼워 넣은 회전 4개",
    "mode": "camera",
    "level": "observe",
