@@ -152,26 +152,35 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--epochs", type=int, default=14)
     ap.add_argument("--bs", type=int, default=64)
+    ap.add_argument("--only", choices=["all", "cube"], default="all", help="cube: 제안 모델만 (실험용)")
+    ap.add_argument("--width", type=int, default=24, help="CubeSegNet 폭 (기본 24 = 지금 앱 모델)")
+    ap.add_argument("--tag", default="", help="실험 꼬리표: 있으면 models/exp/<이름>_<꼬리표>.* 와 reports/train_seg_<꼬리표>.json 에 저장 (앱 모델을 덮어쓰지 않는다)")
     args = ap.parse_args()
     torch.manual_seed(SEED)
     tr, va, te = load("train"), load("val"), load("test")
     print(f"train {len(tr['img'])} / val {len(va['img'])} / test {len(te['img'])}, 장치 {DEVICE}", flush=True)
-    (ROOT / "models").mkdir(exist_ok=True)
+    out_dir = ROOT / "models" / ("exp" if args.tag else "")
+    out_dir.mkdir(parents=True, exist_ok=True)
+    sfx = f"_{args.tag}" if args.tag else ""
     results: dict[str, dict] = {"HSV 규칙 (학습 없음)": {"test": hsv_reference(te)}}
+    if args.tag:
+        results["설정"] = {"width": args.width, "epochs": args.epochs, "bs": args.bs, "data": str(DATA.name)}
 
-    for name, model, epochs, lr, fname in [
-        ("PixelMLP (칸 평균색만, 베이스라인)", PixelMLP(), 4, 5e-3, "pixel_mlp"),
-        ("CubeSegNet (제안)", CubeSegNet(), args.epochs, 4e-3, "cube_seg_net"),
-    ]:
+    runs = [("CubeSegNet (제안)", CubeSegNet(width=args.width), args.epochs, 4e-3, "cube_seg_net")]
+    if args.only == "all":
+        runs.insert(0, ("PixelMLP (칸 평균색만, 베이스라인)", PixelMLP(), 4, 5e-3, "pixel_mlp"))
+    for name, model, epochs, lr, fname in runs:
         log = train(model, name.split()[0], tr, va, epochs, lr, args.bs)
         test = metrics(*infer(model, te["img"]), te)
-        torch.save(model.state_dict(), ROOT / "models" / f"{fname}.pt")
-        results[name] = {"test": test, "log": log, **export(model, ROOT / "models" / f"{fname}.onnx")}
+        torch.save(model.state_dict(), out_dir / f"{fname}{sfx}.pt")
+        results[name] = {"test": test, "log": log, **export(model, out_dir / f"{fname}{sfx}.onnx")}
         print(f"  [{name}] test: {test}", flush=True)
 
-    (ROOT / "reports" / "train_seg.json").write_text(json.dumps(results, ensure_ascii=False, indent=2))
+    (ROOT / "reports" / f"train_seg{sfx}.json").write_text(json.dumps(results, ensure_ascii=False, indent=2))
     print("\n=== 테스트셋(합성) 결과 ===")
     for name, r in results.items():
+        if "test" not in r:
+            continue
         t = r["test"]
         extra = f"  mIoU {t['miou']:.4f}  중심 재현율 {t['center_recall']:.4f}  {r['params']:,}개  {r['onnx_kb']:.0f}KB  {r['ms_cpu1']:.1f}ms" if "miou" in t else ""
         print(f"{name:<36} 스티커 정확도 {t['sticker_acc']:.4f}  F1 {t['sticker_f1']:.4f}{extra}")

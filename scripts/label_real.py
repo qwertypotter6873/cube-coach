@@ -8,8 +8,12 @@
      학습 배경 조각에 쓰지 않은 뒷부분(300초 이후)에서 선명한 프레임을 고르게 뽑는다.
   2) 찍기:           .venv/bin/python scripts/label_real.py serve   → http://127.0.0.1:5181
      결과는 data/real/labels.json 에 바로바로 저장된다.
+  검증 세트(모델 버전을 고를 때 쓰고 시험셋은 마지막에 한 번만 잰다): 두 명령에 --set val 을 붙이면
+  data/real/label_frames_val/, data/real/labels_val.json 을 쓴다.
+     .venv/bin/python scripts/label_real.py extract data/raw/cube_unsolved.mov --start 0 --end 290 --n 20 --gap 5 --set val
+     .venv/bin/python scripts/label_real.py serve --set val
 
-원본 영상과 프레임에는 촬영자가 나오므로 저장소에 올리지 않는다 (data/real/ 은 .gitignore).
+프레임과 정답은 data/real/ 에 둔다(.gitignore). 공개본은 Release data-v1 의 real_labels.zip.
 """
 
 from __future__ import annotations
@@ -172,6 +176,14 @@ class Handler(BaseHTTPRequestHandler):
         return
 
 
+def use_set(name: str) -> None:
+    """정답 세트 고르기: 기본(시험셋) 또는 val(검증 세트)."""
+    global DIR, LABELS
+    suffix = f"_{name}" if name else ""
+    DIR = ROOT / "data" / "real" / f"label_frames{suffix}"
+    LABELS = ROOT / "data" / "real" / f"labels{suffix}.json"
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -181,9 +193,12 @@ def main() -> None:
     e.add_argument("--end", type=float, default=None)
     e.add_argument("--n", type=int, default=40)
     e.add_argument("--gap", type=float, default=2.0)
+    e.add_argument("--set", default="", help="정답 세트 이름 (기본: 시험셋, val: 검증 세트)")
     s = sub.add_parser("serve")
     s.add_argument("--port", type=int, default=5181)
+    s.add_argument("--set", default="", help="정답 세트 이름 (기본: 시험셋, val: 검증 세트)")
     args = ap.parse_args()
+    use_set(args.set)
     if args.cmd == "extract":
         extract(args.video, args.start, args.end, args.n, args.gap)
     else:
