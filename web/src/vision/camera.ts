@@ -9,7 +9,7 @@
  */
 
 import type { ColorMove, State, View } from "../coach/cube.ts";
-import { SCAN_RES, SegModel, TRACK_RES } from "./seg.ts";
+import { SegModel } from "./seg.ts";
 import type { Event as TrackEvent, Roi } from "./tracker.ts";
 import { Tracker, UNKNOWN } from "./tracker.ts";
 import { FaceScanner, followRoi, NEED, readFace } from "./facescan.ts";
@@ -364,8 +364,7 @@ export class VisionInput {
       const raw: Roi = (this.phase === "scan" ? this.scanRoi : tr?.roi()) ?? lost;
       const roi = clampRoi(raw, H / W);
       const t0 = performance.now();
-      // 면 읽기는 192, 추적은 256으로 넣는다 (seg.ts 머리말: 면 읽기는 192에서, 칸 색은 256에서 더 잘 읽었다)
-      const maps = await model.run(this.video, W, H, roi, this.flipInput, this.phase === "scan" ? SCAN_RES : TRACK_RES);
+      const maps = await model.run(this.video, W, H, roi, this.flipInput);
       // 기다리는 사이 멈췄거나 다시 시작했다: 옛 프레임의 결과로 새 스캔·추적을 건드리지 않는다
       // (busy 는 finally 에서 푼다. 멈출 때 바로 풀면 모델 실행 두 개가 겹칠 수 있다)
       if (g !== this.gen) return;

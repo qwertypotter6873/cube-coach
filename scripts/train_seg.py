@@ -132,7 +132,7 @@ def train(model: nn.Module, name: str, tr: dict, va: dict, epochs: int, lr: floa
 
 
 def export(model: nn.Module, path: Path) -> dict[str, float]:
-    # 앱과 같은 모양(입력 크기를 열어 둠, 192·256 모두 확인)으로 내보낸다: cubecoach.segnet.export_onnx
+    # 입력 크기를 열어 둔 모양(192·256 모두 확인)으로 내보낸다: cubecoach.segnet.export_onnx (앱은 192만 넣는다)
     model = model.cpu().eval()
     diff = export_onnx(model, path)
     dummy = torch.rand(1, 3, 192, 192)
