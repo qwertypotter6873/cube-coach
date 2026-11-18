@@ -1,0 +1,32 @@
+{
+  "frames": 40,
+  "results": {
+    "HSV 규칙 (학습 없음)": {
+      "sticker_acc": 0.7662517289073306,
+      "sticker_f1": 0.7577788333091431,
+      "background_fp": 1.0,
+      "n_stickers": 723
+    },
+    "PixelMLP v2 (베이스라인)": {
+      "sticker_acc": 0.48409405255878285,
+      "sticker_f1": 0.5501443862456147,
+      "background_fp": 0.1025720940914012,
+      "n_stickers": 723,
+      "center_recall": 0.40802213001383125
+    },
+    "CubeSegNet v1 (합성만)": {
+      "sticker_acc": 0.330567081604426,
+      "sticker_f1": 0.45308159937746817,
+      "background_fp": 0.31987139529542996,
+      "n_stickers": 723,
+      "center_recall": 0.48686030428769017
+    },
+    "CubeSegNet v2 (실제 맞춤 합성)": {
+      "sticker_acc": 0.7247579529737206,
+      "sticker_f1": 0.7992993036478193,
+      "background_fp": 0.03625209146681539,
+      "n_stickers": 723,
+      "center_recall": 0.8561549100968188
+    }
+  }
+}

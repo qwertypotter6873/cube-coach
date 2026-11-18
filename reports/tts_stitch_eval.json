@@ -1,0 +1,1085 @@
+{
+ "method": "배포한 m4a를 앱(WebAudioSeq)과 같은 방식으로 이어 붙인 소리 vs 같은 문장을 통째로 합성한 소리. 받아 적기 mlx-whisper large-v3-turbo, CER은 숫자·영어를 한글 읽기로 바꿔 비교. 경계 쉼 = 앞 조각 마지막 말소리 ~ 뒤 조각 첫 말소리(봉우리-30dB).",
+ "voices": {
+  "F2": {
+   "samples": 17,
+   "joined": 14,
+   "cer_stitched_vs_text": 0.066,
+   "cer_whole_vs_text": 0.054,
+   "cer_stitched_vs_whole_asr": 0.036,
+   "joint_pause_s_by_gap_ms": {
+    "-30": {
+     "n": 3,
+     "mean": 0.063,
+     "min": 0.04,
+     "max": 0.089
+    },
+    "130": {
+     "n": 9,
+     "mean": 0.224,
+     "min": 0.186,
+     "max": 0.273
+    },
+    "150": {
+     "n": 11,
+     "mean": 0.247,
+     "min": 0.225,
+     "max": 0.271
+    },
+    "280": {
+     "n": 4,
+     "mean": 0.369,
+     "min": 0.356,
+     "max": 0.384
+    }
+   },
+   "length_ratio_stitched_over_whole": 0.939,
+   "rows": [
+    {
+     "i": 0,
+     "kind": "whole",
+     "text": "비, 뒷면 윗줄 왼쪽으로.",
+     "pieces": 1,
+     "gaps_ms": [],
+     "joint_pause_s": [],
+     "stitched_s": 1.299,
+     "whole_s": 1.299,
+     "whole_pauses_s": [],
+     "stitched_pauses_s": [],
+     "asr_stitched": "B 뒷면 윗줄 왼쪽으로",
+     "asr_whole": "B 뒷면 윗줄 왼쪽으로",
+     "cer_stitched_vs_whole_asr": 0.0,
+     "cer_stitched_vs_text": 0.0,
+     "cer_whole_vs_text": 0.0
+    },
+    {
+     "i": 1,
+     "kind": "whole",
+     "text": "디 투, 아랫면 두 번.",
+     "pieces": 1,
+     "gaps_ms": [],
+     "joint_pause_s": [],
+     "stitched_s": 1.039,
+     "whole_s": 1.039,
+     "whole_pauses_s": [],
+     "stitched_pauses_s": [],
+     "asr_stitched": "D2 아랫면 2번.",
+     "asr_whole": "D2 아랫면 2번.",
+     "cer_stitched_vs_whole_asr": 0.0,
+     "cer_stitched_vs_text": 0.0,
+     "cer_whole_vs_text": 0.0
+    },
+    {
+     "i": 2,
+     "kind": "whole",
+     "text": "Aa.",
+     "pieces": 1,
+     "gaps_ms": [],
+     "joint_pause_s": [],
+     "stitched_s": 0.569,
+     "whole_s": 0.569,
+     "whole_pauses_s": [],
+     "stitched_pauses_s": [],
+     "asr_stitched": "에이 에이",
+     "asr_whole": "에이 에이",
+     "cer_stitched_vs_whole_asr": 0.0,
+     "cer_stitched_vs_text": 0.0,
+     "cer_whole_vs_text": 0.0
+    },
+    {
+     "i": 3,
+     "kind": "sentences",
+     "text": "노란 면 최고 기록이에요! 팔십구 초.",
+     "pieces": 2,
+     "gaps_ms": [
+      280
+     ],
+     "joint_pause_s": [
+      0.356
+     ],
+     "stitched_s": 2.346,
+     "whole_s": 2.182,
+     "whole_pauses_s": [
+      0.09,
+      0.1,
+      0.07
+     ],
+     "stitched_pauses_s": [
+      0.355,
+      0.085,
+      0.065
+     ],
+     "asr_stitched": "노란면 최고 기록이에요. 89초",
+     "asr_whole": "노란면 최고 기록이에요. 89초",
+     "cer_stitched_vs_whole_asr": 0.0,
+     "cer_stitched_vs_text": 0.0,
+     "cer_whole_vs_text": 0.0
+    },
+    {
+     "i": 4,
+     "kind": "sentences",
+     "text": "정답은 Na였어요. 십이 초. 알아보는 데 사 초 걸렸어요.",
+     "pieces": 3,
+     "gaps_ms": [
+      150,
+      150
+     ],
+     "joint_pause_s": [
+      0.225,
+      0.241
+     ],
+     "stitched_s": 3.403,
+     "whole_s": 3.918,
+     "whole_pauses_s": [
+      0.105,
+      0.075,
+      0.28,
+      0.07
+     ],
+     "stitched_pauses_s": [
+      0.225,
+      0.07,
+      0.24
+     ],
+     "asr_stitched": "정답은 NA였어요. 12초. 알아보는데 4초 걸렸어요.",
+     "asr_whole": "정답은 NA였어요. 12초. 알아보는데 4초 걸렸어요.",
+     "cer_stitched_vs_whole_asr": 0.0,
+     "cer_stitched_vs_text": 0.0,
+     "cer_whole_vs_text": 0.0
+    },
+    {
+     "i": 5,
+     "kind": "sentences",
+     "text": "정답은 Aa였어요. 칠 초. 알아보는 데 사 초 걸렸어요.",
+     "pieces": 3,
+     "gaps_ms": [
+      150,
+      150
+     ],
+     "joint_pause_s": [
+      0.239,
+      0.245
+     ],
+     "stitched_s": 3.487,
+     "whole_s": 3.929,
+     "whole_pauses_s": [
+      0.095,
+      0.06,
+      0.285,
+      0.065
+     ],
+     "stitched_pauses_s": [
+      0.24,
+      0.06,
+      0.25
+     ],
+     "asr_stitched": "정답은 AA였어요. 7초. 알아보는데 4초 걸렸어요.",
+     "asr_whole": "정답은 AA였어요. 7초. 알아보는데 4초 걸렸어요.",
+     "cer_stitched_vs_whole_asr": 0.0,
+     "cer_stitched_vs_text": 0.0,
+     "cer_whole_vs_text": 0.0
+    },
+    {
+     "i": 6,
+     "kind": "sentences",
+     "text": "다시, 유 프라임, 윗면 오른쪽으로. 마지막이에요.",
+     "pieces": 2,
+     "gaps_ms": [
+      150
+     ],
+     "joint_pause_s": [
+      0.252
+     ],
+     "stitched_s": 2.678,
+     "whole_s": 3.057,
+     "whole_pauses_s": [
+      0.065,
+      0.135,
+      0.17
+     ],
+     "stitched_pauses_s": [
+      0.105,
+      0.25
+     ],
+     "asr_stitched": "다시 U프라임 윗면 오른쪽으로 마지막이에요.",
+     "asr_whole": "다시 U' 윗면 오른쪽으로 마지막이에요.",
+     "cer_stitched_vs_whole_asr": 0.176,
+     "cer_stitched_vs_text": 0.0,
+     "cer_whole_vs_text": 0.0
+    },
+    {
+     "i": 7,
+     "kind": "sentences",
+     "text": "앗, 되돌려 주세요. 에프 투, 앞면 두 번.",
+     "pieces": 2,
+     "gaps_ms": [
+      150
+     ],
+     "joint_pause_s": [
+      0.23
+     ],
+     "stitched_s": 2.298,
+     "whole_s": 2.273,
+     "whole_pauses_s": [
+      0.17,
+      0.08,
+      0.13
+     ],
+     "stitched_pauses_s": [
+      0.275,
+      0.23,
+      0.065
+     ],
+     "asr_stitched": "앗! 되돌려주세요. F2 앞면 2번.",
+     "asr_whole": "앗! 되돌려주세요. F2. 앞면 2번.",
+     "cer_stitched_vs_whole_asr": 0.0,
+     "cer_stitched_vs_text": 0.0,
+     "cer_whole_vs_text": 0.0
+    },
+    {
+     "i": 8,
+     "kind": "sentences",
+     "text": "잠깐요, 그 면 말고요. 비 투, 뒷면 두 번.",
+     "pieces": 2,
+     "gaps_ms": [
+      150
+     ],
+     "joint_pause_s": [
+      0.271
+     ],
+     "stitched_s": 2.294,
+     "whole_s": 2.395,
+     "whole_pauses_s": [
+      0.105,
+      0.07,
+      0.06
+     ],
+     "stitched_pauses_s": [
+      0.27,
+      0.075
+     ],
+     "asr_stitched": "잠깐요 그 면 말고요. B2 뒷면 2번.",
+     "asr_whole": "잠깐요. 그 면 말고요. B2 뒷면 2번.",
+     "cer_stitched_vs_whole_asr": 0.0,
+     "cer_stitched_vs_text": 0.0,
+     "cer_whole_vs_text": 0.0
+    },
+    {
+     "i": 9,
+     "kind": "template",
+     "text": "완성! 총 사십 초, 쉰한 수 걸렸어요. 가장 오래 걸린 단계는 PLL이었어요.",
+     "pieces": 4,
+     "gaps_ms": [
+      280,
+      130,
+      150
+     ],
+     "joint_pause_s": [
+      0.359,
+      0.213,
+      0.251
+     ],
+     "stitched_s": 4.965,
+     "whole_s": 5.687,
+     "whole_pauses_s": [
+      0.38,
+      0.12,
+      0.095,
+      0.43,
+      0.115
+     ],
+     "stitched_pauses_s": [
+      0.365,
+      0.1,
+      0.215,
+      0.25,
+      0.06
+     ],
+     "asr_stitched": "완성 총 40초 50안수 걸렸어요 가장 오래 걸린 단계는 pll 이었어요",
+     "asr_whole": "완성! 총 40초 50안수 걸렸어요. 가장 오래 걸린 단계는 PLL이었어요.",
+     "cer_stitched_vs_whole_asr": 0.0,
+     "cer_stitched_vs_text": 0.103,
+     "cer_whole_vs_text": 0.103
+    },
+    {
+     "i": 10,
+     "kind": "template",
+     "text": "완성! 총 일 분 오십이 초, 아흔아홉 수 넘게 걸렸어요. 가장 오래 걸린 단계는 OLL이었어요.",
+     "pieces": 4,
+     "gaps_ms": [
+      280,
+      130,
+      150
+     ],
+     "joint_pause_s": [
+      0.384,
+      0.244,
+      0.254
+     ],
+     "stitched_s": 5.705,
+     "whole_s": 6.982,
+     "whole_pauses_s": [
+      0.415,
+      0.09,
+      0.485,
+      0.445,
+      0.115
+     ],
+     "stitched_pauses_s": [
+      0.385,
+      0.08,
+      0.24,
+      0.255
+     ],
+     "asr_stitched": "완성. 총 1분 52초. 99수 넘게 걸렸어요. 가장 오래 걸린 단계는 OLL이었어요.",
+     "asr_whole": "완성! 총 1분 52초. 99수 넘게 걸렸어요. 가장 오래 걸린 단계는 OLL이었어요.",
+     "cer_stitched_vs_whole_asr": 0.0,
+     "cer_stitched_vs_text": 0.111,
+     "cer_whole_vs_text": 0.111
+    },
+    {
+     "i": 11,
+     "kind": "template",
+     "text": "3층 꼭짓점 자리가 평균보다 이십육 초 빨랐어요.",
+     "pieces": 2,
+     "gaps_ms": [
+      -30
+     ],
+     "joint_pause_s": [
+      0.04
+     ],
+     "stitched_s": 2.911,
+     "whole_s": 2.877,
+     "whole_pauses_s": [
+      0.07,
+      0.07
+     ],
+     "stitched_pauses_s": [
+      0.095,
+      0.065,
+      0.06,
+      0.065
+     ],
+     "asr_stitched": "3층 꼭지점 자리가 평균보다 26초 빨랐어요.",
+     "asr_whole": "3층 꼭지점 자리가 평균보다 26초 빨랐어요.",
+     "cer_stitched_vs_whole_asr": 0.0,
+     "cer_stitched_vs_text": 0.05,
+     "cer_whole_vs_text": 0.05
+    },
+    {
+     "i": 12,
+     "kind": "template",
+     "text": "1층 꼭짓점이 평균보다 팔십 초 느렸어요. 다음엔 여기를 연습해 봐요.",
+     "pieces": 3,
+     "gaps_ms": [
+      -30,
+      150
+     ],
+     "joint_pause_s": [
+      0.089,
+      0.24
+     ],
+     "stitched_s": 4.116,
+     "whole_s": 4.394,
+     "whole_pauses_s": [
+      0.385,
+      0.08
+     ],
+     "stitched_pauses_s": [
+      0.075,
+      0.09,
+      0.08,
+      0.235,
+      0.07
+     ],
+     "asr_stitched": "1층 꼭지점이 평균보다 80초 느렸어요. 다음엔 여기를 연습해봐요.",
+     "asr_whole": "1층 꼭지점이 평균보다 80초 느렸어요. 다음엔 여기를 연습해봐요.",
+     "cer_stitched_vs_whole_asr": 0.0,
+     "cer_stitched_vs_text": 0.036,
+     "cer_whole_vs_text": 0.036
+    },
+    {
+     "i": 13,
+     "kind": "template",
+     "text": "완성! 총 십삼 분 사십구 초, 아흔아홉 수 넘게 걸렸어요. 가장 오래 걸린 단계는 3층 모서리 자리였어요.",
+     "pieces": 5,
+     "gaps_ms": [
+      280,
+      -30,
+      130,
+      150
+     ],
+     "joint_pause_s": [
+      0.379,
+      0.06,
+      0.223,
+      0.269
+     ],
+     "stitched_s": 6.475,
+     "whole_s": 7.733,
+     "whole_pauses_s": [
+      0.44,
+      0.155,
+      0.12,
+      0.085,
+      0.185,
+      0.065,
+      0.455
+     ],
+     "stitched_pauses_s": [
+      0.38,
+      0.06,
+      0.115,
+      0.22,
+      0.265
+     ],
+     "asr_stitched": "완성! 총 13분 49초 99초 넘게 걸렸어요. 가장 오래 걸린 단계는 3층 모서리 자리였어요.",
+     "asr_whole": "완성! 총 13분 49초 99수 넘게 걸렸어요. 가장 오래 걸린 단계는 3층 모서리 자리였어요.",
+     "cer_stitched_vs_whole_asr": 0.027,
+     "cer_stitched_vs_text": 0.125,
+     "cer_whole_vs_text": 0.1
+    },
+    {
+     "i": 14,
+     "kind": "comma",
+     "text": "유 더블 투 위 두 줄 두 번, 엘 더블 투, 비 더블 뒤 두 줄 윗줄 왼쪽으로.",
+     "pieces": 3,
+     "gaps_ms": [
+      130,
+      130
+     ],
+     "joint_pause_s": [
+      0.214,
+      0.273
+     ],
+     "stitched_s": 3.968,
+     "whole_s": 4.406,
+     "whole_pauses_s": [
+      0.13,
+      0.06,
+      0.155,
+      0.08
+     ],
+     "stitched_pauses_s": [
+      0.215,
+      0.07,
+      0.085,
+      0.27,
+      0.07
+     ],
+     "asr_stitched": "U222 두 줄 두 번, L22, BDD 두 줄 줄 왼쪽으로.",
+     "asr_whole": "U22위 2줄 2번, L22, BDD 2줄 윗줄 왼쪽으로.",
+     "cer_stitched_vs_whole_asr": 0.227,
+     "cer_stitched_vs_text": 0.44,
+     "cer_whole_vs_text": 0.36
+    },
+    {
+     "i": 15,
+     "kind": "comma",
+     "text": "엘 더블, 알 오른쪽 면 위로, 알 더블 프라임 오른쪽 두 줄 아래로.",
+     "pieces": 3,
+     "gaps_ms": [
+      130,
+      130
+     ],
+     "joint_pause_s": [
+      0.225,
+      0.206
+     ],
+     "stitched_s": 3.851,
+     "whole_s": 4.068,
+     "whole_pauses_s": [
+      0.22,
+      0.18,
+      0.06,
+      0.06,
+      0.105
+     ],
+     "stitched_pauses_s": [
+      0.225,
+      0.205,
+      0.09
+     ],
+     "asr_stitched": "L더블, R 오른쪽 면 위로, R더블 프라임 오른쪽 두 줄 아래로",
+     "asr_whole": "L 더블, R 오른쪽 면 위로, R 더블 프라임 오른쪽 두 줄 아래로.",
+     "cer_stitched_vs_whole_asr": 0.0,
+     "cer_stitched_vs_text": 0.0,
+     "cer_whole_vs_text": 0.0
+    },
+    {
+     "i": 16,
+     "kind": "comma",
+     "text": "엘 더블, 유 윗면 왼쪽으로, 에프 투 앞면 두 번.",
+     "pieces": 3,
+     "gaps_ms": [
+      130,
+      130
+     ],
+     "joint_pause_s": [
+      0.23,
+      0.186
+     ],
+     "stitched_s": 3.102,
+     "whole_s": 2.704,
+     "whole_pauses_s": [
+      0.07,
+      0.08
+     ],
+     "stitched_pauses_s": [
+      0.06,
+      0.23,
+      0.185
+     ],
+     "asr_stitched": "LW, U윗면 왼쪽으로, F2 앞면 2번.",
+     "asr_whole": "LW 윗면 왼쪽으로 F2 앞면 2번.",
+     "cer_stitched_vs_whole_asr": 0.071,
+     "cer_stitched_vs_text": 0.059,
+     "cer_whole_vs_text": 0.0
+    }
+   ]
+  },
+  "M1": {
+   "samples": 17,
+   "joined": 14,
+   "cer_stitched_vs_text": 0.06,
+   "cer_whole_vs_text": 0.075,
+   "cer_stitched_vs_whole_asr": 0.052,
+   "joint_pause_s_by_gap_ms": {
+    "-30": {
+     "n": 3,
+     "mean": 0.072,
+     "min": 0.031,
+     "max": 0.135
+    },
+    "130": {
+     "n": 9,
+     "mean": 0.235,
+     "min": 0.195,
+     "max": 0.383
+    },
+    "150": {
+     "n": 11,
+     "mean": 0.25,
+     "min": 0.192,
+     "max": 0.321
+    },
+    "280": {
+     "n": 4,
+     "mean": 0.379,
+     "min": 0.333,
+     "max": 0.429
+    }
+   },
+   "length_ratio_stitched_over_whole": 0.936,
+   "rows": [
+    {
+     "i": 0,
+     "kind": "whole",
+     "text": "비, 뒷면 윗줄 왼쪽으로.",
+     "pieces": 1,
+     "gaps_ms": [],
+     "joint_pause_s": [],
+     "stitched_s": 1.566,
+     "whole_s": 1.566,
+     "whole_pauses_s": [
+      0.06
+     ],
+     "stitched_pauses_s": [
+      0.06
+     ],
+     "asr_stitched": "B 뒷면 윗줄 왼쪽으로",
+     "asr_whole": "B 뒷면 윗줄 왼쪽으로",
+     "cer_stitched_vs_whole_asr": 0.0,
+     "cer_stitched_vs_text": 0.0,
+     "cer_whole_vs_text": 0.0
+    },
+    {
+     "i": 1,
+     "kind": "whole",
+     "text": "디 투, 아랫면 두 번.",
+     "pieces": 1,
+     "gaps_ms": [],
+     "joint_pause_s": [],
+     "stitched_s": 1.113,
+     "whole_s": 1.113,
+     "whole_pauses_s": [
+      0.06
+     ],
+     "stitched_pauses_s": [
+      0.06
+     ],
+     "asr_stitched": "D2 아랫면 2번",
+     "asr_whole": "D2 아랫면 2번",
+     "cer_stitched_vs_whole_asr": 0.0,
+     "cer_stitched_vs_text": 0.0,
+     "cer_whole_vs_text": 0.0
+    },
+    {
+     "i": 2,
+     "kind": "whole",
+     "text": "Aa.",
+     "pieces": 1,
+     "gaps_ms": [],
+     "joint_pause_s": [],
+     "stitched_s": 0.696,
+     "whole_s": 0.696,
+     "whole_pauses_s": [],
+     "stitched_pauses_s": [],
+     "asr_stitched": "에이 에이",
+     "asr_whole": "에이 에이",
+     "cer_stitched_vs_whole_asr": 0.0,
+     "cer_stitched_vs_text": 0.0,
+     "cer_whole_vs_text": 0.0
+    },
+    {
+     "i": 3,
+     "kind": "sentences",
+     "text": "노란 면 최고 기록이에요! 팔십구 초.",
+     "pieces": 2,
+     "gaps_ms": [
+      280
+     ],
+     "joint_pause_s": [
+      0.333
+     ],
+     "stitched_s": 2.589,
+     "whole_s": 2.414,
+     "whole_pauses_s": [
+      0.255,
+      0.07
+     ],
+     "stitched_pauses_s": [
+      0.335,
+      0.08
+     ],
+     "asr_stitched": "노란면 최고 기록이에요. 89초",
+     "asr_whole": "노란면 최고 기록이에요. 89초.",
+     "cer_stitched_vs_whole_asr": 0.0,
+     "cer_stitched_vs_text": 0.0,
+     "cer_whole_vs_text": 0.0
+    },
+    {
+     "i": 4,
+     "kind": "sentences",
+     "text": "정답은 Na였어요. 십이 초. 알아보는 데 사 초 걸렸어요.",
+     "pieces": 3,
+     "gaps_ms": [
+      150,
+      150
+     ],
+     "joint_pause_s": [
+      0.209,
+      0.276
+     ],
+     "stitched_s": 3.616,
+     "whole_s": 4.104,
+     "whole_pauses_s": [
+      0.29,
+      0.48,
+      0.065
+     ],
+     "stitched_pauses_s": [
+      0.21,
+      0.06,
+      0.28
+     ],
+     "asr_stitched": "정답은 NA였어요. 12초. 알아보는데 4초 걸렸어요.",
+     "asr_whole": "정답은 NA였어요. 12초. 알아보는데 4초 걸렸어요.",
+     "cer_stitched_vs_whole_asr": 0.0,
+     "cer_stitched_vs_text": 0.0,
+     "cer_whole_vs_text": 0.0
+    },
+    {
+     "i": 5,
+     "kind": "sentences",
+     "text": "정답은 Aa였어요. 칠 초. 알아보는 데 사 초 걸렸어요.",
+     "pieces": 3,
+     "gaps_ms": [
+      150,
+      150
+     ],
+     "joint_pause_s": [
+      0.192,
+      0.321
+     ],
+     "stitched_s": 3.614,
+     "whole_s": 4.129,
+     "whole_pauses_s": [
+      0.405,
+      0.35
+     ],
+     "stitched_pauses_s": [
+      0.195,
+      0.065,
+      0.32
+     ],
+     "asr_stitched": "정답은 AA였어. 7초. 알아보는데 4초 걸렸어요.",
+     "asr_whole": "정답은 AA였어요. 7초. 알아보는데 4초 걸렸어요.",
+     "cer_stitched_vs_whole_asr": 0.048,
+     "cer_stitched_vs_text": 0.043,
+     "cer_whole_vs_text": 0.0
+    },
+    {
+     "i": 6,
+     "kind": "sentences",
+     "text": "다시, 유 프라임, 윗면 오른쪽으로. 마지막이에요.",
+     "pieces": 2,
+     "gaps_ms": [
+      150
+     ],
+     "joint_pause_s": [
+      0.313
+     ],
+     "stitched_s": 3.091,
+     "whole_s": 3.427,
+     "whole_pauses_s": [
+      0.195,
+      0.06,
+      0.145,
+      0.35
+     ],
+     "stitched_pauses_s": [
+      0.31
+     ],
+     "asr_stitched": "다시 U' 윗면 오른쪽으로 마지막이에요.",
+     "asr_whole": "다시 U' 윗면 오른쪽으로 마지막이에요.",
+     "cer_stitched_vs_whole_asr": 0.0,
+     "cer_stitched_vs_text": 0.0,
+     "cer_whole_vs_text": 0.0
+    },
+    {
+     "i": 7,
+     "kind": "sentences",
+     "text": "앗, 되돌려 주세요. 에프 투, 앞면 두 번.",
+     "pieces": 2,
+     "gaps_ms": [
+      150
+     ],
+     "joint_pause_s": [
+      0.282
+     ],
+     "stitched_s": 2.569,
+     "whole_s": 2.563,
+     "whole_pauses_s": [
+      0.175,
+      0.065,
+      0.085,
+      0.145
+     ],
+     "stitched_pauses_s": [
+      0.115,
+      0.275,
+      0.065,
+      0.09
+     ],
+     "asr_stitched": "앗 되돌려주세요 F2 앞면 2번",
+     "asr_whole": "앗 되돌려주세요 F2 앞면 두번",
+     "cer_stitched_vs_whole_asr": 0.077,
+     "cer_stitched_vs_text": 0.0,
+     "cer_whole_vs_text": 0.0
+    },
+    {
+     "i": 8,
+     "kind": "sentences",
+     "text": "잠깐요, 그 면 말고요. 비 투, 뒷면 두 번.",
+     "pieces": 2,
+     "gaps_ms": [
+      150
+     ],
+     "joint_pause_s": [
+      0.252
+     ],
+     "stitched_s": 2.534,
+     "whole_s": 2.719,
+     "whole_pauses_s": [
+      0.31,
+      0.085
+     ],
+     "stitched_pauses_s": [
+      0.095,
+      0.25,
+      0.07,
+      0.125
+     ],
+     "asr_stitched": "잠깐요. 그 면 말고요. B2 뒷면 두 번.",
+     "asr_whole": "잠깐요. 그면 말고요. B2 뒷면 2번.",
+     "cer_stitched_vs_whole_asr": 0.071,
+     "cer_stitched_vs_text": 0.0,
+     "cer_whole_vs_text": 0.0
+    },
+    {
+     "i": 9,
+     "kind": "template",
+     "text": "완성! 총 사십 초, 쉰한 수 걸렸어요. 가장 오래 걸린 단계는 PLL이었어요.",
+     "pieces": 4,
+     "gaps_ms": [
+      280,
+      130,
+      150
+     ],
+     "joint_pause_s": [
+      0.429,
+      0.212,
+      0.202
+     ],
+     "stitched_s": 5.283,
+     "whole_s": 6.241,
+     "whole_pauses_s": [
+      0.495,
+      0.105,
+      0.2,
+      0.48,
+      0.13
+     ],
+     "stitched_pauses_s": [
+      0.43,
+      0.095,
+      0.215,
+      0.205,
+      0.07
+     ],
+     "asr_stitched": "완성. 총 40초. 50안수 걸렸어요. 가장 오래 걸린 단계는 PLL이었어요.",
+     "asr_whole": "완성! 총 40초, 50안수 걸렸어요. 가장 오래 걸린 단계는 PLL이었어요.",
+     "cer_stitched_vs_whole_asr": 0.0,
+     "cer_stitched_vs_text": 0.103,
+     "cer_whole_vs_text": 0.103
+    },
+    {
+     "i": 10,
+     "kind": "template",
+     "text": "완성! 총 일 분 오십이 초, 아흔아홉 수 넘게 걸렸어요. 가장 오래 걸린 단계는 OLL이었어요.",
+     "pieces": 4,
+     "gaps_ms": [
+      280,
+      130,
+      150
+     ],
+     "joint_pause_s": [
+      0.374,
+      0.199,
+      0.219
+     ],
+     "stitched_s": 6.157,
+     "whole_s": 7.571,
+     "whole_pauses_s": [
+      0.42,
+      0.09,
+      0.265,
+      0.45,
+      0.305
+     ],
+     "stitched_pauses_s": [
+      0.375,
+      0.2,
+      0.22
+     ],
+     "asr_stitched": "완성! 총 1분 52초. 99수 넘게 걸렸어요. 가장 오래 걸린 단계는 OLL이었어요.",
+     "asr_whole": "완성! 총 1분 52초. 99수 넘게 걸렸어요. 가장 오래 걸린 단계는 OLL이었어요.",
+     "cer_stitched_vs_whole_asr": 0.0,
+     "cer_stitched_vs_text": 0.111,
+     "cer_whole_vs_text": 0.111
+    },
+    {
+     "i": 11,
+     "kind": "template",
+     "text": "3층 꼭짓점 자리가 평균보다 이십육 초 빨랐어요.",
+     "pieces": 2,
+     "gaps_ms": [
+      -30
+     ],
+     "joint_pause_s": [
+      0.135
+     ],
+     "stitched_s": 3.18,
+     "whole_s": 3.122,
+     "whole_pauses_s": [
+      0.065,
+      0.075,
+      0.075
+     ],
+     "stitched_pauses_s": [
+      0.06,
+      0.135
+     ],
+     "asr_stitched": "3층 꼭지점 자리가 평균보다 26초 빨랐어요",
+     "asr_whole": "산층 꼭지점 자리가 평균보다 26초 빨랐어요.",
+     "cer_stitched_vs_whole_asr": 0.053,
+     "cer_stitched_vs_text": 0.05,
+     "cer_whole_vs_text": 0.1
+    },
+    {
+     "i": 12,
+     "kind": "template",
+     "text": "1층 꼭짓점이 평균보다 팔십 초 느렸어요. 다음엔 여기를 연습해 봐요.",
+     "pieces": 3,
+     "gaps_ms": [
+      -30,
+      150
+     ],
+     "joint_pause_s": [
+      0.031,
+      0.267
+     ],
+     "stitched_s": 4.444,
+     "whole_s": 4.696,
+     "whole_pauses_s": [
+      0.07,
+      0.07,
+      0.44,
+      0.075
+     ],
+     "stitched_pauses_s": [
+      0.075,
+      0.27,
+      0.07
+     ],
+     "asr_stitched": "1층 꼭지점이 평균보다 80초 느렸어요. 다음엔 여기를 연습해봐요.",
+     "asr_whole": "1층 꼭지점이 평균보다 80초 느렸어요. 다음엔 여기를 연습해봐요.",
+     "cer_stitched_vs_whole_asr": 0.0,
+     "cer_stitched_vs_text": 0.036,
+     "cer_whole_vs_text": 0.036
+    },
+    {
+     "i": 13,
+     "kind": "template",
+     "text": "완성! 총 십삼 분 사십구 초, 아흔아홉 수 넘게 걸렸어요. 가장 오래 걸린 단계는 3층 모서리 자리였어요.",
+     "pieces": 5,
+     "gaps_ms": [
+      280,
+      -30,
+      130,
+      150
+     ],
+     "joint_pause_s": [
+      0.379,
+      0.051,
+      0.195,
+      0.214
+     ],
+     "stitched_s": 7.169,
+     "whole_s": 8.417,
+     "whole_pauses_s": [
+      0.465,
+      0.115,
+      0.34,
+      0.455,
+      0.17
+     ],
+     "stitched_pauses_s": [
+      0.375,
+      0.095,
+      0.2,
+      0.21
+     ],
+     "asr_stitched": "완성 총 13분 49초 99수 넘게 걸렸어요 가장 오래 걸린 단계는 3층 모서리 자리였어요",
+     "asr_whole": "완성! 총 13분 49초, 99수 넘게 걸렸어요. 가장 오래 걸린 단계는 3층 모서리 자리였어요.",
+     "cer_stitched_vs_whole_asr": 0.0,
+     "cer_stitched_vs_text": 0.1,
+     "cer_whole_vs_text": 0.1
+    },
+    {
+     "i": 14,
+     "kind": "comma",
+     "text": "유 더블 투 위 두 줄 두 번, 엘 더블 투, 비 더블 뒤 두 줄 윗줄 왼쪽으로.",
+     "pieces": 3,
+     "gaps_ms": [
+      130,
+      130
+     ],
+     "joint_pause_s": [
+      0.195,
+      0.233
+     ],
+     "stitched_s": 4.326,
+     "whole_s": 4.575,
+     "whole_pauses_s": [
+      0.19,
+      0.065,
+      0.29,
+      0.095,
+      0.06
+     ],
+     "stitched_pauses_s": [
+      0.195,
+      0.075,
+      0.235,
+      0.065,
+      0.065
+     ],
+     "asr_stitched": "U22E 두 줄 두 번, L22BDD 두 줄 윗줄 왼쪽으로",
+     "asr_whole": "U222 두 줄 2번, L22, BDD 두 줄 윗줄 왼쪽으로",
+     "cer_stitched_vs_whole_asr": 0.091,
+     "cer_stitched_vs_text": 0.4,
+     "cer_whole_vs_text": 0.4
+    },
+    {
+     "i": 15,
+     "kind": "comma",
+     "text": "엘 더블, 알 오른쪽 면 위로, 알 더블 프라임 오른쪽 두 줄 아래로.",
+     "pieces": 3,
+     "gaps_ms": [
+      130,
+      130
+     ],
+     "joint_pause_s": [
+      0.248,
+      0.218
+     ],
+     "stitched_s": 4.174,
+     "whole_s": 4.398,
+     "whole_pauses_s": [
+      0.39,
+      0.185,
+      0.07,
+      0.07,
+      0.105
+     ],
+     "stitched_pauses_s": [
+      0.065,
+      0.27,
+      0.215,
+      0.065,
+      0.085
+     ],
+     "asr_stitched": "L 더블, R 오른쪽 면 위로, R 더블 프라임 오른쪽 두 줄 아래로",
+     "asr_whole": "LW, R 오른쪽 면 위로, RW 프라임 오른쪽 두 줄 아래로.",
+     "cer_stitched_vs_whole_asr": 0.182,
+     "cer_stitched_vs_text": 0.0,
+     "cer_whole_vs_text": 0.083
+    },
+    {
+     "i": 16,
+     "kind": "comma",
+     "text": "엘 더블, 유 윗면 왼쪽으로, 에프 투 앞면 두 번.",
+     "pieces": 3,
+     "gaps_ms": [
+      130,
+      130
+     ],
+     "joint_pause_s": [
+      0.383,
+      0.231
+     ],
+     "stitched_s": 3.395,
+     "whole_s": 3.165,
+     "whole_pauses_s": [
+      0.17,
+      0.16,
+      0.07,
+      0.065
+     ],
+     "stitched_pauses_s": [
+      0.065,
+      0.385,
+      0.215
+     ],
+     "asr_stitched": "L 더블, U 윗면 왼쪽으로, F2 앞면 2번",
+     "asr_whole": "LW, U윗면 왼쪽으로, F2 안면 2번.",
+     "cer_stitched_vs_whole_asr": 0.2,
+     "cer_stitched_vs_text": 0.0,
+     "cer_whole_vs_text": 0.118
+    }
+   ]
+  }
+ }
+}

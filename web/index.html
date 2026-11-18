@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>큐브 코치</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body class="setup-open" data-mode="none" data-step="pick">
+    <header class="top">
+      <div class="brand">
+        <span class="logo" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        <h1>큐브 코치</h1>
+      </div>
+      <nav class="stepper" id="stepper" aria-label="진행 단계"></nav>
+      <div class="top-actions">
+        <button id="voice" class="toggle on" aria-pressed="true">음성 켜짐</button>
+        <button id="setupBtn" class="toggle" aria-expanded="true" aria-controls="setup">설정</button>
+      </div>
+    </header>
+
+    <!-- 지금 무엇을 하면 되는지 한 문장 -->
+    <p class="todo" id="todo" aria-live="polite">무엇으로 할지 고르세요.</p>
+
+    <!-- 시작 전 설정: 처음에는 이 화면이 전부이고, 시작하면 접힌다 (머리말의 '설정'으로 다시 연다) -->
+    <section class="setup" id="setup" aria-label="시작 전 설정">
+      <div class="setup-in">
+        <div class="pick" role="radiogroup" aria-label="입력">
+          <button id="modeCam" class="pick-btn" role="radio" aria-checked="false">
+            <svg class="pick-ill" viewBox="0 0 96 64" aria-hidden="true">
+              <rect x="6" y="8" width="84" height="50" rx="7" class="ill-frame" />
+              <g transform="translate(48 33)">
+                <polygon points="0,-15 13,-7.5 0,0 -13,-7.5" fill="#ffd23f" />
+                <polygon points="-13,-7.5 0,0 0,15 -13,7.5" fill="#13985a" />
+                <polygon points="13,-7.5 0,0 0,15 13,7.5" fill="#ff7a1a" />
+              </g>
+              <path d="M30 50 q-8 -4 -6 -14" class="ill-hand" />
+              <path d="M66 50 q8 -4 6 -14" class="ill-hand" />
+              <circle cx="80" cy="16" r="3" class="ill-rec" />
+            </svg>
+            <span class="pick-txt">
+              <b>카메라 · 영상</b>
+              <small>손에 든 진짜 큐브를 카메라로 보며 안내해요. 큐브가 없으면 샘플 영상으로 볼 수 있어요.</small>
+            </span>
+          </button>
+          <button id="modeKey" class="pick-btn" role="radio" aria-checked="false">
+            <svg class="pick-ill" viewBox="0 0 96 64" aria-hidden="true">
+              <g transform="translate(48 26)">
+                <polygon points="0,-18 16,-9 0,0 -16,-9" fill="#ffd23f" />
+                <polygon points="-16,-9 0,0 0,18 -16,9" fill="#13985a" />
+                <polygon points="16,-9 0,0 0,18 16,9" fill="#ff7a1a" />
+              </g>
+              <g class="ill-keys">
+                <rect x="14" y="48" width="14" height="10" rx="2" />
+                <rect x="31" y="48" width="14" height="10" rx="2" />
+                <rect x="48" y="48" width="14" height="10" rx="2" />
+                <rect x="65" y="48" width="14" height="10" rx="2" />
+              </g>
+            </svg>
+            <span class="pick-txt">
+              <b>가상 큐브 (키보드)</b>
+              <small>화면 속 큐브를 키보드로 돌려요. 큐브 없이 연습하거나 시연할 때.</small>
+            </span>
+          </button>
+        </div>
+
+        <div class="opts">
+          <label>방법
+            <select id="method">
+              <option value="beginner">초급 · 층별 7단계</option>
+              <option value="cfop4">중급 · CFOP 4-look</option>
+              <option value="cfop">고급 · PLL 21</option>
+            </select>
+          </label>
+          <label>수준
+            <select id="level">
+              <option value="guided">따라 하기</option>
+              <option value="hint">힌트만</option>
+              <option value="observe">혼자 풀기</option>
+              <option value="drill">공식 연습</option>
+            </select>
+          </label>
+          <label>목소리
+            <select id="voiceSel">
+              <option value="F2">여성</option>
+              <option value="M1">남성</option>
+            </select>
+          </label>
+          <p class="opt-note" id="levelNote"></p>
+        </div>
+        <ul class="promise" aria-label="이렇게 도와줘요">
+          <li><b>한 곳만 보세요</b><span>내 큐브가 비친 카메라 화면(또는 가상 큐브)과 바로 아래 카드에 다음 동작이 나와요.</span></li>
+          <li><b>말은 손에 든 큐브 기준</b><span>위·앞·오른쪽은 큐브를 든 내가 보는 방향이에요. 카드의 색 칸으로 내 큐브와 맞춰 보세요.</span></li>
+          <li><b>틀리면 바로</b><span>다른 면을 돌리기 시작하면 다 돌리기 전에 말리고, 되돌리는 법부터 알려 줘요.</span></li>
+        </ul>
+
+        <div class="setup-foot">
+          <p class="setup-note" id="inputNote"></p>
+          <button id="restart" hidden>이 설정으로 다시 시작</button>
+        </div>
+      </div>
+    </section>
+
+    <main class="layout" id="layout">
+      <!-- 주 화면: 여기와 바로 아래 카드만 보면 된다 -->
+      <div class="main-col">
+        <section class="stage" aria-labelledby="stageTitle">
+          <h2 id="stageTitle" class="sr">가상 큐브</h2>
+
+          <!-- 카메라 모드: 손에 든 진짜 큐브 -->
+          <div class="cam-view" id="camView">
+            <div class="cam-wrap" id="camWrap">
+              <canvas id="camview" width="640" height="360"></canvas>
+              <span class="track" id="track" role="status" hidden>
+                <i class="dot" aria-hidden="true"></i><span id="trackText">준비</span>
+                <span class="qbar" id="qbar" hidden aria-hidden="true"><i></i></span>
+              </span>
+              <span class="cam-fps" id="camFps" aria-hidden="true"></span>
+              <p class="cam-lost" id="camLost" role="status" hidden></p>
+            </div>
+            <!-- 카메라 켜기 전에는 큰 시작 칸, 켠 뒤에는 화면 아래 한 줄 -->
+            <div class="cam-bar">
+              <p class="stage-note" id="camNote"></p>
+              <div class="cam-src" id="camSrc">
+                <div class="cam-src-lead">
+                  <b>카메라로 큐브를 보여 주세요</b>
+                  <span>브라우저가 카메라 권한을 물으면 '허용'을 눌러 주세요.</span>
+                </div>
+                <div class="cam-src-btns">
+                  <button id="camStart" class="primary">카메라 켜기</button>
+                  <button id="camSample" title="직접 촬영한 46초 영상: 여섯 면 보여 주기 → 섹시무브 → F U F' U'">샘플 영상</button>
+                  <label class="file-btn">영상 파일<input id="camFile" type="file" accept="video/*" hidden /></label>
+                  <button id="camRescan">다시 읽기</button>
+                </div>
+                <p class="cam-err" id="camErrMsg" role="alert" hidden></p>
+                <p class="cam-privacy">영상은 이 브라우저 안에서만 처리하고 어디에도 보내지 않아요.</p>
+              </div>
+            </div>
+            <p class="cam-status" id="camStatus" aria-live="polite"></p>
+          </div>
+
+          <!-- 키보드 모드: 가상 큐브 -->
+          <div class="cube-view" id="cubeView">
+            <p class="stage-note" id="stageNote"></p>
+            <div class="cube-row">
+              <div id="cube" class="cube"></div>
+              <div id="hidden" class="hidden-faces" aria-label="안 보이는 면"></div>
+            </div>
+            <div class="turning" id="turning" aria-hidden="true"></div>
+          </div>
+        </section>
+
+        <!-- 다음 할 일 카드: 음성과 같은 내용 -->
+        <section class="next" id="next" data-state="wait" aria-label="다음 할 일">
+          <div class="next-badge" id="nextBadge">준비</div>
+          <div class="next-body">
+            <div class="next-fig" id="nextArrow" aria-hidden="true"></div>
+            <div class="next-main">
+              <div class="next-sym" id="nextSym">–</div>
+              <div class="next-text" id="nextText" aria-live="polite"></div>
+              <div class="next-face" id="nextFace" hidden></div>
+            </div>
+            <div class="refs" id="refs" hidden></div>
+            <div class="scan-faces" id="scanFaces" aria-label="면마다 읽은 정도" hidden></div>
+          </div>
+          <ol class="trail" id="trail" aria-label="인식한 회전" hidden></ol>
+          <div class="next-foot">
+            <p class="say" id="say"></p>
+            <button id="scramble" class="primary">섞고 시작</button>
+          </div>
+        </section>
+
+        <details class="keys" id="keys" open>
+          <summary>키보드로 돌리기 <small>누르고 있으면 돌아가고, 반쯤 돌기 전에 떼면 취소돼요</small></summary>
+          <div class="keygrid" id="keygrid"></div>
+          <p class="keynote">큐브 통째로 돌리기: <kbd>←</kbd><kbd>→</kbd> 옆으로, <kbd>↑</kbd><kbd>↓</kbd> 앞뒤로</p>
+        </details>
+      </div>
+
+      <!-- 참고: 진행·기록·로그는 옆으로 물린다 -->
+      <aside class="side" aria-label="참고">
+        <section class="panel flow" id="flow" aria-label="진행 순서">
+          <h2>이렇게 진행돼요</h2>
+          <ol id="flowList"></ol>
+        </section>
+
+        <section class="panel plan" id="plan" hidden aria-label="풀이 진행">
+          <div class="progress" id="progress"></div>
+          <div class="goal" id="goal"></div>
+        </section>
+
+        <section class="panel record" id="record" hidden aria-label="기록"></section>
+
+        <details class="panel howto" id="howto">
+          <summary>기호 읽는 법</summary>
+          <div class="howto-body">
+            <p>안내는 화면이 아니라 <b>손에 든 큐브를 내가 보는 방향</b> 기준이에요. 나를 보는 면이 앞(F)이에요.</p>
+            <dl class="letters">
+              <div><dt>F</dt><dd>앞</dd></div>
+              <div><dt>U</dt><dd>위</dd></div>
+              <div><dt>R</dt><dd>오른쪽</dd></div>
+              <div><dt>L</dt><dd>왼쪽</dd></div>
+              <div><dt>D</dt><dd>아래</dd></div>
+              <div><dt>B</dt><dd>뒤</dd></div>
+            </dl>
+            <p><b>R</b>처럼 글자만 있으면 그 면을 정면에서 볼 때 시계 방향으로 한 번, <b>R'</b>는 반대로 한 번, <b>R2</b>는 두 번이에요.</p>
+          </div>
+        </details>
+
+        <details class="panel known" id="known">
+          <summary>코치가 아는 큐브 <small>인식 결과 확인용</small></summary>
+          <div class="known-body">
+            <div id="knownCube" class="cube small"></div>
+            <div id="knownHidden" class="hidden-faces"></div>
+          </div>
+        </details>
+
+        <details class="panel logbox" id="logbox">
+          <summary>대화 기록 <small id="logCount"></small></summary>
+          <ol class="log" id="log"></ol>
+        </details>
+      </aside>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

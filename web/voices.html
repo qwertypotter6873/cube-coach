@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>안내 목소리 고르기</title>
+    <link rel="stylesheet" href="/src/style.css" />
+    <style>
+      .wrap { max-width: 1200px; margin: 0 auto; padding: 24px; }
+      table { border-collapse: collapse; width: 100%; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+      th, td { border-bottom: 1px solid var(--line); padding: 8px 10px; text-align: left; font-size: 14px; vertical-align: middle; }
+      th { font-size: 12px; color: var(--muted); font-weight: 600; white-space: nowrap; }
+      td.s { min-width: 240px; }
+      button.play { min-height: 32px; padding: 4px 10px; font-size: 13px; }
+      button.play.on { border-color: var(--accent); color: var(--accent); }
+      .scroll { overflow-x: auto; }
+      .meta { font-weight: 400; display: block; }
+      .note { color: var(--muted); font-size: 14px; }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <h1>안내 목소리 고르기</h1>
+      <p class="note">같은 코치 문장을 목소리마다 들어 보세요. CER은 음성 인식기로 받아 적었을 때의 글자 오류율(낮을수록 또렷함), 속도는 이 컴퓨터 CPU에서 실시간의 몇 배로 만드는지입니다.
+        <button id="playRow">선택한 문장 전부 이어 듣기</button></p>
+      <div class="scroll"><table id="t"></table></div>
+    </div>
+    <script type="module">
+      const data = await (await fetch("./voices.json")).json();
+      const t = document.getElementById("t");
+      let audio = null, selectedRow = 0;
+      const head = document.createElement("tr");
+      head.innerHTML = "<th>문장</th>" + data.systems.map((s) => `<th>${s.name.replace("supertonic3-", "Supertonic ")}<span class="meta">CER ${s.cer.toFixed(3)} · ${s.rtf.toFixed(1)}배</span></th>`).join("");
+      t.appendChild(head);
+      data.sentences.forEach((text, i) => {
+        const tr = document.createElement("tr");
+        const td = document.createElement("td");
+        td.className = "s";
+        td.textContent = text;
+        td.addEventListener("click", () => (selectedRow = i));
+        tr.appendChild(td);
+        data.systems.forEach((s) => {
+          const c = document.createElement("td");
+          const b = document.createElement("button");
+          b.className = "play";
+          b.textContent = "▶";
+          b.setAttribute("aria-label", `${s.name} ${i + 1}번 문장 듣기`);
+          b.addEventListener("click", () => {
+            selectedRow = i;
+            audio?.pause();
+            document.querySelectorAll("button.play.on").forEach((x) => x.classList.remove("on"));
+            audio = new Audio(s.files[i]);
+            b.classList.add("on");
+            audio.onended = () => b.classList.remove("on");
+            audio.play();
+          });
+          c.appendChild(b);
+          tr.appendChild(c);
+        });
+        t.appendChild(tr);
+      });
+      document.getElementById("playRow").addEventListener("click", async () => {
+        for (const s of data.systems) {
+          audio?.pause();
+          audio = new Audio(s.files[selectedRow]);
+          await new Promise((r) => { audio.onended = r; audio.onerror = r; audio.play(); });
+          await new Promise((r) => setTimeout(r, 250));
+        }
+      });
+    </script>
+  </body>
+</html>

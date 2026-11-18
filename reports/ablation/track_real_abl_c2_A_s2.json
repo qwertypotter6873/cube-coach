@@ -1,0 +1,36 @@
+{
+ "video": "sexy_move.mov",
+ "tracker": "ts",
+ "stride": 1,
+ "seed": 2,
+ "segment": "A",
+ "frames": 241,
+ "seconds": 8.0,
+ "detected_moves": 3,
+ "expected_moves": 24,
+ "move_acc": 0.04166666666666663,
+ "edit_distance": 23,
+ "final_state_ok": false,
+ "tracked_ratio": 0.946058091286307,
+ "ms_per_frame": 22.46126000811945,
+ "relocks": 4,
+ "cover": true,
+ "settle": 15,
+ "events": [
+  [
+   0,
+   1,
+   20.5
+  ],
+  [
+   3,
+   3,
+   22.23
+  ],
+  [
+   4,
+   1,
+   22.83
+  ]
+ ]
+}

@@ -1,0 +1,109 @@
+{
+ "video": "latest2.mov",
+ "tracker": "ts",
+ "stride": 1,
+ "seed": 1,
+ "segment": "latest2_Z1b",
+ "frames": 400,
+ "seconds": 13.3,
+ "detected_moves": 0,
+ "expected_moves": 0,
+ "move_acc": 1.0,
+ "edit_distance": 0,
+ "final_state_ok": true,
+ "first_lock_t": 51.0,
+ "tracked_ratio": 0.985,
+ "lost_episodes": 4,
+ "recover_frames_mean": 1.5,
+ "recover_frames_max": 2,
+ "lost_tail": 0,
+ "pan": 0.0,
+ "pan_hz": 0.25,
+ "jump": 0.0,
+ "fast": true,
+ "follow": "",
+ "bank": 1500,
+ "ms_per_frame": 22.626487612724304,
+ "relocks": 0,
+ "local_relocks": 1,
+ "inits": 2,
+ "rejected_turns": 0,
+ "reverts": 0,
+ "opts": "{\"snapVsNone\":-1e9,\"snapOtherVsNone\":-1e9}",
+ "cover": false,
+ "settle": 0,
+ "moving_frames": 6,
+ "events": [
+  [
+   5,
+   3,
+   51.53,
+   {
+    "via": "snap",
+    "back": 0,
+    "held": false,
+    "turnFrames": 5,
+    "q": 0.6666666666666666,
+    "body": 21.37323088611916,
+    "gain": 4.843659531651438,
+    "bodyGain": -3.331527394349788,
+    "vsNone": -3.3486536210602935e-08,
+    "seen": 5.938583267571882
+   }
+  ],
+  [
+   5,
+   1,
+   51.93,
+   {
+    "via": "snapOther",
+    "back": 0,
+    "held": false,
+    "turnFrames": 1,
+    "q": 0.7062050564396306,
+    "body": 8.569171642168094,
+    "gain": 4.924934602993852,
+    "bodyGain": -4.554309245992239,
+    "vsNone": 11.818918646936957,
+    "seen": 3.16619586616338
+   }
+  ],
+  [
+   2,
+   3,
+   54.3,
+   {
+    "via": "snap",
+    "back": 0,
+    "held": false,
+    "turnFrames": 7,
+    "q": 1,
+    "body": 5.092429962589009,
+    "gain": 5.588655338867767,
+    "bodyGain": -13.687009197638929,
+    "vsNone": 0,
+    "seen": 0
+   }
+  ],
+  [
+   2,
+   1,
+   55.97,
+   {
+    "via": "snap",
+    "back": 0,
+    "held": false,
+    "turnFrames": 1,
+    "q": 0.9560705212040381,
+    "body": 9.34418087093613,
+    "gain": 11.195885562507314,
+    "bodyGain": -15.022026142860192,
+    "vsNone": 13.912429691602341,
+    "seen": 3
+   }
+  ]
+ ],
+ "false_moves": 4,
+ "true_found": null,
+ "net_moves": 0
+}

@@ -1,0 +1,238 @@
+{
+ "sentences": [
+  "오른쪽 면을 위로 올려 주세요.",
+  "윗면을 왼쪽으로 돌려 주세요.",
+  "앞면을 반시계 방향으로 돌려 주세요.",
+  "잠깐, 반대 방향이에요!",
+  "앗, 방금은 왼쪽 면을 돌렸어요. 먼저 되돌릴게요. 왼쪽 면을 위로 올려 주세요.",
+  "두 번째. 섹시무브.",
+  "노랑이 위, 초록이 앞에 오게 잡아 주세요.",
+  "흰색, 주황, 파랑 꼭짓점이 아래층 다른 자리에 끼어 있어요. 섹시무브 한 번으로 먼저 꺼낼게요.",
+  "지금은 ㄱ자 모양이에요. 노란 십자 공식을 할게요.",
+  "흰색 십자 완성! 다음은 1층 꼭짓점이에요.",
+  "PLL 제이비 공식이에요.",
+  "완성! 총 일 분 사십이 초, 여든여섯 수 걸렸어요."
+ ],
+ "systems": [
+  {
+   "name": "supertonic3-F1",
+   "kind": "Supertonic 3 (99M, ONNX, 온디바이스)",
+   "cer": 0.07888024528891402,
+   "rtf": 3.5034877962598103,
+   "files": [
+    "voices/supertonic3-F1_00.m4a",
+    "voices/supertonic3-F1_01.m4a",
+    "voices/supertonic3-F1_02.m4a",
+    "voices/supertonic3-F1_03.m4a",
+    "voices/supertonic3-F1_04.m4a",
+    "voices/supertonic3-F1_05.m4a",
+    "voices/supertonic3-F1_06.m4a",
+    "voices/supertonic3-F1_07.m4a",
+    "voices/supertonic3-F1_08.m4a",
+    "voices/supertonic3-F1_09.m4a",
+    "voices/supertonic3-F1_10.m4a",
+    "voices/supertonic3-F1_11.m4a"
+   ]
+  },
+  {
+   "name": "supertonic3-F2",
+   "kind": "Supertonic 3 (99M, ONNX, 온디바이스)",
+   "cer": 0.0735567399654087,
+   "rtf": 3.5898816454436586,
+   "files": [
+    "voices/supertonic3-F2_00.m4a",
+    "voices/supertonic3-F2_01.m4a",
+    "voices/supertonic3-F2_02.m4a",
+    "voices/supertonic3-F2_03.m4a",
+    "voices/supertonic3-F2_04.m4a",
+    "voices/supertonic3-F2_05.m4a",
+    "voices/supertonic3-F2_06.m4a",
+    "voices/supertonic3-F2_07.m4a",
+    "voices/supertonic3-F2_08.m4a",
+    "voices/supertonic3-F2_09.m4a",
+    "voices/supertonic3-F2_10.m4a",
+    "voices/supertonic3-F2_11.m4a"
+   ]
+  },
+  {
+   "name": "supertonic3-F3",
+   "kind": "Supertonic 3 (99M, ONNX, 온디바이스)",
+   "cer": 0.08645600286467159,
+   "rtf": 3.555095028516809,
+   "files": [
+    "voices/supertonic3-F3_00.m4a",
+    "voices/supertonic3-F3_01.m4a",
+    "voices/supertonic3-F3_02.m4a",
+    "voices/supertonic3-F3_03.m4a",
+    "voices/supertonic3-F3_04.m4a",
+    "voices/supertonic3-F3_05.m4a",
+    "voices/supertonic3-F3_06.m4a",
+    "voices/supertonic3-F3_07.m4a",
+    "voices/supertonic3-F3_08.m4a",
+    "voices/supertonic3-F3_09.m4a",
+    "voices/supertonic3-F3_10.m4a",
+    "voices/supertonic3-F3_11.m4a"
+   ]
+  },
+  {
+   "name": "supertonic3-F4",
+   "kind": "Supertonic 3 (99M, ONNX, 온디바이스)",
+   "cer": 0.07408226549093422,
+   "rtf": 3.5446829937175326,
+   "files": [
+    "voices/supertonic3-F4_00.m4a",
+    "voices/supertonic3-F4_01.m4a",
+    "voices/supertonic3-F4_02.m4a",
+    "voices/supertonic3-F4_03.m4a",
+    "voices/supertonic3-F4_04.m4a",
+    "voices/supertonic3-F4_05.m4a",
+    "voices/supertonic3-F4_06.m4a",
+    "voices/supertonic3-F4_07.m4a",
+    "voices/supertonic3-F4_08.m4a",
+    "voices/supertonic3-F4_09.m4a",
+    "voices/supertonic3-F4_10.m4a",
+    "voices/supertonic3-F4_11.m4a"
+   ]
+  },
+  {
+   "name": "supertonic3-F5",
+   "kind": "Supertonic 3 (99M, ONNX, 온디바이스)",
+   "cer": 0.08923378064244937,
+   "rtf": 3.61324287528938,
+   "files": [
+    "voices/supertonic3-F5_00.m4a",
+    "voices/supertonic3-F5_01.m4a",
+    "voices/supertonic3-F5_02.m4a",
+    "voices/supertonic3-F5_03.m4a",
+    "voices/supertonic3-F5_04.m4a",
+    "voices/supertonic3-F5_05.m4a",
+    "voices/supertonic3-F5_06.m4a",
+    "voices/supertonic3-F5_07.m4a",
+    "voices/supertonic3-F5_08.m4a",
+    "voices/supertonic3-F5_09.m4a",
+    "voices/supertonic3-F5_10.m4a",
+    "voices/supertonic3-F5_11.m4a"
+   ]
+  },
+  {
+   "name": "supertonic3-M1",
+   "kind": "Supertonic 3 (99M, ONNX, 온디바이스)",
+   "cer": 0.0735567399654087,
+   "rtf": 3.566188883253391,
+   "files": [
+    "voices/supertonic3-M1_00.m4a",
+    "voices/supertonic3-M1_01.m4a",
+    "voices/supertonic3-M1_02.m4a",
+    "voices/supertonic3-M1_03.m4a",
+    "voices/supertonic3-M1_04.m4a",
+    "voices/supertonic3-M1_05.m4a",
+    "voices/supertonic3-M1_06.m4a",
+    "voices/supertonic3-M1_07.m4a",
+    "voices/supertonic3-M1_08.m4a",
+    "voices/supertonic3-M1_09.m4a",
+    "voices/supertonic3-M1_10.m4a",
+    "voices/supertonic3-M1_11.m4a"
+   ]
+  },
+  {
+   "name": "supertonic3-M2",
+   "kind": "Supertonic 3 (99M, ONNX, 온디바이스)",
+   "cer": 0.07130448771315644,
+   "rtf": 3.543263898145111,
+   "files": [
+    "voices/supertonic3-M2_00.m4a",
+    "voices/supertonic3-M2_01.m4a",
+    "voices/supertonic3-M2_02.m4a",
+    "voices/supertonic3-M2_03.m4a",
+    "voices/supertonic3-M2_04.m4a",
+    "voices/supertonic3-M2_05.m4a",
+    "voices/supertonic3-M2_06.m4a",
+    "voices/supertonic3-M2_07.m4a",
+    "voices/supertonic3-M2_08.m4a",
+    "voices/supertonic3-M2_09.m4a",
+    "voices/supertonic3-M2_10.m4a",
+    "voices/supertonic3-M2_11.m4a"
+   ]
+  },
+  {
+   "name": "supertonic3-M3",
+   "kind": "Supertonic 3 (99M, ONNX, 온디바이스)",
+   "cer": 0.07888024528891402,
+   "rtf": 3.5130601959393952,
+   "files": [
+    "voices/supertonic3-M3_00.m4a",
+    "voices/supertonic3-M3_01.m4a",
+    "voices/supertonic3-M3_02.m4a",
+    "voices/supertonic3-M3_03.m4a",
+    "voices/supertonic3-M3_04.m4a",
+    "voices/supertonic3-M3_05.m4a",
+    "voices/supertonic3-M3_06.m4a",
+    "voices/supertonic3-M3_07.m4a",
+    "voices/supertonic3-M3_08.m4a",
+    "voices/supertonic3-M3_09.m4a",
+    "voices/supertonic3-M3_10.m4a",
+    "voices/supertonic3-M3_11.m4a"
+   ]
+  },
+  {
+   "name": "supertonic3-M4",
+   "kind": "Supertonic 3 (99M, ONNX, 온디바이스)",
+   "cer": 0.0735567399654087,
+   "rtf": 3.6511885496254823,
+   "files": [
+    "voices/supertonic3-M4_00.m4a",
+    "voices/supertonic3-M4_01.m4a",
+    "voices/supertonic3-M4_02.m4a",
+    "voices/supertonic3-M4_03.m4a",
+    "voices/supertonic3-M4_04.m4a",
+    "voices/supertonic3-M4_05.m4a",
+    "voices/supertonic3-M4_06.m4a",
+    "voices/supertonic3-M4_07.m4a",
+    "voices/supertonic3-M4_08.m4a",
+    "voices/supertonic3-M4_09.m4a",
+    "voices/supertonic3-M4_10.m4a",
+    "voices/supertonic3-M4_11.m4a"
+   ]
+  },
+  {
+   "name": "supertonic3-M5",
+   "kind": "Supertonic 3 (99M, ONNX, 온디바이스)",
+   "cer": 0.0735567399654087,
+   "rtf": 3.53850880839221,
+   "files": [
+    "voices/supertonic3-M5_00.m4a",
+    "voices/supertonic3-M5_01.m4a",
+    "voices/supertonic3-M5_02.m4a",
+    "voices/supertonic3-M5_03.m4a",
+    "voices/supertonic3-M5_04.m4a",
+    "voices/supertonic3-M5_05.m4a",
+    "voices/supertonic3-M5_06.m4a",
+    "voices/supertonic3-M5_07.m4a",
+    "voices/supertonic3-M5_08.m4a",
+    "voices/supertonic3-M5_09.m4a",
+    "voices/supertonic3-M5_10.m4a",
+    "voices/supertonic3-M5_11.m4a"
+   ]
+  },
+  {
+   "name": "macos-Yuna",
+   "kind": "macOS 내장 음성 (브라우저 기본 음성의 예)",
+   "cer": 0.0779427048776894,
+   "rtf": 2.4416789489989243,
+   "files": [
+    "voices/macos-Yuna_00.m4a",
+    "voices/macos-Yuna_01.m4a",
+    "voices/macos-Yuna_02.m4a",
+    "voices/macos-Yuna_03.m4a",
+    "voices/macos-Yuna_04.m4a",
+    "voices/macos-Yuna_05.m4a",
+    "voices/macos-Yuna_06.m4a",
+    "voices/macos-Yuna_07.m4a",
+    "voices/macos-Yuna_08.m4a",
+    "voices/macos-Yuna_09.m4a",
+    "voices/macos-Yuna_10.m4a",
+    "voices/macos-Yuna_11.m4a"
+   ]
+  }
+ ]
+}

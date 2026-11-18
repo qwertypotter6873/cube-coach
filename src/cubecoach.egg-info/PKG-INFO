@@ -1,0 +1,5 @@
+Metadata-Version: 2.4
+Name: cubecoach
+Version: 0.1.0
+Summary: 카메라로 3x3x3 큐브를 읽고 수준별 공식을 음성으로 안내하는 코치
+Requires-Python: >=3.12

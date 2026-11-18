@@ -1,0 +1,34 @@
+{
+ "model_v1__test_synth3d": {
+  "pixel_acc": 0.9827861689814815,
+  "miou": 0.8361307958986972,
+  "sticker_acc": 0.929559043348281,
+  "sticker_f1": 0.9435056640636258,
+  "center_recall": 0.9803811659192825,
+  "n_stickers": 21408
+ },
+ "model_v1__test_synth3d_v2": {
+  "pixel_acc": 0.9153981481481481,
+  "miou": 0.5901958620856431,
+  "sticker_acc": 0.8561420345489443,
+  "sticker_f1": 0.8953438585973238,
+  "center_recall": 0.9178502879078695,
+  "n_stickers": 20840
+ },
+ "model_v2__test_synth3d": {
+  "pixel_acc": 0.9793767361111111,
+  "miou": 0.8086531067782301,
+  "sticker_acc": 0.9250280269058296,
+  "sticker_f1": 0.9392378040973419,
+  "center_recall": 0.9796804932735426,
+  "n_stickers": 21408
+ },
+ "model_v2__test_synth3d_v2": {
+  "pixel_acc": 0.9795720486111111,
+  "miou": 0.8051220875399037,
+  "sticker_acc": 0.9182821497120921,
+  "sticker_f1": 0.9329555267310975,
+  "center_recall": 0.9761036468330134,
+  "n_stickers": 20840
+ }
+}

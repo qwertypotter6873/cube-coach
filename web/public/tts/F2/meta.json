@@ -1,0 +1,1 @@
+{"voice": "F2", "steps": 8, "speed": 1.08, "short_speed": [[5, 0.95], [7, 1.0]], "seed": 0, "seed_fix": {"디 프라임, 아랫면 왼쪽으로.": 1, "디, 아랫면 오른쪽으로.": 1}, "trim": {"v": 1, "speech_db": 30, "onset_db": 50, "offset_db": 45, "pad_in": 0.015, "pad_out": 0.04, "fade_in": 0.005, "fade_out": 0.02}, "model": "Supertone/supertonic-3 (OpenRAIL-M)"}

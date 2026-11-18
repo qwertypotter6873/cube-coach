@@ -1,0 +1,10 @@
+pyproject.toml
+src/cubecoach/__init__.py
+src/cubecoach/cube.py
+src/cubecoach/models.py
+src/cubecoach/synth.py
+src/cubecoach.egg-info/PKG-INFO
+src/cubecoach.egg-info/SOURCES.txt
+src/cubecoach.egg-info/dependency_links.txt
+src/cubecoach.egg-info/top_level.txt
+tests/test_cube.py

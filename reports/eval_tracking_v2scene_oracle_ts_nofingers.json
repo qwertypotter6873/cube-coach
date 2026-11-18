@@ -1,0 +1,138 @@
+{
+  "summary": {
+    "sequences": 8,
+    "move_acc": 0.90625,
+    "exact_rate": 0.625,
+    "final_state_rate": 0.75,
+    "lock_ratio": 0.9024374310481451,
+    "mean_delay_frames": NaN,
+    "ms_tracker": 4.9891665039467625,
+    "ms_net": 0.08164600512827747,
+    "fingers": false,
+    "any_view": false,
+    "oracle": true,
+    "turn_frames": [
+      5,
+      11
+    ],
+    "pause": [
+      3,
+      10
+    ],
+    "frames_per_move": 19.15625
+  },
+  "rows": [
+    {
+      "seq": 0,
+      "frames": 399,
+      "moves": 20,
+      "detected": 20,
+      "exact": true,
+      "move_acc": 1.0,
+      "final_state_ok": true,
+      "lock_ratio": 0.9674185463659147,
+      "median_pose_err": 3.0096984441212022,
+      "mean_delay": null,
+      "ms_net": 0.08133400115184486,
+      "ms_tracker": 5.1551670039771125
+    },
+    {
+      "seq": 1,
+      "frames": 395,
+      "moves": 20,
+      "detected": 20,
+      "exact": false,
+      "move_acc": 0.9,
+      "final_state_ok": true,
+      "lock_ratio": 0.8810126582278481,
+      "median_pose_err": 3.6816417915562982,
+      "mean_delay": null,
+      "ms_net": 0.08479200187139213,
+      "ms_tracker": 5.001958008506335
+    },
+    {
+      "seq": 2,
+      "frames": 404,
+      "moves": 20,
+      "detected": 20,
+      "exact": true,
+      "move_acc": 1.0,
+      "final_state_ok": true,
+      "lock_ratio": 0.9653465346534653,
+      "median_pose_err": 3.8369104845243776,
+      "mean_delay": null,
+      "ms_net": 0.08139550482155755,
+      "ms_tracker": 5.4640005037072115
+    },
+    {
+      "seq": 3,
+      "frames": 373,
+      "moves": 20,
+      "detected": 20,
+      "exact": true,
+      "move_acc": 1.0,
+      "final_state_ok": true,
+      "lock_ratio": 0.9168900804289544,
+      "median_pose_err": 4.268320170758484,
+      "mean_delay": null,
+      "ms_net": 0.0816670071799308,
+      "ms_tracker": 4.97637499938719
+    },
+    {
+      "seq": 4,
+      "frames": 390,
+      "moves": 20,
+      "detected": 18,
+      "exact": false,
+      "move_acc": 0.55,
+      "final_state_ok": false,
+      "lock_ratio": 0.658974358974359,
+      "median_pose_err": 6.203480234272788,
+      "mean_delay": null,
+      "ms_net": 0.08162500307662413,
+      "ms_tracker": 4.861375011387281
+    },
+    {
+      "seq": 5,
+      "frames": 365,
+      "moves": 20,
+      "detected": 19,
+      "exact": false,
+      "move_acc": 0.8,
+      "final_state_ok": false,
+      "lock_ratio": 0.8794520547945206,
+      "median_pose_err": 3.353937047188669,
+      "mean_delay": null,
+      "ms_net": 0.08362499647773802,
+      "ms_tracker": 4.763541990541853
+    },
+    {
+      "seq": 6,
+      "frames": 352,
+      "moves": 20,
+      "detected": 20,
+      "exact": true,
+      "move_acc": 1.0,
+      "final_state_ok": true,
+      "lock_ratio": 0.9659090909090909,
+      "median_pose_err": 3.4913099067233992,
+      "mean_delay": null,
+      "ms_net": 0.08087500464171171,
+      "ms_tracker": 5.317416500474792
+    },
+    {
+      "seq": 7,
+      "frames": 387,
+      "moves": 20,
+      "detected": 20,
+      "exact": true,
+      "move_acc": 1.0,
+      "final_state_ok": true,
+      "lock_ratio": 0.9844961240310077,
+      "median_pose_err": 2.412794589902248,
+      "mean_delay": null,
+      "ms_net": 0.08195900591090322,
+      "ms_tracker": 4.879458007053472
+    }
+  ]
+}

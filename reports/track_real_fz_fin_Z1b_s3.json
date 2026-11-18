@@ -1,0 +1,229 @@
+{
+ "video": "sexy_move.mov",
+ "tracker": "ts",
+ "stride": 1,
+ "seed": 3,
+ "segment": "Z1b",
+ "frames": 340,
+ "seconds": 11.3,
+ "detected_moves": 12,
+ "expected_moves": 0,
+ "move_acc": -11.0,
+ "edit_distance": 12,
+ "final_state_ok": false,
+ "tracked_ratio": 0.9205882352941176,
+ "lost_episodes": 6,
+ "recover_frames_mean": 4.5,
+ "recover_frames_max": 19,
+ "lost_tail": 0,
+ "pan": 0.0,
+ "pan_hz": 0.25,
+ "jump": 0.0,
+ "fast": true,
+ "follow": "",
+ "bank": 1500,
+ "ms_per_frame": 21.46676778793335,
+ "relocks": 0,
+ "local_relocks": 2,
+ "inits": 2,
+ "rejected_turns": 0,
+ "opts": "",
+ "cover": false,
+ "settle": 0,
+ "moving_frames": 31,
+ "events": [
+  [
+   2,
+   3,
+   12.63,
+   {
+    "via": "snapOther",
+    "back": 0,
+    "held": false,
+    "turnFrames": 4,
+    "q": 0.46174973027887206,
+    "body": 14.440478727516115,
+    "gain": 6.638532627122451,
+    "bodyGain": -21.051625521835668,
+    "vsNone": 4.6497005860668965
+   }
+  ],
+  [
+   0,
+   3,
+   14.33,
+   {
+    "via": "doubt",
+    "back": 2,
+    "held": null,
+    "turnFrames": 0,
+    "q": 0.5,
+    "body": 4.8968458464158315,
+    "gain": 0,
+    "bodyGain": 0,
+    "vsNone": 5.756035776130208
+   }
+  ],
+  [
+   4,
+   3,
+   13.53,
+   {
+    "via": "snap",
+    "back": 0,
+    "held": false,
+    "turnFrames": 1,
+    "q": 0.5,
+    "body": 6.244495330824307,
+    "gain": 5.637990257170152,
+    "bodyGain": 5.3585732126887144,
+    "vsNone": 5.527503351905212
+   }
+  ],
+  [
+   5,
+   3,
+   14.27,
+   {
+    "via": "snap",
+    "back": 0,
+    "held": false,
+    "turnFrames": 2,
+    "q": 0.8321845529544425,
+    "body": 4.982802993936221,
+    "gain": 4.915072242409039,
+    "bodyGain": -3.5660478890977565,
+    "vsNone": 2.583993880418621
+   }
+  ],
+  [
+   0,
+   2,
+   15.73,
+   {
+    "via": "snapOther",
+    "back": 0,
+    "held": true,
+    "turnFrames": 8,
+    "q": 0.7272802087598277,
+    "body": 6.916861465962278,
+    "gain": 3.598825988074662,
+    "bodyGain": 1.494162107393425,
+    "vsNone": 7.292292652218036
+   }
+  ],
+  [
+   2,
+   1,
+   17.03,
+   {
+    "via": "snap",
+    "back": 0,
+    "held": false,
+    "turnFrames": 13,
+    "q": 0.5554711520192563,
+    "body": 5.968596311343053,
+    "gain": 10.952910536191379,
+    "bodyGain": -10.147978582352398,
+    "vsNone": 1.7249467793390139
+   }
+  ],
+  [
+   0,
+   3,
+   17.43,
+   {
+    "via": "snap",
+    "back": 0,
+    "held": false,
+    "turnFrames": 12,
+    "q": 0.6983951284395638,
+    "body": 11.701052017974378,
+    "gain": 10.301096240824522,
+    "bodyGain": -3.888773140361561,
+    "vsNone": 6.977244704891654
+   }
+  ],
+  [
+   4,
+   1,
+   17.7,
+   {
+    "via": "snap",
+    "back": 0,
+    "held": false,
+    "turnFrames": 8,
+    "q": 0.8488598321410858,
+    "body": 15.75027980188535,
+    "gain": 3.138458569835846,
+    "bodyGain": -18.82759125286461,
+    "vsNone": 0.5242106216169047
+   }
+  ],
+  [
+   5,
+   1,
+   17.97,
+   {
+    "via": "doubt",
+    "back": 1,
+    "held": null,
+    "turnFrames": 0,
+    "q": 0.8,
+    "body": 5.627754013532331,
+    "gain": 0,
+    "bodyGain": 0,
+    "vsNone": 6.212943785504999
+   }
+  ],
+  [
+   0,
+   3,
+   17.73,
+   {
+    "via": "snap",
+    "back": 0,
+    "held": false,
+    "turnFrames": 1,
+    "q": 0.8607105231667679,
+    "body": 16.40159747816781,
+    "gain": 5.437088616342564,
+    "bodyGain": -13.26075558677465,
+    "vsNone": 5.647805550379598
+   }
+  ],
+  [
+   3,
+   1,
+   18.77,
+   {
+    "via": "snap",
+    "back": 0,
+    "held": false,
+    "turnFrames": 18,
+    "q": 0.7156045864603828,
+    "body": 11.398308766707558,
+    "gain": 6.555362818791831,
+    "bodyGain": 1.3106557270651642,
+    "vsNone": 11.749765271720495
+   }
+  ],
+  [
+   4,
+   2,
+   19.43,
+   {
+    "via": "snapOther",
+    "back": 0,
+    "held": false,
+    "turnFrames": 19,
+    "q": 0.6666666666666666,
+    "body": 6.13882230674821,
+    "gain": 3.6648497109300813,
+    "bodyGain": -7.584649050373297,
+    "vsNone": 10.490686501159047
+   }
+  ]
+ ],
+ "false_moves": 12
+}

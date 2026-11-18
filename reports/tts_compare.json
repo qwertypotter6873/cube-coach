@@ -1,0 +1,1146 @@
+{
+ "supertonic3-F1": {
+  "rows": [
+   {
+    "i": 0,
+    "path": "reports/tts/compare/supertonic3-F1/00.wav",
+    "audio_s": 2.6736961451247168,
+    "synth_s": 0.8315823749871925,
+    "asr": "오른쪽 면을 위로 올려주세요.",
+    "cer": 0.0
+   },
+   {
+    "i": 1,
+    "path": "reports/tts/compare/supertonic3-F1/01.wav",
+    "audio_s": 2.6431972789115648,
+    "synth_s": 0.8200627500191331,
+    "asr": "윗면을 왼쪽으로 돌려주세요.",
+    "cer": 0.0
+   },
+   {
+    "i": 2,
+    "path": "reports/tts/compare/supertonic3-F1/02.wav",
+    "audio_s": 3.144104308390023,
+    "synth_s": 0.8594911670079455,
+    "asr": "앞면을 반시계 방향으로 돌려주세요.",
+    "cer": 0.0
+   },
+   {
+    "i": 3,
+    "path": "reports/tts/compare/supertonic3-F1/03.wav",
+    "audio_s": 2.336734693877551,
+    "synth_s": 0.8036187500110827,
+    "asr": "잠깐 반대 방향이에요.",
+    "cer": 0.0
+   },
+   {
+    "i": 4,
+    "path": "reports/tts/compare/supertonic3-F1/04.wav",
+    "audio_s": 7.02827664399093,
+    "synth_s": 1.8255998749518767,
+    "asr": "앗, 방금은 왼쪽 면을 돌렸어요. 먼저 되돌릴게요. 왼쪽 면을 위로 올려주세요.",
+    "cer": 0.0
+   },
+   {
+    "i": 5,
+    "path": "reports/tts/compare/supertonic3-F1/05.wav",
+    "audio_s": 2.2311337868480727,
+    "synth_s": 0.800661500019487,
+    "asr": "두 번째, 섹시 무브.",
+    "cer": 0.0
+   },
+   {
+    "i": 6,
+    "path": "reports/tts/compare/supertonic3-F1/06.wav",
+    "audio_s": 3.7589115646258504,
+    "synth_s": 1.0763437920249999,
+    "asr": "노랑이 위, 초록이 앞에 오게 잡아주세요.",
+    "cer": 0.0
+   },
+   {
+    "i": 7,
+    "path": "reports/tts/compare/supertonic3-F1/07.wav",
+    "audio_s": 8.01265306122449,
+    "synth_s": 2.07319391600322,
+    "asr": "흰색, 주황, 파랑 꼭지점이 아래층 다른 자리에 끼어 있어요. 섹시 무브 한 번으로 먼저 꺼낼게요.",
+    "cer": 0.02702702702702703
+   },
+   {
+    "i": 8,
+    "path": "reports/tts/compare/supertonic3-F1/08.wav",
+    "audio_s": 4.534285714285715,
+    "synth_s": 1.3243539159884676,
+    "asr": "지금은 기자 모양이에요. 노란 십자 공식을 할게요.",
+    "cer": 0.05263157894736842
+   },
+   {
+    "i": 9,
+    "path": "reports/tts/compare/supertonic3-F1/09.wav",
+    "audio_s": 4.5390022675736965,
+    "synth_s": 1.3122590419952758,
+    "asr": "흰색 십자 완성. 다음은 1층 꼭지점이에요.",
+    "cer": 0.058823529411764705
+   },
+   {
+    "i": 10,
+    "path": "reports/tts/compare/supertonic3-F1/10.wav",
+    "audio_s": 2.0279591836734694,
+    "synth_s": 0.6047595409909263,
+    "asr": "PLL 제2비 공식",
+    "cer": 0.36363636363636365
+   },
+   {
+    "i": 11,
+    "path": "reports/tts/compare/supertonic3-F1/11.wav",
+    "audio_s": 5.040045351473923,
+    "synth_s": 1.360143333033193,
+    "asr": "완성! 총 1분 42초 86수 걸렸어요.",
+    "cer": 0.4444444444444444
+   }
+  ],
+  "kind": "Supertonic 3 (99M, ONNX, 온디바이스)",
+  "voice": "F1",
+  "cer_mean": 0.07888024528891402,
+  "rtf": 3.5034877962598103
+ },
+ "supertonic3-F2": {
+  "rows": [
+   {
+    "i": 0,
+    "path": "reports/tts/compare/supertonic3-F2/00.wav",
+    "audio_s": 2.4986167800453516,
+    "synth_s": 0.8161462920252234,
+    "asr": "오른쪽 면을 위로 올려주세요.",
+    "cer": 0.0
+   },
+   {
+    "i": 1,
+    "path": "reports/tts/compare/supertonic3-F2/01.wav",
+    "audio_s": 2.4713378684807257,
+    "synth_s": 0.8094424590235576,
+    "asr": "윗면을 왼쪽으로 돌려주세요.",
+    "cer": 0.0
+   },
+   {
+    "i": 2,
+    "path": "reports/tts/compare/supertonic3-F2/02.wav",
+    "audio_s": 2.948934240362812,
+    "synth_s": 0.8511429580394179,
+    "asr": "앞면을 반시계 방향으로 돌려주세요.",
+    "cer": 0.0
+   },
+   {
+    "i": 3,
+    "path": "reports/tts/compare/supertonic3-F2/03.wav",
+    "audio_s": 2.229433106575964,
+    "synth_s": 0.8131621250067838,
+    "asr": "잠깐 반대 방향이에요.",
+    "cer": 0.0
+   },
+   {
+    "i": 4,
+    "path": "reports/tts/compare/supertonic3-F2/04.wav",
+    "audio_s": 6.588027210884354,
+    "synth_s": 1.6157007500296459,
+    "asr": "앗! 방금은 왼쪽 면을 돌렸어요. 먼저 되돌릴게요. 왼쪽 면을 위로 올려주세요.",
+    "cer": 0.0
+   },
+   {
+    "i": 5,
+    "path": "reports/tts/compare/supertonic3-F2/05.wav",
+    "audio_s": 2.1597732426303855,
+    "synth_s": 0.6018704170128331,
+    "asr": "두번째, 섹시 무브",
+    "cer": 0.0
+   },
+   {
+    "i": 6,
+    "path": "reports/tts/compare/supertonic3-F2/06.wav",
+    "audio_s": 3.5213378684807255,
+    "synth_s": 1.075777374964673,
+    "asr": "노랑이 위, 초록이 앞에 오게 잡아주세요.",
+    "cer": 0.0
+   },
+   {
+    "i": 7,
+    "path": "reports/tts/compare/supertonic3-F2/07.wav",
+    "audio_s": 7.523061224489796,
+    "synth_s": 1.8587556660058908,
+    "asr": "흰색, 주황, 파란 꼭지점이 아래층 다른 자리에 끼어 있어요. 섹시 무브 한 번으로 먼저 꺼낼게요.",
+    "cer": 0.05405405405405406
+   },
+   {
+    "i": 8,
+    "path": "reports/tts/compare/supertonic3-F2/08.wav",
+    "audio_s": 4.253265306122449,
+    "synth_s": 1.113633207976818,
+    "asr": "지금은 기자 모양이에요. 노란 십자 공식을 할게요.",
+    "cer": 0.05263157894736842
+   },
+   {
+    "i": 9,
+    "path": "reports/tts/compare/supertonic3-F2/09.wav",
+    "audio_s": 4.264444444444444,
+    "synth_s": 1.110846458002925,
+    "asr": "흰색 십자 완성. 다음은 1층 꼭지점이에요.",
+    "cer": 0.058823529411764705
+   },
+   {
+    "i": 10,
+    "path": "reports/tts/compare/supertonic3-F2/10.wav",
+    "audio_s": 1.95702947845805,
+    "synth_s": 0.5955029999604449,
+    "asr": "PLL JB 공식이에요.",
+    "cer": 0.2727272727272727
+   },
+   {
+    "i": 11,
+    "path": "reports/tts/compare/supertonic3-F2/11.wav",
+    "audio_s": 4.729070294784581,
+    "synth_s": 1.3134564579813741,
+    "asr": "완성! 총 1분 42초, 86수 걸렸어요.",
+    "cer": 0.4444444444444444
+   }
+  ],
+  "kind": "Supertonic 3 (99M, ONNX, 온디바이스)",
+  "voice": "F2",
+  "cer_mean": 0.0735567399654087,
+  "rtf": 3.5898816454436586
+ },
+ "supertonic3-F3": {
+  "rows": [
+   {
+    "i": 0,
+    "path": "reports/tts/compare/supertonic3-F3/00.wav",
+    "audio_s": 2.757755102040816,
+    "synth_s": 0.8240343749639578,
+    "asr": "오른쪽 면을 위로 올려주세요.",
+    "cer": 0.0
+   },
+   {
+    "i": 1,
+    "path": "reports/tts/compare/supertonic3-F3/01.wav",
+    "audio_s": 2.726326530612245,
+    "synth_s": 0.8200466670095921,
+    "asr": "윗면을 왼쪽으로 돌려주세요.",
+    "cer": 0.0
+   },
+   {
+    "i": 2,
+    "path": "reports/tts/compare/supertonic3-F3/02.wav",
+    "audio_s": 3.2440136054421767,
+    "synth_s": 0.8665739590069279,
+    "asr": "앞면을 반시계 방향으로 돌려주세요.",
+    "cer": 0.0
+   },
+   {
+    "i": 3,
+    "path": "reports/tts/compare/supertonic3-F3/03.wav",
+    "audio_s": 2.410408163265306,
+    "synth_s": 0.8157141669653356,
+    "asr": "잠깐 반대 방향이에요.",
+    "cer": 0.0
+   },
+   {
+    "i": 4,
+    "path": "reports/tts/compare/supertonic3-F3/04.wav",
+    "audio_s": 7.247210884353741,
+    "synth_s": 1.8389098750194535,
+    "asr": "앗, 방금은 왼쪽 면을 돌렸어요. 먼저 되돌릴게요. 왼쪽 면을 위로 올려주세요.",
+    "cer": 0.0
+   },
+   {
+    "i": 5,
+    "path": "reports/tts/compare/supertonic3-F3/05.wav",
+    "audio_s": 2.2962131519274376,
+    "synth_s": 0.7991454579751007,
+    "asr": "두번째, 섹시 무브.",
+    "cer": 0.0
+   },
+   {
+    "i": 6,
+    "path": "reports/tts/compare/supertonic3-F3/06.wav",
+    "audio_s": 3.876780045351474,
+    "synth_s": 1.0737394579919055,
+    "asr": "노랑이 위, 초록이 앞에 오게 잡아주세요.",
+    "cer": 0.0
+   },
+   {
+    "i": 7,
+    "path": "reports/tts/compare/supertonic3-F3/07.wav",
+    "audio_s": 8.258548752834468,
+    "synth_s": 2.218959125049878,
+    "asr": "흰색, 주황, 파랑 꼭지점이 아래층 다른 자리에 끼어 있어요. 섹시 무브 한 번으로 먼저 꺼낼게요.",
+    "cer": 0.02702702702702703
+   },
+   {
+    "i": 8,
+    "path": "reports/tts/compare/supertonic3-F3/08.wav",
+    "audio_s": 4.675192743764172,
+    "synth_s": 1.3357451670453884,
+    "asr": "지금은 기자 모양이에요. 노란 십자 공식을 할게요.",
+    "cer": 0.05263157894736842
+   },
+   {
+    "i": 9,
+    "path": "reports/tts/compare/supertonic3-F3/09.wav",
+    "audio_s": 4.6801133786848075,
+    "synth_s": 1.3316474999883212,
+    "asr": "흰색 십자 완성, 다음은 1층 꼭지점이에요.",
+    "cer": 0.058823529411764705
+   },
+   {
+    "i": 10,
+    "path": "reports/tts/compare/supertonic3-F3/10.wav",
+    "audio_s": 2.087845804988662,
+    "synth_s": 0.6128178749931976,
+    "asr": "PLL JB 공식이",
+    "cer": 0.45454545454545453
+   },
+   {
+    "i": 11,
+    "path": "reports/tts/compare/supertonic3-F3/11.wav",
+    "audio_s": 5.196916099773243,
+    "synth_s": 1.374340707960073,
+    "asr": "완성! 총 1분 42초. 86수 걸렸어요.",
+    "cer": 0.4444444444444444
+   }
+  ],
+  "kind": "Supertonic 3 (99M, ONNX, 온디바이스)",
+  "voice": "F3",
+  "cer_mean": 0.08645600286467159,
+  "rtf": 3.555095028516809
+ },
+ "supertonic3-F4": {
+  "rows": [
+   {
+    "i": 0,
+    "path": "reports/tts/compare/supertonic3-F4/00.wav",
+    "audio_s": 2.3750566893424034,
+    "synth_s": 0.8254259169916622,
+    "asr": "오른쪽 면을 위로 올려주세요",
+    "cer": 0.0
+   },
+   {
+    "i": 1,
+    "path": "reports/tts/compare/supertonic3-F4/01.wav",
+    "audio_s": 2.355328798185941,
+    "synth_s": 0.8055780000286177,
+    "asr": "윗면을 왼쪽으로 돌려주세요.",
+    "cer": 0.0
+   },
+   {
+    "i": 2,
+    "path": "reports/tts/compare/supertonic3-F4/02.wav",
+    "audio_s": 2.776439909297052,
+    "synth_s": 0.8376297909999266,
+    "asr": "앞면을 반시계 방향으로 돌려주세요.",
+    "cer": 0.0
+   },
+   {
+    "i": 3,
+    "path": "reports/tts/compare/supertonic3-F4/03.wav",
+    "audio_s": 2.1494784580498867,
+    "synth_s": 0.6129990420304239,
+    "asr": "잠깐 반대 방향이에요.",
+    "cer": 0.0
+   },
+   {
+    "i": 4,
+    "path": "reports/tts/compare/supertonic3-F4/04.wav",
+    "audio_s": 6.018117913832199,
+    "synth_s": 1.5931577910087071,
+    "asr": "아! 방금은 왼쪽 면을 돌렸어요. 먼저 되돌릴게요. 왼쪽 면을 위로 올려주세요.",
+    "cer": 0.03333333333333333
+   },
+   {
+    "i": 5,
+    "path": "reports/tts/compare/supertonic3-F4/05.wav",
+    "audio_s": 2.084285714285714,
+    "synth_s": 0.6171468330430798,
+    "asr": "두번째, 섹시 무브.",
+    "cer": 0.0
+   },
+   {
+    "i": 6,
+    "path": "reports/tts/compare/supertonic3-F4/06.wav",
+    "audio_s": 3.2886167800453516,
+    "synth_s": 0.8609810000052676,
+    "asr": "노랑이 위 초록이 앞에 오게 잡아주세요.",
+    "cer": 0.0
+   },
+   {
+    "i": 7,
+    "path": "reports/tts/compare/supertonic3-F4/07.wav",
+    "audio_s": 6.878775510204082,
+    "synth_s": 1.8166943329852074,
+    "asr": "흰색, 주황, 파랑 꼭지점이 아래층 다른 자리에 끼어 있어요. 섹시무브 한 번으로 먼저 꺼낼게요.",
+    "cer": 0.02702702702702703
+   },
+   {
+    "i": 8,
+    "path": "reports/tts/compare/supertonic3-F4/08.wav",
+    "audio_s": 3.9129931972789116,
+    "synth_s": 1.0917545830016024,
+    "asr": "지금은 기자 모양이에요. 노란 십자 공식을 할게요.",
+    "cer": 0.05263157894736842
+   },
+   {
+    "i": 9,
+    "path": "reports/tts/compare/supertonic3-F4/09.wav",
+    "audio_s": 3.9401814058956917,
+    "synth_s": 1.0928200830239803,
+    "asr": "흰색 십자 완성 다음은 1층 꼭지점이에요.",
+    "cer": 0.058823529411764705
+   },
+   {
+    "i": 10,
+    "path": "reports/tts/compare/supertonic3-F4/10.wav",
+    "audio_s": 1.8904761904761904,
+    "synth_s": 0.5878798330086283,
+    "asr": "PLLJB 공식이에요.",
+    "cer": 0.2727272727272727
+   },
+   {
+    "i": 11,
+    "path": "reports/tts/compare/supertonic3-F4/11.wav",
+    "audio_s": 4.346439909297052,
+    "synth_s": 1.1112326660077088,
+    "asr": "완성! 총 1분 42초 86수 걸렸어요.",
+    "cer": 0.4444444444444444
+   }
+  ],
+  "kind": "Supertonic 3 (99M, ONNX, 온디바이스)",
+  "voice": "F4",
+  "cer_mean": 0.07408226549093422,
+  "rtf": 3.5446829937175326
+ },
+ "supertonic3-F5": {
+  "rows": [
+   {
+    "i": 0,
+    "path": "reports/tts/compare/supertonic3-F5/00.wav",
+    "audio_s": 2.5763038548752832,
+    "synth_s": 0.8181430000113323,
+    "asr": "오른쪽 면을 위로 올려주세요.",
+    "cer": 0.0
+   },
+   {
+    "i": 1,
+    "path": "reports/tts/compare/supertonic3-F5/01.wav",
+    "audio_s": 2.546938775510204,
+    "synth_s": 0.8128798750112765,
+    "asr": "윗면을 왼쪽으로 돌려주세요.",
+    "cer": 0.0
+   },
+   {
+    "i": 2,
+    "path": "reports/tts/compare/supertonic3-F5/02.wav",
+    "audio_s": 3.030498866213152,
+    "synth_s": 0.8437397500383668,
+    "asr": "앞면을 반시계 방향으로 돌려주세요.",
+    "cer": 0.0
+   },
+   {
+    "i": 3,
+    "path": "reports/tts/compare/supertonic3-F5/03.wav",
+    "audio_s": 2.259637188208617,
+    "synth_s": 0.8013997919624671,
+    "asr": "잠깐 반대 방향이에요.",
+    "cer": 0.0
+   },
+   {
+    "i": 4,
+    "path": "reports/tts/compare/supertonic3-F5/04.wav",
+    "audio_s": 6.802403628117914,
+    "synth_s": 1.809329416952096,
+    "asr": "아, 방금은 왼쪽 면을 돌렸어요. 먼저 되돌릴게요. 왼쪽 면을 위로 올려주세요.",
+    "cer": 0.03333333333333333
+   },
+   {
+    "i": 5,
+    "path": "reports/tts/compare/supertonic3-F5/05.wav",
+    "audio_s": 2.1794331065759636,
+    "synth_s": 0.6274493340170011,
+    "asr": "두 번째, 섹시 무브.",
+    "cer": 0.0
+   },
+   {
+    "i": 6,
+    "path": "reports/tts/compare/supertonic3-F5/06.wav",
+    "audio_s": 3.624920634920635,
+    "synth_s": 1.0776206669979729,
+    "asr": "노랑이 위, 초록이 앞에 오게 잡아주세요.",
+    "cer": 0.0
+   },
+   {
+    "i": 7,
+    "path": "reports/tts/compare/supertonic3-F5/07.wav",
+    "audio_s": 7.768117913832199,
+    "synth_s": 1.8834683749591932,
+    "asr": "흰색, 주황, 파랑 꼭지점이 아래층 다른 자리에 끼어 있어요. 섹시 무브 한 번으로 먼저 꺼낼게요.",
+    "cer": 0.02702702702702703
+   },
+   {
+    "i": 8,
+    "path": "reports/tts/compare/supertonic3-F5/08.wav",
+    "audio_s": 4.384399092970521,
+    "synth_s": 1.1236043749959208,
+    "asr": "지금은 기자 모양이에요. 노란 십자 공식을 할게요.",
+    "cer": 0.05263157894736842
+   },
+   {
+    "i": 9,
+    "path": "reports/tts/compare/supertonic3-F5/09.wav",
+    "audio_s": 4.389818594104308,
+    "synth_s": 1.1149233750184067,
+    "asr": "흰색 십자 완성. 다음은 1층 꼭지점이에요.",
+    "cer": 0.058823529411764705
+   },
+   {
+    "i": 10,
+    "path": "reports/tts/compare/supertonic3-F5/10.wav",
+    "audio_s": 1.9747845804988662,
+    "synth_s": 0.5986948750214651,
+    "asr": "PLLJB 공식이",
+    "cer": 0.45454545454545453
+   },
+   {
+    "i": 11,
+    "path": "reports/tts/compare/supertonic3-F5/11.wav",
+    "audio_s": 4.8729705215419505,
+    "synth_s": 1.3332274170243181,
+    "asr": "완성. 총 1분 42초, 86수 걸렸어요.",
+    "cer": 0.4444444444444444
+   }
+  ],
+  "kind": "Supertonic 3 (99M, ONNX, 온디바이스)",
+  "voice": "F5",
+  "cer_mean": 0.08923378064244937,
+  "rtf": 3.61324287528938
+ },
+ "supertonic3-M1": {
+  "rows": [
+   {
+    "i": 0,
+    "path": "reports/tts/compare/supertonic3-M1/00.wav",
+    "audio_s": 2.671201814058957,
+    "synth_s": 0.8290621670312248,
+    "asr": "오른쪽 면을 위로 올려주세요.",
+    "cer": 0.0
+   },
+   {
+    "i": 1,
+    "path": "reports/tts/compare/supertonic3-M1/01.wav",
+    "audio_s": 2.6407709750566895,
+    "synth_s": 0.8184791670064442,
+    "asr": "윗면을 왼쪽으로 돌려주세요.",
+    "cer": 0.0
+   },
+   {
+    "i": 2,
+    "path": "reports/tts/compare/supertonic3-M1/02.wav",
+    "audio_s": 3.142108843537415,
+    "synth_s": 0.8545043329941109,
+    "asr": "앞면을 반시계 방향으로 돌려주세요.",
+    "cer": 0.0
+   },
+   {
+    "i": 3,
+    "path": "reports/tts/compare/supertonic3-M1/03.wav",
+    "audio_s": 2.3336054421768706,
+    "synth_s": 0.79764362500282,
+    "asr": "잠깐 반대 방향이에요.",
+    "cer": 0.0
+   },
+   {
+    "i": 4,
+    "path": "reports/tts/compare/supertonic3-M1/04.wav",
+    "audio_s": 7.03328798185941,
+    "synth_s": 1.8185986669850536,
+    "asr": "앗, 방금은 왼쪽 면을 돌렸어요. 먼저 되돌릴게요. 왼쪽 면을 위로 올려주세요.",
+    "cer": 0.0
+   },
+   {
+    "i": 5,
+    "path": "reports/tts/compare/supertonic3-M1/05.wav",
+    "audio_s": 2.228027210884354,
+    "synth_s": 0.6014379580155946,
+    "asr": "두번째, 섹시 무브",
+    "cer": 0.0
+   },
+   {
+    "i": 6,
+    "path": "reports/tts/compare/supertonic3-M1/06.wav",
+    "audio_s": 3.759591836734694,
+    "synth_s": 1.0801149160251953,
+    "asr": "노랑이 위, 초록이 앞에 오게 잡아주세요.",
+    "cer": 0.0
+   },
+   {
+    "i": 7,
+    "path": "reports/tts/compare/supertonic3-M1/07.wav",
+    "audio_s": 8.020861678004534,
+    "synth_s": 2.068769166013226,
+    "asr": "흰색 주황 파란 꼭지점이 아래층 다른 자리에 끼어 있어요. 섹시 무브 한 번으로 먼저 꺼낼게요.",
+    "cer": 0.05405405405405406
+   },
+   {
+    "i": 8,
+    "path": "reports/tts/compare/supertonic3-M1/08.wav",
+    "audio_s": 4.5370521541950115,
+    "synth_s": 1.312608124979306,
+    "asr": "지금은 기자 모양이에요. 노란 십자 공식을 할게요.",
+    "cer": 0.05263157894736842
+   },
+   {
+    "i": 9,
+    "path": "reports/tts/compare/supertonic3-M1/09.wav",
+    "audio_s": 4.541746031746031,
+    "synth_s": 1.307694916962646,
+    "asr": "흰색 십자 완성. 다음은 1층 꼭지점이에요.",
+    "cer": 0.058823529411764705
+   },
+   {
+    "i": 10,
+    "path": "reports/tts/compare/supertonic3-M1/10.wav",
+    "audio_s": 2.024671201814059,
+    "synth_s": 0.6055912090232596,
+    "asr": "PLLJB 공식이에요.",
+    "cer": 0.2727272727272727
+   },
+   {
+    "i": 11,
+    "path": "reports/tts/compare/supertonic3-M1/11.wav",
+    "audio_s": 5.04281179138322,
+    "synth_s": 1.358439083036501,
+    "asr": "완성! 총 1분 42초 86수 걸렸어요.",
+    "cer": 0.4444444444444444
+   }
+  ],
+  "kind": "Supertonic 3 (99M, ONNX, 온디바이스)",
+  "voice": "M1",
+  "cer_mean": 0.0735567399654087,
+  "rtf": 3.566188883253391
+ },
+ "supertonic3-M2": {
+  "rows": [
+   {
+    "i": 0,
+    "path": "reports/tts/compare/supertonic3-M2/00.wav",
+    "audio_s": 2.6082766439909295,
+    "synth_s": 0.8207800830132328,
+    "asr": "오른쪽 면을 위로 올려주세요.",
+    "cer": 0.0
+   },
+   {
+    "i": 1,
+    "path": "reports/tts/compare/supertonic3-M2/01.wav",
+    "audio_s": 2.578526077097506,
+    "synth_s": 0.814914625021629,
+    "asr": "윗면을 왼쪽으로 돌려주세요.",
+    "cer": 0.0
+   },
+   {
+    "i": 2,
+    "path": "reports/tts/compare/supertonic3-M2/02.wav",
+    "audio_s": 3.0671655328798186,
+    "synth_s": 0.8563412090297788,
+    "asr": "앞면을 반시계 방향으로 돌려주세요.",
+    "cer": 0.0
+   },
+   {
+    "i": 3,
+    "path": "reports/tts/compare/supertonic3-M2/03.wav",
+    "audio_s": 2.2788208616780046,
+    "synth_s": 0.8042112920084037,
+    "asr": "잠깐 반대 방향이에요.",
+    "cer": 0.0
+   },
+   {
+    "i": 4,
+    "path": "reports/tts/compare/supertonic3-M2/04.wav",
+    "audio_s": 6.878662131519274,
+    "synth_s": 1.8257114170119166,
+    "asr": "앗, 방금은 왼쪽 면을 돌렸어요. 먼저 되돌릴게요. 왼쪽 면을 위로 올려주세요.",
+    "cer": 0.0
+   },
+   {
+    "i": 5,
+    "path": "reports/tts/compare/supertonic3-M2/05.wav",
+    "audio_s": 2.1930385487528343,
+    "synth_s": 0.6028065420105122,
+    "asr": "두번째, 섹시 무브.",
+    "cer": 0.0
+   },
+   {
+    "i": 6,
+    "path": "reports/tts/compare/supertonic3-M2/06.wav",
+    "audio_s": 3.6699319727891155,
+    "synth_s": 1.0821611249702983,
+    "asr": "노랑이 위, 초록이 앞에 오게 잡아주세요.",
+    "cer": 0.0
+   },
+   {
+    "i": 7,
+    "path": "reports/tts/compare/supertonic3-M2/07.wav",
+    "audio_s": 7.855124716553288,
+    "synth_s": 2.235229874961078,
+    "asr": "흰색, 주황, 파랑 꼭지점이 아래층 다른 자리에 끼어 있어요. 섹시 무브 한 번으로 먼저 꺼낼게요.",
+    "cer": 0.02702702702702703
+   },
+   {
+    "i": 8,
+    "path": "reports/tts/compare/supertonic3-M2/08.wav",
+    "audio_s": 4.433242630385488,
+    "synth_s": 1.1331568749737926,
+    "asr": "지금은 기자 모양이에요. 노란 십자 공식을 할게요.",
+    "cer": 0.05263157894736842
+   },
+   {
+    "i": 9,
+    "path": "reports/tts/compare/supertonic3-M2/09.wav",
+    "audio_s": 4.439092970521542,
+    "synth_s": 1.1143690420431085,
+    "asr": "흰색 십자 완성. 다음은 1층 꼭지점이에요.",
+    "cer": 0.058823529411764705
+   },
+   {
+    "i": 10,
+    "path": "reports/tts/compare/supertonic3-M2/10.wav",
+    "audio_s": 1.989455782312925,
+    "synth_s": 0.6036121670040302,
+    "asr": "PLLJB 공식이에요.",
+    "cer": 0.2727272727272727
+   },
+   {
+    "i": 11,
+    "path": "reports/tts/compare/supertonic3-M2/11.wav",
+    "audio_s": 4.927641723356009,
+    "synth_s": 1.3484458329621702,
+    "asr": "완성! 총 1분 42초 86수 걸렸어요.",
+    "cer": 0.4444444444444444
+   }
+  ],
+  "kind": "Supertonic 3 (99M, ONNX, 온디바이스)",
+  "voice": "M2",
+  "cer_mean": 0.07130448771315644,
+  "rtf": 3.543263898145111
+ },
+ "supertonic3-M3": {
+  "rows": [
+   {
+    "i": 0,
+    "path": "reports/tts/compare/supertonic3-M3/00.wav",
+    "audio_s": 2.3258503401360544,
+    "synth_s": 0.8097264170064591,
+    "asr": "오른쪽 면을 위로 올려주세요.",
+    "cer": 0.0
+   },
+   {
+    "i": 1,
+    "path": "reports/tts/compare/supertonic3-M3/01.wav",
+    "audio_s": 2.306439909297052,
+    "synth_s": 0.8132412090199068,
+    "asr": "윗면을 왼쪽으로 돌려주세요.",
+    "cer": 0.0
+   },
+   {
+    "i": 2,
+    "path": "reports/tts/compare/supertonic3-M3/02.wav",
+    "audio_s": 2.7187301587301587,
+    "synth_s": 0.8399040829972364,
+    "asr": "앞면을 반시계 방향으로 돌려주세요.",
+    "cer": 0.0
+   },
+   {
+    "i": 3,
+    "path": "reports/tts/compare/supertonic3-M3/03.wav",
+    "audio_s": 2.104580498866213,
+    "synth_s": 0.6107764999615029,
+    "asr": "잠깐 반대 방향이에요.",
+    "cer": 0.0
+   },
+   {
+    "i": 4,
+    "path": "reports/tts/compare/supertonic3-M3/04.wav",
+    "audio_s": 5.769795918367347,
+    "synth_s": 1.6035280410433188,
+    "asr": "앗! 방금은 왼쪽 면을 돌렸어요. 먼저 되돌릴게요. 왼쪽 면을 위로 올려주세요.",
+    "cer": 0.0
+   },
+   {
+    "i": 5,
+    "path": "reports/tts/compare/supertonic3-M3/05.wav",
+    "audio_s": 2.0406349206349206,
+    "synth_s": 0.5968631669529714,
+    "asr": "두번째, 섹시무브",
+    "cer": 0.0
+   },
+   {
+    "i": 6,
+    "path": "reports/tts/compare/supertonic3-M3/06.wav",
+    "audio_s": 3.2186621315192743,
+    "synth_s": 0.8602475830120966,
+    "asr": "노랑이 위 초록이 앞에 오게 잡아주세요.",
+    "cer": 0.0
+   },
+   {
+    "i": 7,
+    "path": "reports/tts/compare/supertonic3-M3/07.wav",
+    "audio_s": 6.588367346938775,
+    "synth_s": 1.613249749992974,
+    "asr": "흰색, 주황, 파랑 꼭지점이 아래층 다른 자리에 끼어 있어요. 섹시 무브 한 번으로 먼저 꺼낼게요.",
+    "cer": 0.02702702702702703
+   },
+   {
+    "i": 8,
+    "path": "reports/tts/compare/supertonic3-M3/08.wav",
+    "audio_s": 3.825532879818594,
+    "synth_s": 1.0911130830063485,
+    "asr": "지금은 기자 모양이에요. 노란 십자 공식을 할게요.",
+    "cer": 0.05263157894736842
+   },
+   {
+    "i": 9,
+    "path": "reports/tts/compare/supertonic3-M3/09.wav",
+    "audio_s": 3.8455555555555554,
+    "synth_s": 1.08205495798029,
+    "asr": "흰색 십자 완성. 다음은 1층 꼭지점이에요.",
+    "cer": 0.058823529411764705
+   },
+   {
+    "i": 10,
+    "path": "reports/tts/compare/supertonic3-M3/10.wav",
+    "audio_s": 1.85140589569161,
+    "synth_s": 0.5934763749828562,
+    "asr": "PLJB 공식이에요.",
+    "cer": 0.36363636363636365
+   },
+   {
+    "i": 11,
+    "path": "reports/tts/compare/supertonic3-M3/11.wav",
+    "audio_s": 4.228571428571429,
+    "synth_s": 1.1064927499974146,
+    "asr": "완성! 총 1분 42초 86수 걸렸어요.",
+    "cer": 0.4444444444444444
+   }
+  ],
+  "kind": "Supertonic 3 (99M, ONNX, 온디바이스)",
+  "voice": "M3",
+  "cer_mean": 0.07888024528891402,
+  "rtf": 3.5130601959393952
+ },
+ "supertonic3-M4": {
+  "rows": [
+   {
+    "i": 0,
+    "path": "reports/tts/compare/supertonic3-M4/00.wav",
+    "audio_s": 2.4859863945578233,
+    "synth_s": 0.8074025419773534,
+    "asr": "오른쪽 면을 위로 올려주세요.",
+    "cer": 0.0
+   },
+   {
+    "i": 1,
+    "path": "reports/tts/compare/supertonic3-M4/01.wav",
+    "audio_s": 2.458866213151927,
+    "synth_s": 0.8049081250210293,
+    "asr": "윗면을 왼쪽으로 돌려주세요.",
+    "cer": 0.0
+   },
+   {
+    "i": 2,
+    "path": "reports/tts/compare/supertonic3-M4/02.wav",
+    "audio_s": 2.9338775510204083,
+    "synth_s": 0.8478382499888539,
+    "asr": "앞면을 반시계 방향으로 돌려주세요.",
+    "cer": 0.0
+   },
+   {
+    "i": 3,
+    "path": "reports/tts/compare/supertonic3-M4/03.wav",
+    "audio_s": 2.2234467120181405,
+    "synth_s": 0.599030458019115,
+    "asr": "잠깐 반대 방향이에요.",
+    "cer": 0.0
+   },
+   {
+    "i": 4,
+    "path": "reports/tts/compare/supertonic3-M4/04.wav",
+    "audio_s": 6.566643990929705,
+    "synth_s": 1.6060292499605566,
+    "asr": "앗, 방금은 왼쪽 면을 돌렸어요. 먼저 되돌릴게요. 왼쪽 면을 위로 올려주세요.",
+    "cer": 0.0
+   },
+   {
+    "i": 5,
+    "path": "reports/tts/compare/supertonic3-M4/05.wav",
+    "audio_s": 2.152426303854875,
+    "synth_s": 0.6038323329994455,
+    "asr": "두번째, 섹시 무브",
+    "cer": 0.0
+   },
+   {
+    "i": 6,
+    "path": "reports/tts/compare/supertonic3-M4/06.wav",
+    "audio_s": 3.5061224489795917,
+    "synth_s": 1.0688132499926724,
+    "asr": "노랑이 위, 초록이 앞에 오게 잡아주세요.",
+    "cer": 0.0
+   },
+   {
+    "i": 7,
+    "path": "reports/tts/compare/supertonic3-M4/07.wav",
+    "audio_s": 7.502902494331066,
+    "synth_s": 1.852028249995783,
+    "asr": "흰색, 주황, 파란 꼭지점이 아래층 다른 자리에 끼어 있어요. 섹시 무브 한 번으로 먼저 꺼낼게요.",
+    "cer": 0.05405405405405406
+   },
+   {
+    "i": 8,
+    "path": "reports/tts/compare/supertonic3-M4/08.wav",
+    "audio_s": 4.242199546485261,
+    "synth_s": 1.1069670830038376,
+    "asr": "지금은 기자 모양이에요. 노란 십자 공식을 할게요.",
+    "cer": 0.05263157894736842
+   },
+   {
+    "i": 9,
+    "path": "reports/tts/compare/supertonic3-M4/09.wav",
+    "audio_s": 4.253356009070295,
+    "synth_s": 1.1110943750245497,
+    "asr": "흰색 십자 완성. 다음은 1층 꼭지점이에요.",
+    "cer": 0.058823529411764705
+   },
+   {
+    "i": 10,
+    "path": "reports/tts/compare/supertonic3-M4/10.wav",
+    "audio_s": 1.9469160997732426,
+    "synth_s": 0.5907519169850275,
+    "asr": "PLLJB 공식이에요",
+    "cer": 0.2727272727272727
+   },
+   {
+    "i": 11,
+    "path": "reports/tts/compare/supertonic3-M4/11.wav",
+    "audio_s": 4.71702947845805,
+    "synth_s": 1.3232570410473272,
+    "asr": "완성! 총 1분 42초, 86수 걸렸어요.",
+    "cer": 0.4444444444444444
+   }
+  ],
+  "kind": "Supertonic 3 (99M, ONNX, 온디바이스)",
+  "voice": "M4",
+  "cer_mean": 0.0735567399654087,
+  "rtf": 3.6511885496254823
+ },
+ "supertonic3-M5": {
+  "rows": [
+   {
+    "i": 0,
+    "path": "reports/tts/compare/supertonic3-M5/00.wav",
+    "audio_s": 2.6629024943310657,
+    "synth_s": 0.8560817089746706,
+    "asr": "오른쪽 면을 위로 올려주세요.",
+    "cer": 0.0
+   },
+   {
+    "i": 1,
+    "path": "reports/tts/compare/supertonic3-M5/01.wav",
+    "audio_s": 2.632562358276644,
+    "synth_s": 0.851595374988392,
+    "asr": "윗면을 왼쪽으로 돌려주세요.",
+    "cer": 0.0
+   },
+   {
+    "i": 2,
+    "path": "reports/tts/compare/supertonic3-M5/02.wav",
+    "audio_s": 3.1320861678004537,
+    "synth_s": 0.8556917500100099,
+    "asr": "앞면을 반시계 방향으로 돌려주세요.",
+    "cer": 0.0
+   },
+   {
+    "i": 3,
+    "path": "reports/tts/compare/supertonic3-M5/03.wav",
+    "audio_s": 2.3266213151927437,
+    "synth_s": 0.8048275419860147,
+    "asr": "잠깐 반대 방향이에요.",
+    "cer": 0.0
+   },
+   {
+    "i": 4,
+    "path": "reports/tts/compare/supertonic3-M5/04.wav",
+    "audio_s": 7.014444444444444,
+    "synth_s": 1.82488133397419,
+    "asr": "앗! 방금은 왼쪽 면을 돌렸어요. 먼저 되돌릴게요. 왼쪽 면을 위로 올려주세요.",
+    "cer": 0.0
+   },
+   {
+    "i": 5,
+    "path": "reports/tts/compare/supertonic3-M5/05.wav",
+    "audio_s": 2.2212244897959184,
+    "synth_s": 0.600890374975279,
+    "asr": "두번째, 섹시 무브.",
+    "cer": 0.0
+   },
+   {
+    "i": 6,
+    "path": "reports/tts/compare/supertonic3-M5/06.wav",
+    "audio_s": 3.7476190476190476,
+    "synth_s": 1.0727159160305746,
+    "asr": "노랑이 위, 초록이 앞에 오게 잡아주세요.",
+    "cer": 0.0
+   },
+   {
+    "i": 7,
+    "path": "reports/tts/compare/supertonic3-M5/07.wav",
+    "audio_s": 8.005850340136055,
+    "synth_s": 2.069294791028369,
+    "asr": "흰색, 주황, 파란 꼭지점이 아래층 다른 자리에 끼어 있어요. 섹시무브 한 번으로 먼저 꺼낼게요.",
+    "cer": 0.05405405405405406
+   },
+   {
+    "i": 8,
+    "path": "reports/tts/compare/supertonic3-M5/08.wav",
+    "audio_s": 4.524308390022676,
+    "synth_s": 1.3130626250058413,
+    "asr": "지금은 기자 모양이에요. 노란 십자 공식을 할게요.",
+    "cer": 0.05263157894736842
+   },
+   {
+    "i": 9,
+    "path": "reports/tts/compare/supertonic3-M5/09.wav",
+    "audio_s": 4.528866213151927,
+    "synth_s": 1.3056785830412991,
+    "asr": "흰색 십자 완성. 다음은 1층 꼭지점이에요.",
+    "cer": 0.058823529411764705
+   },
+   {
+    "i": 10,
+    "path": "reports/tts/compare/supertonic3-M5/10.wav",
+    "audio_s": 2.0175056689342403,
+    "synth_s": 0.5972386670182459,
+    "asr": "PLLJB 공식이에요.",
+    "cer": 0.2727272727272727
+   },
+   {
+    "i": 11,
+    "path": "reports/tts/compare/supertonic3-M5/11.wav",
+    "audio_s": 5.028639455782313,
+    "synth_s": 1.368604083021637,
+    "asr": "완성. 총 1분 42초 86수 걸렸어요.",
+    "cer": 0.4444444444444444
+   }
+  ],
+  "kind": "Supertonic 3 (99M, ONNX, 온디바이스)",
+  "voice": "M5",
+  "cer_mean": 0.0735567399654087,
+  "rtf": 3.53850880839221
+ },
+ "macos-Yuna": {
+  "rows": [
+   {
+    "i": 0,
+    "path": "reports/tts/compare/macos-Yuna/00.aiff",
+    "audio_s": 2.250249,
+    "synth_s": 1.6343233330408111,
+    "asr": "오른쪽 면을 위로 올려주세요.",
+    "cer": 0.0
+   },
+   {
+    "i": 1,
+    "path": "reports/tts/compare/macos-Yuna/01.aiff",
+    "audio_s": 2.168662,
+    "synth_s": 1.3486102080205455,
+    "asr": "윗면을 왼쪽으로 돌려주세요.",
+    "cer": 0.0
+   },
+   {
+    "i": 2,
+    "path": "reports/tts/compare/macos-Yuna/02.aiff",
+    "audio_s": 2.632744,
+    "synth_s": 1.3827755840029567,
+    "asr": "앞면을 반시계 방향으로 돌려주세요.",
+    "cer": 0.0
+   },
+   {
+    "i": 3,
+    "path": "reports/tts/compare/macos-Yuna/03.aiff",
+    "audio_s": 2.215238,
+    "synth_s": 1.4372184589738026,
+    "asr": "잠깐 반대 방향이에요.",
+    "cer": 0.0
+   },
+   {
+    "i": 4,
+    "path": "reports/tts/compare/macos-Yuna/04.aiff",
+    "audio_s": 6.336825,
+    "synth_s": 1.4469615000416525,
+    "asr": "앗 방금은 왼쪽 면을 돌렸어요. 먼저 되돌릴게요. 왼쪽 면을 위로 올려주세요.",
+    "cer": 0.0
+   },
+   {
+    "i": 5,
+    "path": "reports/tts/compare/macos-Yuna/05.aiff",
+    "audio_s": 1.894966,
+    "synth_s": 1.3337678340030834,
+    "asr": "두번째, 섹시 무브.",
+    "cer": 0.0
+   },
+   {
+    "i": 6,
+    "path": "reports/tts/compare/macos-Yuna/06.aiff",
+    "audio_s": 2.992789,
+    "synth_s": 1.4524824999971315,
+    "asr": "노랑이 위, 초록이 앞에 오게 잡아주세요.",
+    "cer": 0.0
+   },
+   {
+    "i": 7,
+    "path": "reports/tts/compare/macos-Yuna/07.aiff",
+    "audio_s": 7.356417,
+    "synth_s": 1.5111704170121811,
+    "asr": "흰색, 주황, 파란 꼭지점이 아래층 다른 자리에 끼어 있어요. 섹시 무브 한 번으로 먼저 꺼낼게요.",
+    "cer": 0.05405405405405406
+   },
+   {
+    "i": 8,
+    "path": "reports/tts/compare/macos-Yuna/08.aiff",
+    "audio_s": 4.027755,
+    "synth_s": 1.4045173329650424,
+    "asr": "지금은 기역자 모양이에요. 노란 십자 공식을 할게요.",
+    "cer": 0.10526315789473684
+   },
+   {
+    "i": 9,
+    "path": "reports/tts/compare/macos-Yuna/09.aiff",
+    "audio_s": 3.745714,
+    "synth_s": 1.3968493330175988,
+    "asr": "흰색 십자 완성. 다음은 1층 꼭지점이에요.",
+    "cer": 0.058823529411764705
+   },
+   {
+    "i": 10,
+    "path": "reports/tts/compare/macos-Yuna/10.aiff",
+    "audio_s": 1.909932,
+    "synth_s": 1.3497175829834305,
+    "asr": "PLLJB 공식이에요.",
+    "cer": 0.2727272727272727
+   },
+   {
+    "i": 11,
+    "path": "reports/tts/compare/macos-Yuna/11.aiff",
+    "audio_s": 4.188435,
+    "synth_s": 1.3880971670150757,
+    "asr": "완성! 총 1분 42초 86수 걸렸어요.",
+    "cer": 0.4444444444444444
+   }
+  ],
+  "kind": "macOS 내장 음성 (브라우저 기본 음성의 예)",
+  "voice": "Yuna",
+  "cer_mean": 0.0779427048776894,
+  "rtf": 2.4416789489989243
+ }
+}

@@ -1,0 +1,253 @@
+{
+ "설명": "실제 영상(sexy_move.mov) 회귀: 전 = 빨리 따라가기 끔(예전 흐름), 후 = 켬(web/src/vision/tracker.ts FollowOpts 전부). pan/jump 는 B 구간 프레임을 움직이는 창으로 잘라 큐브를 빠르게 옮기는 것처럼 만든 시험 (--pan 0.25 --pan-hz, --jump 0.3). 시드 = 추적기 탐색 난수.",
+ "segments": {
+  "A": {
+   "전": {
+    "n": 5,
+    "move_acc_mean": 0.392,
+    "move_acc_by_seed": [
+     0.0,
+     0.083,
+     0.25,
+     1.0,
+     0.625
+    ],
+    "detected_moves_mean": 14.0,
+    "expected_moves": 24,
+    "tracked_ratio_mean": 0.968,
+    "lost_episodes_mean": 4.2,
+    "recover_frames_mean": 2.25,
+    "recover_frames_max_mean": 4.6
+   },
+   "후": {
+    "n": 5,
+    "move_acc_mean": 0.408,
+    "move_acc_by_seed": [
+     0.0,
+     0.125,
+     0.25,
+     1.0,
+     0.667
+    ],
+    "detected_moves_mean": 14.0,
+    "expected_moves": 24,
+    "tracked_ratio_mean": 0.973,
+    "lost_episodes_mean": 4.4,
+    "recover_frames_mean": 1.8,
+    "recover_frames_max_mean": 3.2
+   }
+  },
+  "B": {
+   "전": {
+    "n": 5,
+    "move_acc_mean": 0.843,
+    "move_acc_by_seed": [
+     0.571,
+     1.0,
+     0.893,
+     0.857,
+     0.893
+    ],
+    "detected_moves_mean": 27.8,
+    "expected_moves": 28,
+    "tracked_ratio_mean": 1.0,
+    "lost_episodes_mean": 0.2,
+    "recover_frames_mean": 0.2,
+    "recover_frames_max_mean": 0.2
+   },
+   "후": {
+    "n": 5,
+    "move_acc_mean": 0.843,
+    "move_acc_by_seed": [
+     0.571,
+     1.0,
+     0.893,
+     0.857,
+     0.893
+    ],
+    "detected_moves_mean": 27.8,
+    "expected_moves": 28,
+    "tracked_ratio_mean": 1.0,
+    "lost_episodes_mean": 0.2,
+    "recover_frames_mean": 0.2,
+    "recover_frames_max_mean": 0.2
+   }
+  },
+  "AB": {
+   "전": {
+    "n": 5,
+    "move_acc_mean": 0.308,
+    "move_acc_by_seed": [
+     0.096,
+     0.231,
+     0.269,
+     0.558,
+     0.385
+    ],
+    "detected_moves_mean": 37.6,
+    "expected_moves": 52,
+    "tracked_ratio_mean": 0.99,
+    "lost_episodes_mean": 10.0,
+    "recover_frames_mean": 1.81,
+    "recover_frames_max_mean": 5.4
+   },
+   "후": {
+    "n": 5,
+    "move_acc_mean": 0.296,
+    "move_acc_by_seed": [
+     0.154,
+     0.173,
+     0.192,
+     0.558,
+     0.404
+    ],
+    "detected_moves_mean": 38.8,
+    "expected_moves": 52,
+    "tracked_ratio_mean": 0.988,
+    "lost_episodes_mean": 17.2,
+    "recover_frames_mean": 1.46,
+    "recover_frames_max_mean": 4.0
+   }
+  },
+  "all": {
+   "전": {
+    "n": 5,
+    "move_acc_mean": 0.135,
+    "move_acc_by_seed": [
+     0.154,
+     0.154,
+     0.096,
+     0.096,
+     0.173
+    ],
+    "detected_moves_mean": 41.6,
+    "expected_moves": 52,
+    "tracked_ratio_mean": 0.966,
+    "lost_episodes_mean": 24.6,
+    "recover_frames_mean": 3.74,
+    "recover_frames_max_mean": 23.8
+   },
+   "후": {
+    "n": 5,
+    "move_acc_mean": 0.162,
+    "move_acc_by_seed": [
+     0.154,
+     0.192,
+     0.135,
+     0.115,
+     0.212
+    ],
+    "detected_moves_mean": 45.2,
+    "expected_moves": 52,
+    "tracked_ratio_mean": 0.978,
+    "lost_episodes_mean": 24.4,
+    "recover_frames_mean": 2.55,
+    "recover_frames_max_mean": 18.6
+   }
+  }
+ },
+ "fast_move": {
+  "pan 0.25 x 0.5Hz": {
+   "전": {
+    "n": 3,
+    "move_acc_mean": -1.857,
+    "move_acc_by_seed": [
+     -2.107,
+     -1.571,
+     -1.893
+    ],
+    "detected_moves_mean": 96.3,
+    "expected_moves": 28,
+    "tracked_ratio_mean": 0.863,
+    "lost_episodes_mean": 50.3,
+    "recover_frames_mean": 4.86,
+    "recover_frames_max_mean": 10.0
+   },
+   "후": {
+    "n": 3,
+    "move_acc_mean": -0.179,
+    "move_acc_by_seed": [
+     -0.071,
+     -0.214,
+     -0.25
+    ],
+    "detected_moves_mean": 40.7,
+    "expected_moves": 28,
+    "tracked_ratio_mean": 0.979,
+    "lost_episodes_mean": 24.0,
+    "recover_frames_mean": 1.56,
+    "recover_frames_max_mean": 2.7
+   }
+  },
+  "pan 0.25 x 1Hz": {
+   "전": {
+    "n": 3,
+    "move_acc_mean": -1.964,
+    "move_acc_by_seed": [
+     -2.179,
+     -1.607,
+     -2.107
+    ],
+    "detected_moves_mean": 98.3,
+    "expected_moves": 28,
+    "tracked_ratio_mean": 0.392,
+    "lost_episodes_mean": 161.7,
+    "recover_frames_mean": 6.73,
+    "recover_frames_max_mean": 10.0
+   },
+   "후": {
+    "n": 3,
+    "move_acc_mean": 0.167,
+    "move_acc_by_seed": [
+     0.179,
+     0.107,
+     0.214
+    ],
+    "detected_moves_mean": 21.7,
+    "expected_moves": 28,
+    "tracked_ratio_mean": 0.914,
+    "lost_episodes_mean": 85.7,
+    "recover_frames_mean": 1.8,
+    "recover_frames_max_mean": 4.0
+   }
+  },
+  "jump 0.3 (2초마다)": {
+   "전": {
+    "n": 3,
+    "move_acc_mean": -0.012,
+    "move_acc_by_seed": [
+     0.143,
+     -0.143,
+     -0.036
+    ],
+    "detected_moves_mean": 32.7,
+    "expected_moves": 28,
+    "tracked_ratio_mean": 0.747,
+    "lost_episodes_mean": 54.0,
+    "recover_frames_mean": 8.2,
+    "recover_frames_max_mean": 18.0
+   },
+   "후": {
+    "n": 3,
+    "move_acc_mean": 0.036,
+    "move_acc_by_seed": [
+     0.071,
+     -0.143,
+     0.179
+    ],
+    "detected_moves_mean": 35.3,
+    "expected_moves": 28,
+    "tracked_ratio_mean": 0.915,
+    "lost_episodes_mean": 63.7,
+    "recover_frames_mean": 2.39,
+    "recover_frames_max_mean": 13.3
+   }
+  }
+ },
+ "참고": {
+  "기준값과 뱅크": "과제 기준 A 0.44 는 전체 탐색 회전 뱅크 2500 에서 낸 값(끔+2500 재실행 평균 0.442). 위 표는 앱과 같은 뱅크 1500.",
+  "15fps": "B 를 --stride 2 (15fps) 로 돌려도 '옮기는 중'은 시드 0 에서 2프레임만 켜짐. 정확도 시드 1·2 동일, 시드 0 0.893→0.857.",
+  "합성": "eval_tracking --ts --seqs 8: 손가락 없음 0.738→0.744, 손가락 0.581→0.575 (reports/eval_tracking_follow_*.json)",
+  "보는 방향 이벤트": "브라우저, 원본 B 구간(돌려 잡지 않음) 약 45초: 예전 방식 24~38번 → 새 방식 2번. 샘플 46초: 22~25번 → 12~14번 (남은 것은 가짜 회전으로 상태가 틀어진 뒤의 자세 변화)."
+ }
+}
