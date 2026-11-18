@@ -336,7 +336,7 @@ def main() -> None:
             run = 0
     res = {
         "video": Path(args.video).name, "tracker": "ts" if args.ts else "py", "stride": args.stride, "seed": args.seed,
-        "segment": args.segment,
+        "segment": args.segment, "res": args.res, "map_n": args.map_n,  # 2026-11-18 저녁 전 결과에는 없다(그때는 모두 192 입력)
         "frames": len(times), "seconds": round(times[-1] - times[0], 1) if times else 0,
         "detected_moves": len(d), "expected_moves": len(exps[best]),
         "move_acc": None if no_gt else 1 - dists[best] / max(len(exps[best]), 1), "edit_distance": None if no_gt else dists[best],
