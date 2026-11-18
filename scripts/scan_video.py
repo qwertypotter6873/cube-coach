@@ -22,7 +22,7 @@ from track_video import LATEST2_STATE, LATEST_STATE, SEXY_MOVE_STATE, crop  # no
 
 from cubecoach.facescan import FaceScanner, follow_roi, read_face  # noqa: E402
 from cubecoach.render3d import N_CLASSES  # noqa: E402
-from cubecoach.segnet import CubeSegNet  # noqa: E402
+from cubecoach.segnet import CubeSegNet, load_segnet  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -33,10 +33,10 @@ def main() -> None:
     ap.add_argument("--start", type=float, default=0.0)
     ap.add_argument("--end", type=float, default=15.0)
     ap.add_argument("--truth", default=SEXY_MOVE_STATE)
+    ap.add_argument("--weights", default=str(ROOT / "models" / "cube_seg_net.pt"))
     args = ap.parse_args()
     args.truth = {"sexy": SEXY_MOVE_STATE, "latest": LATEST_STATE, "latest2": LATEST2_STATE}.get(args.truth, args.truth)
-    m = CubeSegNet()
-    m.load_state_dict(torch.load(ROOT / "models" / "cube_seg_net.pt", map_location="cpu", weights_only=True))
+    m = load_segnet(args.weights)
     m.eval()
     cap = cv2.VideoCapture(args.video)
     fps = cap.get(cv2.CAP_PROP_FPS)

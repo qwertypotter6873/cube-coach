@@ -19,7 +19,7 @@ import torch
 from cubecoach.cube import MOVES
 from cubecoach.geometry import CENTERS, NORMALS, rotation_angle, rotvec
 from cubecoach.render3d import N_CLASSES, real_bg, render
-from cubecoach.segnet import CubeSegNet
+from cubecoach.segnet import CubeSegNet, load_segnet
 from cubecoach.simseq import simulate
 from cubecoach.synth import PALETTE
 from cubecoach.tracker import Event, Tracker
@@ -165,9 +165,7 @@ def main() -> None:
                          "합성 배경만으로 재려면 ALLOW_NO_REAL_BG=1.")
 
     torch.set_num_threads(2)
-    model = CubeSegNet()
-    if not args.oracle:
-        model.load_state_dict(torch.load(args.weights, map_location="cpu", weights_only=True))
+    model = CubeSegNet() if args.oracle else load_segnet(args.weights)  # 폭은 가중치에서 알아낸다
     model.eval()
 
     rows = []

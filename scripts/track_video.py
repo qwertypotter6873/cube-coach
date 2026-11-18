@@ -33,7 +33,7 @@ from eval_tracking import TsTracker, edit_distance, merge  # noqa: E402
 
 from cubecoach.cube import COLORS, apply  # noqa: E402
 from cubecoach.render3d import N_CLASSES  # noqa: E402
-from cubecoach.segnet import CubeSegNet  # noqa: E402
+from cubecoach.segnet import CubeSegNet, load_segnet  # noqa: E402
 from cubecoach.tracker import Tracker  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -200,8 +200,7 @@ def main() -> None:
         if pre:
             args.state = apply(args.state, pre)
     torch.set_num_threads(4)
-    model = CubeSegNet()
-    model.load_state_dict(torch.load(args.weights, map_location="cpu", weights_only=True))
+    model = load_segnet(args.weights)  # 폭은 가중치에서 알아낸다
     model.eval()
     colors = np.array([COLORS.index(c) for c in args.state])
     cap = cv2.VideoCapture(args.video)

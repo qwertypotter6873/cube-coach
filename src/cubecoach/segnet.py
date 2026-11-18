@@ -43,6 +43,14 @@ class CubeSegNet(nn.Module):
         return self.head(u)
 
 
+def load_segnet(path) -> "CubeSegNet":
+    """저장한 가중치에서 폭을 알아내(첫 합성곱의 출력 채널 수) CubeSegNet 을 만들고 불러온다 (평가 모드)."""
+    sd = torch.load(path, map_location="cpu", weights_only=True)
+    m = CubeSegNet(width=int(sd["e1.0.weight"].shape[0]))
+    m.load_state_dict(sd)
+    return m.eval()
+
+
 class PixelMLP(nn.Module):
     def __init__(self, hidden: int = 32) -> None:
         super().__init__()
