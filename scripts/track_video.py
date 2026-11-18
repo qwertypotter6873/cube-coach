@@ -58,6 +58,8 @@ SEXY_MOVE_GT["all"] = (0.0, 90.0, "", DROP_TURN + SEXY_MOVE_GT["AB"][3])
 SEXY_MOVE_GT["Z1"] = (0.0, 19.5, "", DROP_TURN)
 SEXY_MOVE_GT["Z2"] = (26.6, 34.5, "U", [])
 SEXY_MOVE_GT["Z1b"] = (8.2, 19.5, "", DROP_TURN)  # Z1 가운데 앱에서 실제로 추적하는 부분 (면 읽기가 끝난 뒤)
+# 앱과 같은 흐름: 면 읽기가 끝나는 7.7초(scripts/scan_video.py)부터 끝까지 이어서. 2026-11-18 자세 이탈 게이트를 견줄 때 더했다.
+SEXY_MOVE_GT["app"] = (7.7, 90.0, "", DROP_TURN + SEXY_MOVE_GT["AB"][3])
 SEXY_MOVE_FINAL = "U L F L' F'"  # 전체를 마친 상태 = 처음 상태에 이 슬롯 회전을 한 것
 
 # 두 번째 시험 영상(latest.mov, 194초, 노트북 웹캠, 2026-11-17 촬영). 문턱을 고른 뒤에 받은 영상이라 시험에만 쓴다.
