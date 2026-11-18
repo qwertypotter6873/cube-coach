@@ -7,7 +7,7 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 BASE="https://github.com/qwertypotter6873/cube-coach/releases/download/data-v1"
 TMP="$ROOT/data/raw/.download"   # data/raw/ 는 저장소에서 제외된다
-ALL=(sexy_move.mov cube_unsolved.mov latest.mov latest2.mov bg_patches.npy real_labels.zip)
+ALL=(sexy_move.mov cube_unsolved.mov latest.mov latest2.mov bg_patches.npy real_labels.zip real_labels_val.zip)
 FILES=("${@:-${ALL[@]}}")
 mkdir -p "$TMP" "$ROOT/data/raw" "$ROOT/data/real"
 
@@ -29,7 +29,7 @@ for f in "${FILES[@]}"; do
   case "$f" in
     *.mov) [ -e "$ROOT/data/raw/$f" ] || cp "$TMP/$f" "$ROOT/data/raw/$f" ;;
     bg_patches.npy) [ -e "$ROOT/data/real/$f" ] || cp "$TMP/$f" "$ROOT/data/real/$f" ;;
-    real_labels.zip) unzip -n -q "$TMP/$f" -d "$ROOT/data/real/" ;;
+    real_labels.zip|real_labels_val.zip) unzip -n -q "$TMP/$f" -d "$ROOT/data/real/" ;;
   esac
 done
 echo "끝: data/raw/, data/real/ (받은 원본은 $TMP 에 남겨 둠, 지워도 된다)"
