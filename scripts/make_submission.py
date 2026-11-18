@@ -96,7 +96,8 @@ body {{ margin: 0; }}
         f"- 포트폴리오: {pdf.name} (GitHub README 와 같은 내용, 커밋 {sha[:7]})\n"
         f"- 저장소: {meta['github_url']} (커밋 {sha})\n- 데모: {meta['demo_url']}\n"
         "- 소스코드: 같은 커밋의 저장소 파일 전부 (src/, scripts/, tests/, web/, models/ 학습한 가중치, reports/ 학습 기록·평가 결과)\n"
-        "- 뺀 것(용량, 공개 저장소에 있음): web/public/tts (미리 합성한 음성 조각 58MB, 없으면 앱은 브라우저 음성으로 말한다),\n"
+        "- 뺀 것(용량, 공개 저장소에 있음): web/public/tts (미리 합성한 음성 조각 58MB. 없으면 앱은 브라우저 음성으로 말하고,\n"
+        "  웹 시험의 음성 조각 확인 두 가지는 건너뛴다. 이 묶음을 푼 그대로 웹 시험 129개·파이썬 시험 27개가 통과하는 것을 확인했다),\n"
         "  reports/tts (음성 엔진 비교 녹음 43MB). 촬영 영상·배경 조각·실제 프레임 정답은 Release data-v1 에 있고\n"
         "  scripts/download_data.sh 가 받아 SHA-256 으로 확인한다 (README 8절).\n"
         "- 실행 방법: README 8절 (파이썬 requirements.txt, 웹 web/package.json)\n")
