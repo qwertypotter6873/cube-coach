@@ -3,7 +3,7 @@
 # 결과 정리: reports/browser_sample_runs.json
 #
 # 사람이 쓰는 길 그대로 연다: '카메라 · 영상' 고르기 → '샘플 영상' 버튼 (그래야 코치가 읽은 상태로 시작한다).
-# 끝에서 화면·코치가 아는 큐브가 추적기 상태와 같은지 확인한다 (놓친 회전을 앞에 끼워 넣어도 따라가야 한다).
+# 끝에서 화면·코치가 아는 큐브가 추적기 상태와 같은지, 읽은 처음 상태가 정답과 같은지 확인한다 (놓친 회전을 앞에 끼워 넣어도 따라가야 한다).
 #   표준출력 마지막 줄: 예전과 같은 결과 JSON (phase, scanned, n, moves=[시각, 가운데 색, 90도 단위], errs, fps + 확인용 값, scanT=상태를 다 읽은 영상 시각, frames/skipped=처리한·건너뛴 프레임 수,
 #     ms=프레임마다 걸린 시간의 중앙값·90% 값: 모델(자르기·추론·지도 줄이기 포함)·추적기·그리기, 최근 2000프레임.
 #        firstTrackModel=추적으로 넘어간 첫 프레임(입력 192→256)의 모델 시간, modelMax=가장 느린 모델 시간, maxGap=처리한 프레임 사이 가장 긴 간격(ms), gaps200=200ms 넘는 간격 수)
@@ -54,6 +54,10 @@ const st = (s) => Uint8Array.from(s, Number);
 const problems = [];
 if (r.mode !== "camera") problems.push(`카메라 모드가 아님 (${r.mode})`);
 if (!r.scanned) problems.push("상태를 읽지 못함");
+// 샘플 영상의 처음 상태(사람이 읽은 정답, scripts/track_video.py SEXY_MOVE_STATE 를 앱 숫자로). 상태 일치만 보면
+// 틀리게 읽은 상태도 서로 같기만 하면 통과한다(2026-11-18, 31.69초에 18칸 틀린 실행이 '통과'로 나왔다).
+const TRUTH = "211300354513010150440524250432330341112441420523252535";
+if (r.scanned && r.scanned !== TRUTH) problems.push(`읽은 처음 상태가 정답과 다름 (${[...r.scanned].filter((c, i) => c !== TRUTH[i]).length}칸, ${r.scanT}초에 읽음)`);
 if (r.tracker.length !== 54 || r.cube.length !== 54) problems.push("추적기 또는 화면 상태가 없음");
 else {
   const tracker = Array.from(alignCenters(st(r.tracker), st(r.cube))).join("");
@@ -62,5 +66,5 @@ else {
 }
 const note = `회전 ${r.n}개, 앞에 끼워 넣은 회전 ${r.backs.length}개${r.backs.length ? "" : " (이번 실행에서는 끼워 넣기가 없어 다시 맞추기는 시험되지 않음)"}`;
 if (problems.length) { console.error(`확인 실패: ${problems.join(", ")}. ${note}`); process.exit(1); }
-console.error(`확인 통과: 화면·코치 상태 = 추적기 상태. ${note}`);
+console.error(`확인 통과: 읽은 처음 상태 = 정답, 화면·코치 상태 = 추적기 상태. ${note}`);
 ' "$ROOT"
