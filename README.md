@@ -470,7 +470,10 @@ v2 모델은 옛 시험셋에서도 거의 떨어지지 않지만, v1 모델은 
 
 - 플랫폼: GitHub Pages (정적 사이트). `.github/workflows/pages.yml`이 `web/`을 빌드·시험(`npm test`)한 뒤 `web/dist`를 올린다.
 - 서버가 없다. 인식 모델(ONNX 664KB)과 WebAssembly 런타임(onnxruntime-web 1.31.1), 미리 합성한 음성(목소리당 약 30MB), 샘플 영상(9MB)을 정적 파일로 내려받아 브라우저에서 실행한다. 카메라 영상은 밖으로 나가지 않는다.
-- 공개 URL: https://qwertypotter6873.github.io/cube-coach/
+- 공개 URL: https://qwertypotter6873.github.io/cube-coach/ (저장소 https://github.com/qwertypotter6873/cube-coach, 배포 기록은 저장소의 Actions)
+- 공개 주소 확인 (2026-11-18, 로그인하지 않은 새 헤드리스 Chrome):
+  - 카메라 · 영상 → 샘플 영상(`CUBE_URL=https://qwertypotter6873.github.io/cube-coach/ scripts/browser_sample_check.sh`): 인식 모델을 공개 주소에서 내려받아 브라우저 안에서 돌렸다. 7.7초에 54칸을 정답대로 읽었고, 46초 끝까지 오류 없이 30fps로 따라갔다(판정 24개, 앞에 끼워 넣은 회전 2개). 끝에서 화면·코치가 아는 큐브는 추적기 상태와 같았다.
+  - 가상 큐브(`CUBE_URL=… scripts/browser_keyboard_check.sh`): 따라 하기에서 지시와 다른 면을 돌리면 바로잡기 카드가 뜨고, 되돌리면 원래 지시로 돌아왔다. 다음 할 일 카드대로 끝까지(145~160수) 따라 하면 기록과 완성 정리가 1개씩 남았고, 다 맞춘 뒤 한 수 돌렸다 되돌려도 늘지 않았다. '힌트만'은 시작할 때 다음 동작과 공식 기호를 보이지 않았다. 페이지 오류는 없었다.
 
 ## 8. 실행 방법
 
@@ -494,6 +497,8 @@ RENDER=v1 .venv/bin/python scripts/make_seg_data.py     # 합성 데이터 v1 (d
 .venv/bin/python scripts/scan_ablation.py               # 처음 상태 읽기 규칙 비교 (5.3절 표)
 .venv/bin/python scripts/scan_ambiguity.py              # 면만으로 상태를 못 정하는 비율 (5.3절)
 .venv/bin/python scripts/fig_preprocess.py              # 전처리 그림
+scripts/browser_sample_check.sh                         # 브라우저: 샘플 영상을 사람과 같은 길로 (CUBE_URL 로 공개 주소도)
+scripts/browser_keyboard_check.sh                       # 브라우저: 가상 큐브 따라 하기·힌트만·기록
 
 # 웹 (서비스)
 cd web && npm install && npm test && npm run dev        # http://127.0.0.1:5180
