@@ -58,7 +58,7 @@ def area_weights(n_in: int, n_out: int):
 
 def maps_to(logp, heat, n_out: int = 48):
     """모델 지도(로그확률 C x n x n, 중심 지도 n x n)를 n_out x n_out 으로 넓이 평균해 줄인다 (확률로 평균한 뒤 다시 로그).
-    입력을 크게(256) 넣어도 추적기·면 읽기는 늘 보던 48x48 지도를 받게 한다."""
+    입력 256 실험 갈래에서 추적기가 늘 보던 48x48 지도를 받게 했다(README 5.2절, 지금 앱은 쓰지 않음)."""
     import numpy as np
 
     n = heat.shape[0]
@@ -73,12 +73,12 @@ def maps_to(logp, heat, n_out: int = 48):
     return np.log(np.maximum(p2, 1e-12)).astype(np.float32), h2.astype(np.float32)
 
 
-APP_SIZES = (192, 256)  # 앱이 넣는 입력 한 변: 면 읽기 192, 추적 256 (web/src/vision/seg.ts SCAN_RES·TRACK_RES)
+APP_SIZES = (192, 256)  # export_onnx 가 확인하는 입력 한 변: 지금 앱은 192, 입력 256 실험 갈래(커밋 5154035)는 추적 단계에 256
 
 
 def export_onnx(model, path, sizes=APP_SIZES) -> float:
-    """앱이 읽는 모양으로 ONNX 를 내보낸다: 입력 높이·너비를 열어 두고(면 읽기 192, 추적 256), 크기마다 torch 와 같은지 본다.
-    학습 스크립트(scripts/train_seg.py)와 앱 사본 내보내기(scripts/export_app_onnx.py)가 함께 쓴다. 최대 차이를 돌려준다."""
+    """입력 높이·너비를 열어 둔 ONNX 를 내보내고, 크기마다(192·256) torch 와 같은지 본다. 최대 차이를 돌려준다.
+    학습 스크립트(scripts/train_seg.py)와 실험용 내보내기(scripts/export_app_onnx.py)가 함께 쓴다. 192 입력이면 앱에서 그대로 쓸 수 있다."""
     import numpy as np
     import onnxruntime as ort
 

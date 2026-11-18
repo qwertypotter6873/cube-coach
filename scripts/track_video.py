@@ -177,10 +177,10 @@ def main() -> None:
     ap.add_argument("--fast", action="store_true", help="(TS) 큐브를 옮길 때 빨리 따라가기 켜기 (세부 스위치 전부)")
     ap.add_argument("--follow", default="", help="(TS) 빨리 따라가기 세부 스위치만 켜기, 쉼표로 (predict,jump,relock,fastLost,wide,calmAfterLock)")
     ap.add_argument("--traj", action="store_true", help="프레임마다 자세 중심·일치율·진단값을 결과에 남긴다")
-    ap.add_argument("--res", type=int, default=256,
-                    help="모델 입력 한 변 (기본 256 = 지금 앱의 추적 단계, 2026-11-18부터. 그 전 결과는 192로 쟀다; 지도는 res/4)")
-    ap.add_argument("--map-n", type=int, default=48, dest="map_n",
-                    help="지도를 이 크기로 넓이 평균해 줄여 추적기에 넘긴다 (기본 48 = 앱과 같음, 0 = 그대로. 192 입력이면 이미 48)")
+    ap.add_argument("--res", type=int, default=192,
+                    help="모델 입력 한 변 (기본 192 = 지금 앱; 지도는 res/4. 입력 256 실험 갈래는 --res 256 --map-n 48, README 5.2절)")
+    ap.add_argument("--map-n", type=int, default=0, dest="map_n",
+                    help="지도를 이 크기로 넓이 평균해 줄여 추적기에 넘긴다 (0 = 그대로, 192 입력이면 이미 48x48)")
     ap.add_argument("--opts", default="", help='(TS) 추적기 설정 JSON, 예 {"turnVsBody": 8}')
     ap.add_argument("--bank", type=int, default=1500, help="(TS) 전체 탐색 회전 뱅크 크기 (앱과 같은 1500)")
     ap.add_argument("--pan", type=float, default=0.0,
@@ -336,7 +336,7 @@ def main() -> None:
             run = 0
     res = {
         "video": Path(args.video).name, "tracker": "ts" if args.ts else "py", "stride": args.stride, "seed": args.seed,
-        "segment": args.segment, "res": args.res, "map_n": args.map_n,  # 2026-11-18 저녁 전 결과에는 없다(그때는 모두 192 입력)
+        "segment": args.segment, "res": args.res, "map_n": args.map_n,  # 2026-11-18 저녁 전 결과에는 없다(그때는 모두 192 입력, 그대로)
         "frames": len(times), "seconds": round(times[-1] - times[0], 1) if times else 0,
         "detected_moves": len(d), "expected_moves": len(exps[best]),
         "move_acc": None if no_gt else 1 - dists[best] / max(len(exps[best]), 1), "edit_distance": None if no_gt else dists[best],
