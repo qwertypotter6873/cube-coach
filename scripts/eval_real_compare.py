@@ -50,7 +50,7 @@ def predict(model, img: np.ndarray, zoom: float, size: int, resample: int = 0) -
     x = cv2.resize(img, (size, size), interpolation=cv2.INTER_AREA)
     with torch.no_grad():
         o = model(torch.from_numpy(x).permute(2, 0, 1)[None].float() / 255)[0]
-    if resample:  # 앱처럼 지도를 resample x resample 로 넓이 평균해 줄인 뒤 읽는다
+    if resample:  # 입력 256 실험 갈래처럼 지도를 resample x resample 로 넓이 평균해 줄인 뒤 읽는다
         logp, heat = maps_to(torch.log_softmax(o[:N_CLASSES], 0).numpy(), torch.sigmoid(o[N_CLASSES]).numpy(), resample)
         return logp.argmax(0)
     return o[:N_CLASSES].argmax(0).numpy()
@@ -72,7 +72,7 @@ def main() -> None:
     ap.add_argument("--zoom", type=float, nargs="+", default=[1.0])
     ap.add_argument("--size", type=int, nargs="+", default=[192])
     ap.add_argument("--boot", type=int, default=4000)
-    ap.add_argument("--resample", type=int, default=0, help="지도를 이 크기로 줄인 뒤 읽는다 (앱의 256 입력 + 48 지도 흉내)")
+    ap.add_argument("--resample", type=int, default=0, help="지도를 이 크기로 줄인 뒤 읽는다 (입력 256 실험 갈래의 256 입력 + 48 지도)")
     args = ap.parse_args()
     d, labels, used = frames_of(args.set)
     imgs = [cv2.cvtColor(cv2.imread(str(d / f["file"])), cv2.COLOR_BGR2RGB) for f in used]

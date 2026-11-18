@@ -1,4 +1,4 @@
-"""지도 줄이기(cubecoach.segnet.maps_to): 앱이 256 입력의 64x64 지도를 48x48로 줄일 때 쓰는 계산."""
+"""지도 줄이기(cubecoach.segnet.maps_to): 입력 256 실험 갈래에서 64x64 지도를 48x48로 줄일 때 쓴 계산 (지금 앱은 쓰지 않음)."""
 
 import numpy as np
 

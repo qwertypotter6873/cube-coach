@@ -12,6 +12,9 @@
   data/real/label_frames_val/, data/real/labels_val.json 을 쓴다.
      .venv/bin/python scripts/label_real.py extract data/raw/cube_unsolved.mov --start 0 --end 290 --n 20 --gap 5 --set val
      .venv/bin/python scripts/label_real.py serve --set val
+  주의: extract 는 채도 높은 곳을 큐브로 보고 자르므로 큐브가 자른 그림에 작게 들 수 있다. 시험셋은 그 뒤 v2 모델로 큐브가
+  절반쯤 차게 다시 잘랐다(앱이 모델에 넣는 크기). 검증 세트는 이 단계를 빠뜨려 입력 크기 비교가 치우쳤고(README 5.2절),
+  scripts/recrop_val.py 로 같은 방법으로 다시 자른 세트(--set valc)를 만든다.
 
 프레임과 정답은 data/real/ 에 둔다(.gitignore). 공개본은 Release data-v1 의 real_labels.zip.
 """
