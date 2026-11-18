@@ -158,7 +158,7 @@
 
 ![학습곡선](reports/learning_curves.png)
 
-학습곡선. v1은 v1 검증셋, v2는 v2 검증셋 기준이다. v2 데이터가 더 어려워서(스티커리스 큐브, 실제 배경, 움직임 번짐) 같은 epoch에서 v2의 검증 점수가 조금 낮다. 두 모델 모두 10 epoch 이후 평평해져 14 epoch에서 멈췄다.
+학습곡선. v1은 v1 검증셋, v2는 v2 검증셋 기준이다. v2 데이터가 더 어려워서(스티커리스 큐브, 실제 배경, 움직임 번짐) 같은 epoch에서 v2의 검증 점수가 조금 낮다. 두 모델 모두 10 epoch 이후 평평해져 14 epoch에서 멈췄다. 학습 로그(에폭마다 손실과 검증 지표)는 `reports/train_seg.json`(v2 데이터: PixelMLP 4에폭, CubeSegNet 14에폭)과 `reports/train_seg_v1.json`(v1 데이터)에 있다(`scripts/train_seg.py`).
 
 ![합성 혼동행렬](reports/confusion_synth.png)
 
