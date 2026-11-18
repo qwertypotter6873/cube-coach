@@ -120,6 +120,7 @@ class TsTracker:
         self.local_relocks = r.get("localRelocks", 0)
         self.inits = r.get("inits", 0)
         self.rejected_turns = r.get("rejectedTurns", 0)
+        self.off_rejected = r.get("offRejected", 0)
         self.reverts = r.get("reverts", 0)
         self.view = r.get("view")
         if "ms" in r:

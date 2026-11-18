@@ -33,6 +33,7 @@ const reply = () => {
     localRelocks: t.localRelocks,
     inits: t.inits,
     rejectedTurns: t.rejectedTurns,
+    offRejected: t.offRejected,
     reverts: t.reverts,
   };
 };

@@ -341,7 +341,7 @@ def main() -> None:
         "pan": args.pan, "pan_hz": args.pan_hz, "jump": args.jump, "fast": args.fast, "follow": args.follow, "bank": args.bank,
         "ms_per_frame": 1000 * elapsed / max(len(times), 1),
         "relocks": getattr(tracker, "relocks", None), "local_relocks": getattr(tracker, "local_relocks", None), "inits": getattr(tracker, "inits", None),
-        "rejected_turns": getattr(tracker, "rejected_turns", None), "reverts": getattr(tracker, "reverts", None), "opts": args.opts,
+        "rejected_turns": getattr(tracker, "rejected_turns", None), "off_rejected": getattr(tracker, "off_rejected", None), "reverts": getattr(tracker, "reverts", None), "opts": args.opts,
         "cover": args.cover and not args.no_cover, "settle": args.settle, "moving_frames": moving_frames,
         "events": [[int(e.center), int(e.quarter_turns), round(times[min(e.frame - 1, len(times) - 1)], 2)]
                    + ([info] if (info := (getattr(tracker, "event_info", None) or [None] * len(tracker.events))[n]) else [])

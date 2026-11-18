@@ -334,6 +334,16 @@ export class Tracker {
    * (reports/track_real_gt2_summary.json). 프레임 수라 fps에 따라 길이가 바뀌는 문제도 없앤다.
    */
   relaxWithin = 0;
+  /**
+   * 자세가 큐브에서 벗어나 있으면 새 회전을 확정하지 않는다: 직전 프레임에서 큐브 영역 무게중심과 자세 중심이
+   * 조각 이만큼 넘게 떨어졌으면 (diag.blobOff) 확정·끼워 넣기를 하지 않는다. 0이면 끈다.
+   * 개발 영상(sexy_move) 재기: 진짜 회전은 이 거리가 0.64 조각 이하, 들고 있을 때의 가짜 회전은 절반이 1.0을 넘었다.
+   * 1.0(미리 정한 값)으로 켜면 앱처럼 7.7초에 시작한 시드 15개에서 들고 있는 11초의 판정이 평균 6.6 → 3.6개,
+   * 천천히 돌린 B 구간은 그대로(0.971, 한 번도 막지 않음), 빠른 A 구간 0.358 → 0.392 (reports/track_real_pf_*).
+   */
+  offGate = 1.0;
+  /** offGate 로 확정하지 않은 회전 수 (진단용) */
+  offRejected = 0;
   private lastMoveFrame = -1e9;
   /** 위 조건들로 버린 층 회전 수 (진단용) */
   rejectedTurns = 0;
@@ -799,6 +809,11 @@ export class Tracker {
         this.rejectedTurns++;
       }
     } else if (s[1 + best] - s[0] > RECOVER_MARGIN && s[1 + best] - s[1 + second] > RECOVER_LEAD) choice = best;
+    // 자세가 큐브에서 벗어나 있으면 (decide 는 measure 보다 먼저 돌아서 diag.blobOff 는 직전 프레임 값) 확정하지 않는다
+    if (choice !== null && this.offGate > 0 && this.diag.blobOff > this.offGate) {
+      choice = null;
+      this.offRejected++;
+    }
     this.layer = -1;
     this.phi = 0;
     this.still = 0;
