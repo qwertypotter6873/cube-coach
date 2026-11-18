@@ -309,12 +309,15 @@ def _area(pts: np.ndarray) -> float:
 
 
 def render(scene: Scene, roi: tuple[float, float, float], rng: np.random.Generator,
-           res: int = 192, ss: int = 2) -> Frame:
+           res: int = 192, ss: int = 2, version: int = 2) -> Frame:
+    """version 3: 층을 돌리는 장면에서 화면 전체 대신 돌아가는 층만 번지게 한다 (실제 영상에서는 그 층만 번진다).
+    version 2 의 난수 사용 순서는 그대로라 v2 데이터는 같은 시드로 바이트까지 다시 만들어진다."""
     hi, look = res * ss, scene.look
     n_lab = res // STRIDE
     k = hi // n_lab  # 정답 지도 한 칸에 해당하는 고해상도 픽셀 수
 
     quads, normals, cubies = QUADS, FACE_NORMALS, CUBIES
+    layer = None
     if scene.turn is not None:
         face, ang = scene.turn
         layer = CUBIES @ np.array(FRAMES[face][0], dtype=np.float64) > 0.5
@@ -346,6 +349,7 @@ def render(scene: Scene, roi: tuple[float, float, float], rng: np.random.Generat
         img = cv2.GaussianBlur(img, (0, 0), look.bg.blur * hi / 384 / max(roi[2], 0.2))
     seg = np.full((hi, hi), OTHER, dtype=np.uint8)
     ids = np.zeros((hi, hi), dtype=np.uint8)
+    lmask = np.zeros((hi, hi), dtype=np.float32) if (version >= 3 and layer is not None) else None  # 돌아가는 층이 보이는 곳
 
     # 큐브: 먼 조각부터, 카메라를 향한 면만
     centers = np.zeros((54, 2), dtype=np.float32)
@@ -357,6 +361,8 @@ def render(scene: Scene, roi: tuple[float, float, float], rng: np.random.Generat
         _poly(img, px[i], (look.body * shade,) * 3)
         _poly(seg, px[i], BODY)
         _poly(ids, px[i], 0)
+        if lmask is not None:
+            _poly(lmask, px[i], 1.0 if layer[i] else 0.0)
         j = FACELET_OF[i]
         if j < 0:
             continue
@@ -418,10 +424,32 @@ def render(scene: Scene, roi: tuple[float, float, float], rng: np.random.Generat
     out = _to_srgb(img * look.gains * look.exposure)
     gray = out.mean(axis=2, keepdims=True)
     out = out * (1 - look.wash) + gray * look.wash
-    blur = look.blur + (0.8 if scene.turn is not None else 0.0) * rng.random()  # 돌리는 중엔 조금 더 흐리다
+    if version >= 3:
+        blur = look.blur
+    else:
+        blur = look.blur + (0.8 if scene.turn is not None else 0.0) * rng.random()  # 돌리는 중엔 조금 더 흐리다
     if blur > 0.2:
         out = cv2.GaussianBlur(out, (0, 0), blur * ss)
-    motion = look.motion * rng.uniform(0.5, 1.0) if look.motion else (rng.uniform(2, 10) if scene.turn is not None and rng.random() < 0.4 else 0.0)
+    if lmask is not None and rng.random() < 0.6:
+        # 돌아가는 층만 회전 방향으로 번진다: 층의 회전축을 화면에 투영한 방향에 수직으로
+        face, _ = scene.turn
+        ax = np.array(FRAMES[face][0], dtype=np.float64)
+        c0 = (ax * 1.0) @ scene.R.T + scene.T
+        c1 = (ax * 1.6) @ scene.R.T + scene.T
+        p0, p1 = to_pixels(project(c0[None], scene.f), roi, hi)[0], to_pixels(project(c1[None], scene.f), roi, hi)[0]
+        dvec = p1 - p0
+        ang_deg = float(np.degrees(np.arctan2(dvec[1], dvec[0]))) + 90.0 if np.hypot(*dvec) > 1e-3 else float(rng.uniform(0, 180))
+        L = int(rng.uniform(3, 14) * ss) | 1
+        ker = np.zeros((L, L), dtype=np.float32)
+        ker[L // 2] = 1.0
+        ker = cv2.warpAffine(ker, cv2.getRotationMatrix2D((L / 2 - 0.5, L / 2 - 0.5), ang_deg, 1.0), (L, L))
+        ker /= max(ker.sum(), 1e-6)
+        mb = cv2.filter2D(lmask, -1, ker)[..., None]
+        out = out * (1 - mb) + cv2.filter2D(out, -1, ker) * mb
+    if version >= 3:
+        motion = look.motion * rng.uniform(0.5, 1.0) if look.motion else 0.0  # 큐브를 옮기거나 흔들 때만 화면 전체
+    else:
+        motion = look.motion * rng.uniform(0.5, 1.0) if look.motion else (rng.uniform(2, 10) if scene.turn is not None and rng.random() < 0.4 else 0.0)
     if motion >= 1.5:  # 빠르게 돌리거나 흔들 때의 한 방향 번짐
         L = int(motion * ss) | 1
         ker = np.zeros((L, L), dtype=np.float32)

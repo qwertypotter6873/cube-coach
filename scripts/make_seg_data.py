@@ -2,6 +2,7 @@
 
 실행: .venv/bin/python scripts/make_seg_data.py              v2 (기본): data/synth3d_v2, 20,000장
       RENDER=v1 .venv/bin/python scripts/make_seg_data.py    v1: data/synth3d, 16,000장 (src/cubecoach/render3d_v1.py)
+      RENDER=v3 .venv/bin/python scripts/make_seg_data.py    v3: data/synth3d_v3, 20,000장 (v2 + 층을 돌릴 때 그 층만 번짐)
 결과: data/<폴더>/{train,val,test}_{img,seg,heat,centers,vis,colors}.npy
 렌더러 버전(RENDER)이 폴더·장수의 기본값을 정한다. SYNTH_DIR·N_TRAIN 으로 바꿀 수는 있지만, 렌더러는 RENDER 로만 바뀐다.
 v2 는 실제 촬영 배경 조각(data/real/bg_patches.npy, scripts/extract_real_bg.py)이 있어야 한다. 이 조각은 촬영자가 나오는
@@ -24,11 +25,12 @@ import numpy as np
 VERSION = os.environ.get("RENDER", "v2")
 if VERSION == "v1":
     from cubecoach.render3d_v1 import STRIDE, render, sample_scene
-elif VERSION == "v2":
+elif VERSION in ("v2", "v3"):
     from cubecoach.render3d import STRIDE, real_bg, render, sample_scene
 else:
     raise SystemExit(f"RENDER 는 v1 또는 v2 여야 합니다: {VERSION}")
-DEFAULTS = {"v1": ("synth3d", 16000), "v2": ("synth3d_v2", 20000)}
+DEFAULTS = {"v1": ("synth3d", 16000), "v2": ("synth3d_v2", 20000), "v3": ("synth3d_v3", 20000)}
+RENDER_KW = {"version": 3} if VERSION == "v3" else {}  # v1·v2 는 예전 호출 그대로
 OUT = Path(__file__).resolve().parents[1] / "data" / os.environ.get("SYNTH_DIR", DEFAULTS[VERSION][0])
 RES = 192
 N_TRAIN = int(os.environ.get("N_TRAIN", str(DEFAULTS[VERSION][1])))
@@ -42,7 +44,7 @@ def _job(args: tuple[str, int, int, int]) -> int:
     rng = np.random.default_rng(seed)
     for i in range(start, stop):
         scene, roi = sample_scene(rng)
-        fr = render(scene, roi, rng, res=RES)
+        fr = render(scene, roi, rng, res=RES, **RENDER_KW)
         arrs["img"][i], arrs["seg"][i] = fr.img, fr.seg
         arrs["heat"][i] = (fr.heat * 255).astype(np.uint8)
         arrs["centers"][i], arrs["vis"][i], arrs["colors"][i] = fr.centers, fr.vis, scene.colors
@@ -52,7 +54,7 @@ def _job(args: tuple[str, int, int, int]) -> int:
 
 
 def main() -> None:
-    if VERSION == "v2" and real_bg()[0] is None and os.environ.get("ALLOW_NO_REAL_BG") != "1":
+    if VERSION in ("v2", "v3") and real_bg()[0] is None and os.environ.get("ALLOW_NO_REAL_BG") != "1":
         raise SystemExit("data/real/bg_patches.npy 가 없습니다. v2 는 실제 촬영 배경 조각이 있어야 보고한 실험과 같아집니다"
                          " (scripts/extract_real_bg.py, 촬영 영상 필요). 합성 배경만으로 만들려면 ALLOW_NO_REAL_BG=1.")
     print(f"렌더러 {VERSION} → {OUT} (학습 {N_TRAIN}장)", flush=True)
