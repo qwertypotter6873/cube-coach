@@ -22,7 +22,7 @@ from track_video import LATEST2_STATE, LATEST_STATE, SEXY_MOVE_STATE, crop  # no
 
 from cubecoach.facescan import FaceScanner, follow_roi, read_face  # noqa: E402
 from cubecoach.render3d import N_CLASSES  # noqa: E402
-from cubecoach.segnet import CubeSegNet, load_segnet  # noqa: E402
+from cubecoach.segnet import CubeSegNet, load_segnet, maps_to  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -34,6 +34,8 @@ def main() -> None:
     ap.add_argument("--end", type=float, default=15.0)
     ap.add_argument("--truth", default=SEXY_MOVE_STATE)
     ap.add_argument("--weights", default=str(ROOT / "models" / "cube_seg_net.pt"))
+    ap.add_argument("--res", type=int, default=192, help="모델 입력 한 변")
+    ap.add_argument("--map-n", type=int, default=0, dest="map_n", help="지도를 이 크기로 넓이 평균해 줄인 뒤 읽는다 (0 = 그대로)")
     args = ap.parse_args()
     args.truth = {"sexy": SEXY_MOVE_STATE, "latest": LATEST_STATE, "latest2": LATEST2_STATE}.get(args.truth, args.truth)
     m = load_segnet(args.weights)
@@ -56,11 +58,14 @@ def main() -> None:
         rgb = cv2.cvtColor(fr, cv2.COLOR_BGR2RGB)
         H, W = rgb.shape[:2]
         r = roi or (0.0, 0.0, H / W)
-        x = crop(rgb, r)
+        x = crop(rgb, r, res=args.res)
         with torch.no_grad():
             o = m(torch.from_numpy(x).permute(2, 0, 1)[None].float() / 255)[0]
-        cls = o[:N_CLASSES].argmax(0).numpy()
+        logp = torch.log_softmax(o[:N_CLASSES], 0).numpy()
         heat = torch.sigmoid(o[N_CLASSES]).numpy()
+        if args.map_n:
+            logp, heat = maps_to(logp, heat, args.map_n)
+        cls = logp.argmax(0)
         face = read_face(cls, heat)
         if face:
             c = sc.add(face)

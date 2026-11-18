@@ -23,7 +23,7 @@ import torch
 from sklearn.metrics import f1_score
 
 from cubecoach.render3d import N_CLASSES
-from cubecoach.segnet import CubeSegNet
+from cubecoach.segnet import CubeSegNet, maps_to
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -37,7 +37,7 @@ def frames_of(name: str):
     return d, labels, used
 
 
-def predict(model, img: np.ndarray, zoom: float, size: int) -> np.ndarray:
+def predict(model, img: np.ndarray, zoom: float, size: int, resample: int = 0) -> np.ndarray:
     h = img.shape[0]
     if zoom != 1.0:
         side = int(round(h * zoom))
@@ -50,6 +50,9 @@ def predict(model, img: np.ndarray, zoom: float, size: int) -> np.ndarray:
     x = cv2.resize(img, (size, size), interpolation=cv2.INTER_AREA)
     with torch.no_grad():
         o = model(torch.from_numpy(x).permute(2, 0, 1)[None].float() / 255)[0]
+    if resample:  # 앱처럼 지도를 resample x resample 로 넓이 평균해 줄인 뒤 읽는다
+        logp, heat = maps_to(torch.log_softmax(o[:N_CLASSES], 0).numpy(), torch.sigmoid(o[N_CLASSES]).numpy(), resample)
+        return logp.argmax(0)
     return o[:N_CLASSES].argmax(0).numpy()
 
 
@@ -69,6 +72,7 @@ def main() -> None:
     ap.add_argument("--zoom", type=float, nargs="+", default=[1.0])
     ap.add_argument("--size", type=int, nargs="+", default=[192])
     ap.add_argument("--boot", type=int, default=4000)
+    ap.add_argument("--resample", type=int, default=0, help="지도를 이 크기로 줄인 뒤 읽는다 (앱의 256 입력 + 48 지도 흉내)")
     args = ap.parse_args()
     d, labels, used = frames_of(args.set)
     imgs = [cv2.cvtColor(cv2.imread(str(d / f["file"])), cv2.COLOR_BGR2RGB) for f in used]
@@ -85,10 +89,10 @@ def main() -> None:
         m.eval()
         for zoom in args.zoom:
             for size in args.size:
-                key = f"{name} zoom{zoom:g} size{size}"
+                key = f"{name} zoom{zoom:g} size{size}" + (f"→{args.resample}" if args.resample and size != 192 else "")
                 hits, preds = [], []
                 for img, p, c in zip(imgs, pts, cols):
-                    pr = correct_cells(predict(m, img, zoom, size), p, zoom)
+                    pr = correct_cells(predict(m, img, zoom, size, args.resample if size != 192 else 0), p, zoom)
                     hits.append(pr == c)
                     preds.append(pr)
                 yt, yp = np.concatenate(cols), np.concatenate(preds)

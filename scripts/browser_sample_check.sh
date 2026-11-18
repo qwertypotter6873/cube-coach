@@ -4,7 +4,9 @@
 #
 # 사람이 쓰는 길 그대로 연다: '카메라 · 영상' 고르기 → '샘플 영상' 버튼 (그래야 코치가 읽은 상태로 시작한다).
 # 끝에서 화면·코치가 아는 큐브가 추적기 상태와 같은지 확인한다 (놓친 회전을 앞에 끼워 넣어도 따라가야 한다).
-#   표준출력 마지막 줄: 예전과 같은 결과 JSON (phase, scanned, n, moves=[시각, 가운데 색, 90도 단위], errs, fps + 확인용 값, scanT=상태를 다 읽은 영상 시각, frames/skipped=처리한·건너뛴 프레임 수)
+#   표준출력 마지막 줄: 예전과 같은 결과 JSON (phase, scanned, n, moves=[시각, 가운데 색, 90도 단위], errs, fps + 확인용 값, scanT=상태를 다 읽은 영상 시각, frames/skipped=처리한·건너뛴 프레임 수,
+#     ms=프레임마다 걸린 시간의 중앙값·90% 값: 모델(자르기·추론·지도 줄이기 포함)·추적기·그리기, 최근 2000프레임.
+#        firstTrackModel=추적으로 넘어간 첫 프레임(입력 192→256)의 모델 시간, modelMax=가장 느린 모델 시간, maxGap=처리한 프레임 사이 가장 긴 간격(ms), gaps200=200ms 넘는 간격 수)
 #   표준오류: 확인 결과. 같지 않으면 종료 코드 1.
 # 다른 주소·세션: CUBE_URL=http://127.0.0.1:5180/ AGENT_BROWSER_SESSION=내세션 scripts/browser_sample_check.sh
 export AGENT_BROWSER_SESSION="${AGENT_BROWSER_SESSION:-cubesmoke-main}"
@@ -32,7 +34,12 @@ for i in $(seq 1 60); do sleep 2; E=$($AB eval "!!(globalThis.__vision.video && 
 sleep 1 # 끝나기 직전 프레임의 처리가 마저 끝나게
 OUT=$($AB eval "JSON.stringify({phase: globalThis.__vision.phase, scanned: document.body.dataset.scanned, scanT: globalThis.__scanT, n: globalThis.__moves.length, moves: globalThis.__moves, errs: globalThis.__errs, fps: globalThis.__vision.fps,
   mode: document.body.dataset.mode, level: document.getElementById('level').value, backs: globalThis.__backs, frames: globalThis.__vision.frames, skipped: globalThis.__vision.skipped,
-  cube: document.body.dataset.cube || '', coach: document.body.dataset.coach || '', tracker: Array.from((globalThis.__vision.tracker || {}).colors || []).join('')})")
+  cube: document.body.dataset.cube || '', coach: document.body.dataset.coach || '', tracker: Array.from((globalThis.__vision.tracker || {}).colors || []).join(''),
+  ms: (() => { const st = globalThis.__vision.stats || []; const q = (k, p) => { const a = st.map(x => x[k]).sort((x, y) => x - y); return a.length ? +a[Math.min(a.length - 1, Math.floor(p * a.length))].toFixed(2) : null; };
+    const ft = st.find(x => x.kind !== 'scan'); let mx = null, gap = 0, gapAt = null, gaps = 0;
+    for (let i = 0; i < st.length; i++) { if (!mx || st[i].modelMs > mx.modelMs) mx = st[i]; if (i) { const g = st[i].t - st[i - 1].t; if (g > 200) gaps++; if (g > gap) { gap = g; gapAt = st[i].kind; } } }
+    return {n: st.length, model50: q('modelMs', 0.5), model90: q('modelMs', 0.9), track50: q('trackMs', 0.5), track90: q('trackMs', 0.9), draw50: q('drawMs', 0.5),
+      firstTrackModel: ft ? +ft.modelMs.toFixed(1) : null, modelMax: mx ? +mx.modelMs.toFixed(1) : null, modelMaxKind: mx ? mx.kind : null, maxGap: gap, maxGapKind: gapAt, gaps200: gaps}; })()})")
 $AB close >/dev/null 2>&1
 print -r -- "$OUT"
 

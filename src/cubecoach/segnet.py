@@ -43,6 +43,59 @@ class CubeSegNet(nn.Module):
         return self.head(u)
 
 
+def area_weights(n_in: int, n_out: int):
+    """n_in 칸을 n_out 칸으로 줄일 때 칸마다 겹치는 길이 (n_out x n_in, 행 합 = n_in / n_out). 브라우저판 seg.ts 와 같은 계산."""
+    import numpy as np
+
+    s = n_in / n_out
+    w = np.zeros((n_out, n_in), dtype=np.float64)
+    for i in range(n_out):
+        a, b = i * s, (i + 1) * s
+        for k in range(int(a), min(n_in, int(np.ceil(b)))):
+            w[i, k] = max(0.0, min(b, k + 1) - max(a, k))
+    return w
+
+
+def maps_to(logp, heat, n_out: int = 48):
+    """모델 지도(로그확률 C x n x n, 중심 지도 n x n)를 n_out x n_out 으로 넓이 평균해 줄인다 (확률로 평균한 뒤 다시 로그).
+    입력을 크게(256) 넣어도 추적기·면 읽기는 늘 보던 48x48 지도를 받게 한다."""
+    import numpy as np
+
+    n = heat.shape[0]
+    if n == n_out:
+        return logp, heat
+    w = area_weights(n, n_out)
+    norm = (n / n_out) ** 2
+    p = np.exp(logp.astype(np.float64))
+    p2 = np.einsum("ik,ckl,jl->cij", w, p, w) / norm
+    p2 /= p2.sum(0, keepdims=True)
+    h2 = (w @ heat.astype(np.float64) @ w.T) / norm
+    return np.log(np.maximum(p2, 1e-12)).astype(np.float32), h2.astype(np.float32)
+
+
+APP_SIZES = (192, 256)  # 앱이 넣는 입력 한 변: 면 읽기 192, 추적 256 (web/src/vision/seg.ts SCAN_RES·TRACK_RES)
+
+
+def export_onnx(model, path, sizes=APP_SIZES) -> float:
+    """앱이 읽는 모양으로 ONNX 를 내보낸다: 입력 높이·너비를 열어 두고(면 읽기 192, 추적 256), 크기마다 torch 와 같은지 본다.
+    학습 스크립트(scripts/train_seg.py)와 앱 사본 내보내기(scripts/export_app_onnx.py)가 함께 쓴다. 최대 차이를 돌려준다."""
+    import numpy as np
+    import onnxruntime as ort
+
+    model = model.cpu().eval()
+    torch.onnx.export(model, (torch.rand(1, 3, sizes[0], sizes[0]),), str(path), input_names=["image"], output_names=["maps"],
+                      opset_version=17, dynamo=False, dynamic_axes={"image": {2: "h", 3: "w"}, "maps": {2: "mh", 3: "mw"}})
+    sess = ort.InferenceSession(str(path), providers=["CPUExecutionProvider"])
+    worst = 0.0
+    with torch.no_grad():
+        for n in sizes:
+            x = torch.rand(1, 3, n, n)
+            worst = max(worst, float(np.abs(sess.run(None, {"image": x.numpy()})[0] - model(x).numpy()).max()))
+    if worst > 1e-3:
+        raise RuntimeError(f"ONNX 출력이 torch 와 다르다 (최대 차이 {worst})")
+    return worst
+
+
 def load_segnet(path) -> "CubeSegNet":
     """저장한 가중치에서 폭을 알아내(첫 합성곱의 출력 채널 수) CubeSegNet 을 만들고 불러온다 (평가 모드)."""
     sd = torch.load(path, map_location="cpu", weights_only=True)

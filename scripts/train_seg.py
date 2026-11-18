@@ -21,7 +21,7 @@ from torch import nn
 
 from cubecoach.models import n_params
 from cubecoach.render3d import N_CLASSES
-from cubecoach.segnet import CubeSegNet, PixelMLP, seg_loss
+from cubecoach.segnet import CubeSegNet, PixelMLP, export_onnx, seg_loss
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data" / os.environ.get("SYNTH_DIR", "synth3d_v2")  # v1 은 synth3d
@@ -132,13 +132,13 @@ def train(model: nn.Module, name: str, tr: dict, va: dict, epochs: int, lr: floa
 
 
 def export(model: nn.Module, path: Path) -> dict[str, float]:
+    # 앱과 같은 모양(입력 크기를 열어 둠, 192·256 모두 확인)으로 내보낸다: cubecoach.segnet.export_onnx
     model = model.cpu().eval()
+    diff = export_onnx(model, path)
     dummy = torch.rand(1, 3, 192, 192)
-    torch.onnx.export(model, (dummy,), str(path), input_names=["image"], output_names=["maps"], opset_version=17, dynamo=False)
     so = ort.SessionOptions()
     so.intra_op_num_threads = 1
     sess = ort.InferenceSession(str(path), so, providers=["CPUExecutionProvider"])
-    diff = float(np.abs(sess.run(None, {"image": dummy.numpy()})[0] - model(dummy).detach().numpy()).max())
     times = []
     for i in range(120):
         t = time.perf_counter()
