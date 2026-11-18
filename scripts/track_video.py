@@ -177,6 +177,7 @@ def main() -> None:
     ap.add_argument("--fast", action="store_true", help="(TS) 큐브를 옮길 때 빨리 따라가기 켜기 (세부 스위치 전부)")
     ap.add_argument("--follow", default="", help="(TS) 빨리 따라가기 세부 스위치만 켜기, 쉼표로 (predict,jump,relock,fastLost,wide,calmAfterLock)")
     ap.add_argument("--traj", action="store_true", help="프레임마다 자세 중심·일치율·진단값을 결과에 남긴다")
+    ap.add_argument("--res", type=int, default=192, help="모델 입력 한 변 (기본 192 = 지금 앱; 지도는 res/4)")
     ap.add_argument("--opts", default="", help='(TS) 추적기 설정 JSON, 예 {"turnVsBody": 8}')
     ap.add_argument("--bank", type=int, default=1500, help="(TS) 전체 탐색 회전 뱅크 크기 (앱과 같은 1500)")
     ap.add_argument("--pan", type=float, default=0.0,
@@ -260,7 +261,7 @@ def main() -> None:
         mx, my = 0.5 + side / 2 - min(side, 1.0) / 3, H / W / 2 + side / 2 - min(side, H / W) / 3
         roi = (min(max(roi[0], -mx), mx), min(max(roi[1], -my), my), side)
         dx, dy = shift(t)
-        x = crop(rgb, (roi[0] - dx, roi[1] - dy, roi[2]))
+        x = crop(rgb, (roi[0] - dx, roi[1] - dy, roi[2]), res=args.res)
         with torch.no_grad():
             o = model(torch.from_numpy(x).permute(2, 0, 1)[None].float() / 255)[0]
         logp = torch.log_softmax(o[:N_CLASSES], 0).numpy()

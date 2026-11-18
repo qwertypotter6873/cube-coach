@@ -1,0 +1,93 @@
+{
+ "video": "sexy_move.mov",
+ "tracker": "ts",
+ "stride": 1,
+ "seed": 10,
+ "segment": null,
+ "frames": 355,
+ "seconds": 11.8,
+ "detected_moves": 2,
+ "expected_moves": 0,
+ "move_acc": -1.0,
+ "edit_distance": 2,
+ "final_state_ok": false,
+ "first_lock_t": 7.7,
+ "tracked_ratio": 0.9014084507042254,
+ "lost_episodes": 14,
+ "recover_frames_mean": 2.5,
+ "recover_frames_max": 16,
+ "lost_tail": 0,
+ "pan": 0.0,
+ "pan_hz": 0.25,
+ "jump": 0.0,
+ "fast": true,
+ "follow": "",
+ "bank": 1500,
+ "ms_per_frame": 27.185562966575084,
+ "relocks": 0,
+ "local_relocks": 4,
+ "inits": 4,
+ "rejected_turns": 14,
+ "off_rejected": 23,
+ "reverts": 0,
+ "opts": "",
+ "cover": false,
+ "settle": 0,
+ "moving_frames": 6,
+ "events": [
+  [
+   0,
+   3,
+   14.87,
+   {
+    "via": "snap",
+    "back": 0,
+    "held": true,
+    "turnFrames": 36,
+    "q": 0.9885273374479154,
+    "body": 4.998744877705396,
+    "gain": 3.329158532692569,
+    "bodyGain": -1.9984077400931035,
+    "vsNone": 5.511218032059713,
+    "seen": 4.542640342774348
+   }
+  ],
+  [
+   0,
+   3,
+   16.0,
+   {
+    "via": "snap",
+    "back": 0,
+    "held": false,
+    "turnFrames": 20,
+    "q": 1,
+    "body": 8.116595413753572,
+    "gain": 10.620599536599993,
+    "bodyGain": 6.716571045795604,
+    "vsNone": 11.618254547054192,
+    "seen": 3.0271534754520397
+   }
+  ],
+  [
+   4,
+   3,
+   18.5,
+   {
+    "via": "snap",
+    "back": 0,
+    "held": true,
+    "turnFrames": 5,
+    "q": 0.8,
+    "body": 7.110518953863995,
+    "gain": 4.652690727438644,
+    "bodyGain": 3.254160077490459,
+    "vsNone": 4.633094564401931,
+    "seen": 3
+   }
+  ]
+ ],
+ "false_moves": null,
+ "true_found": null,
+ "net_moves": 2
+}
