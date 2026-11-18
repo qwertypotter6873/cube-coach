@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 # 촬영 자료(GitHub Release data-v1)를 받아 data/raw/, data/real/ 에 놓고 SHA-256 으로 확인한다.
-#   scripts/download_data.sh                     모두 (약 1.66GB)
+#   scripts/download_data.sh                     모두 (약 1.89GB)
 #   scripts/download_data.sh real_labels.zip     골라서 (파일 이름은 SHA256SUMS.txt 와 같게)
-# 이미 있는 파일은 덮어쓰지 않는다. latest2.mov 는 앞 180초만 담은 판이다.
+# 이미 있는 파일은 덮어쓰지 않는다. latest2.mov 는 앞 180초, latest3.mov 는 앞 150초만 담은 판이다.
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 BASE="https://github.com/qwertypotter6873/cube-coach/releases/download/data-v1"
 TMP="$ROOT/data/raw/.download"   # data/raw/ 는 저장소에서 제외된다
-ALL=(sexy_move.mov cube_unsolved.mov latest.mov latest2.mov bg_patches.npy real_labels.zip real_labels_val.zip)
+ALL=(sexy_move.mov cube_unsolved.mov latest.mov latest2.mov latest3.mov bg_patches.npy real_labels.zip real_labels_val.zip)
 FILES=("${@:-${ALL[@]}}")
 mkdir -p "$TMP" "$ROOT/data/raw" "$ROOT/data/real"
 

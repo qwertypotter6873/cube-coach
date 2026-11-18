@@ -1,0 +1,18 @@
+{
+  "student_id": "201935607",
+  "name": "김대현",
+  "title": "큐브 코치: 웹캠으로 손에 든 큐브를 매 프레임 추적하며 음성으로 풀이를 안내하는 코치",
+  "github_url": "https://github.com/qwertypotter6873/cube-coach",
+  "demo_url": "https://qwertypotter6873.github.io/cube-coach/",
+  "data_type": "image (video frames: 3D synthetic cube scenes + real camera background patches, pixel-wise segmentation)",
+  "training": "scratch",
+  "models": [
+    "PixelMLP (baseline, 1x1 conv 3 layers on 4x4 cell colors)",
+    "CubeSegNet v1 (same architecture, trained on synthetic data only)",
+    "CubeSegNet v2 (proposed, final: depthwise-separable encoder-decoder, 170,025 params, ONNX 664KB)"
+  ],
+  "primary_metric": {
+    "name": "Real-frame sticker color accuracy (test set: 40 frames, 723 cells)",
+    "value": 0.725
+  }
+}

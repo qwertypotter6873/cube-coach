@@ -30,3 +30,6 @@ data/real/
 # 개발 서버·라벨 서버 기록 (내 컴퓨터 경로가 들어간다)
 reports/*.log
 *.log
+
+# 제출 묶음(PDF·ZIP)은 저장소에 올리지 않는다 (submission.json 은 올린다)
+submission/
