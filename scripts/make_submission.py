@@ -65,6 +65,7 @@ body {{ margin: 0; }}
 .markdown-body {{ font-size: 10.5pt; max-width: none; padding: 0; }}
 .markdown-body table {{ display: table; width: 100%; table-layout: auto; font-size: 8.5pt; }}
 .markdown-body table th, .markdown-body table td {{ padding: 3px 5px; word-break: keep-all; overflow-wrap: anywhere; }}
+.markdown-body table th:first-child, .markdown-body table td:first-child {{ min-width: 3.4em; }}
 .markdown-body pre, .markdown-body pre code {{ white-space: pre-wrap; word-break: break-all; font-size: 8.5pt; }}
 .markdown-body img {{ max-width: 100%; page-break-inside: avoid; }}
 .markdown-body h2 {{ page-break-before: auto; }}
