@@ -1,0 +1,314 @@
+{
+ "video": "sexy_move.mov",
+ "tracker": "ts",
+ "stride": 1,
+ "seed": 8,
+ "segment": null,
+ "frames": 355,
+ "seconds": 11.8,
+ "detected_moves": 9,
+ "expected_moves": 0,
+ "move_acc": -8.0,
+ "edit_distance": 9,
+ "final_state_ok": false,
+ "first_lock_t": 7.7,
+ "tracked_ratio": 0.9070422535211268,
+ "lost_episodes": 9,
+ "recover_frames_mean": 3.6666666666666665,
+ "recover_frames_max": 19,
+ "lost_tail": 0,
+ "pan": 0.0,
+ "pan_hz": 0.25,
+ "jump": 0.0,
+ "fast": true,
+ "follow": "",
+ "bank": 1500,
+ "ms_per_frame": 30.122873145090022,
+ "relocks": 0,
+ "local_relocks": 2,
+ "inits": 5,
+ "rejected_turns": 10,
+ "off_rejected": 0,
+ "reverts": 0,
+ "opts": "",
+ "cover": false,
+ "settle": 0,
+ "moving_frames": 5,
+ "events": [
+  [
+   3,
+   1,
+   8.03,
+   {
+    "via": "snap",
+    "back": 0,
+    "held": true,
+    "turnFrames": 1,
+    "q": 0.7686171540945904,
+    "body": 28.13218609628278,
+    "gain": 4.062430712613927,
+    "bodyGain": -11.157810033630414,
+    "vsNone": 31.555469027352373,
+    "seen": 11.710017112363811
+   }
+  ],
+  [
+   5,
+   2,
+   8.97,
+   {
+    "via": "doubt",
+    "back": 1,
+    "held": null,
+    "turnFrames": 0,
+    "q": 0.8888888888888888,
+    "body": 4.4671715408814014,
+    "gain": 0,
+    "bodyGain": 0,
+    "vsNone": 6.047377719113311,
+    "seen": 9
+   }
+  ],
+  [
+   3,
+   3,
+   8.13,
+   {
+    "via": "snap",
+    "back": 0,
+    "held": true,
+    "turnFrames": 2,
+    "q": 0.8699957439103114,
+    "body": 23.963091418554626,
+    "gain": 4.00623408709251,
+    "bodyGain": -17.42009085254989,
+    "vsNone": 50.02439410237508,
+    "seen": 12.479331899090843
+   }
+  ],
+  [
+   0,
+   3,
+   9.2,
+   {
+    "via": "snap",
+    "back": 0,
+    "held": false,
+    "turnFrames": 1,
+    "q": 0.8635256409091263,
+    "body": 2.5463701473971914,
+    "gain": 3.5949912487423497,
+    "bodyGain": -9.14084105197184,
+    "vsNone": 5.632515318771366,
+    "seen": 3
+   }
+  ],
+  [
+   3,
+   3,
+   9.97,
+   {
+    "via": "snap",
+    "back": 0,
+    "held": false,
+    "turnFrames": 15,
+    "q": 0.701152502632426,
+    "body": 6.078237339627187,
+    "gain": 3.1022759820592967,
+    "bodyGain": -7.7823560123236195,
+    "vsNone": 5.154213756618553,
+    "seen": 3
+   }
+  ],
+  [
+   3,
+   1,
+   10.97,
+   {
+    "via": "snap",
+    "back": 0,
+    "held": false,
+    "turnFrames": 20,
+    "q": 0.7236339192637341,
+    "body": 4.901141718118702,
+    "gain": 4.150219846035462,
+    "bodyGain": -1.1421278056080055,
+    "vsNone": 11.039512519561502,
+    "seen": 3.399254297623694
+   }
+  ],
+  [
+   5,
+   3,
+   12.57,
+   {
+    "via": "snap",
+    "back": 0,
+    "held": true,
+    "turnFrames": 33,
+    "q": 0.5206936748510033,
+    "body": 5.717972664275108,
+    "gain": 4.089261482244018,
+    "bodyGain": -11.118314264834925,
+    "vsNone": 14.594460906998503,
+    "seen": 12.354669874462168
+   }
+  ],
+  [
+   5,
+   2,
+   12.7,
+   {
+    "via": "snap",
+    "back": 0,
+    "held": true,
+    "turnFrames": 3,
+    "q": 0,
+    "body": 31.013064789257175,
+    "gain": 3.574943644869429,
+    "bodyGain": 0.7494901930980156,
+    "vsNone": 5.648167678152497,
+    "seen": 12
+   }
+  ],
+  [
+   5,
+   1,
+   13.93,
+   {
+    "via": "snap",
+    "back": 0,
+    "held": false,
+    "turnFrames": 1,
+    "q": 0.5555555555555556,
+    "body": 9.119761533166718,
+    "gain": 5.247374916017435,
+    "bodyGain": 0.42074643092823294,
+    "vsNone": 5.528855406664324,
+    "seen": 3
+   }
+  ],
+  [
+   4,
+   1,
+   14.33,
+   {
+    "via": "snap",
+    "back": 0,
+    "held": false,
+    "turnFrames": 1,
+    "q": 1,
+    "body": 6.026781673785254,
+    "gain": 3.005858528051636,
+    "bodyGain": -1.1852088673740688,
+    "vsNone": 5.061931204288008,
+    "seen": 3
+   }
+  ],
+  [
+   4,
+   3,
+   15.43,
+   {
+    "via": "snapOther",
+    "back": 0,
+    "held": false,
+    "turnFrames": 15,
+    "q": 0.6,
+    "body": 5.712727047069005,
+    "gain": 3.9121493242605716,
+    "bodyGain": -3.177154929675062,
+    "vsNone": 10.619074782271621,
+    "seen": 0
+   }
+  ],
+  [
+   4,
+   3,
+   16.93,
+   {
+    "via": "snap",
+    "back": 0,
+    "held": false,
+    "turnFrames": 3,
+    "q": 1,
+    "body": 8.747070461648724,
+    "gain": 5.309528626587703,
+    "bodyGain": -1.6906983813386063,
+    "vsNone": 8.872327372868886,
+    "seen": 3
+   }
+  ],
+  [
+   0,
+   3,
+   17.27,
+   {
+    "via": "snap",
+    "back": 0,
+    "held": false,
+    "turnFrames": 8,
+    "q": 0.9174274687572984,
+    "body": 5.4036090505370185,
+    "gain": 5.718928154531625,
+    "bodyGain": -1.850316419590884,
+    "vsNone": 7.874602852568735,
+    "seen": 3.440252358809345
+   }
+  ],
+  [
+   0,
+   2,
+   18.0,
+   {
+    "via": "snap",
+    "back": 0,
+    "held": false,
+    "turnFrames": 4,
+    "q": 1,
+    "body": 6.109153336801576,
+    "gain": 4.6539496061225805,
+    "bodyGain": -1.785111452332984,
+    "vsNone": 8.104691424179492,
+    "seen": 6
+   }
+  ],
+  [
+   4,
+   1,
+   18.97,
+   {
+    "via": "snap",
+    "back": 0,
+    "held": false,
+    "turnFrames": 2,
+    "q": 0.7323106368320168,
+    "body": 6.733980642241999,
+    "gain": 7.493025271052828,
+    "bodyGain": -0.29813748130627893,
+    "vsNone": 7.286864606975358,
+    "seen": 4.3325366457011665
+   }
+  ],
+  [
+   5,
+   1,
+   19.13,
+   {
+    "via": "doubt",
+    "back": 0,
+    "held": null,
+    "turnFrames": 0,
+    "q": 0.6532165847672651,
+    "body": 5.650446502726786,
+    "gain": 0,
+    "bodyGain": 0,
+    "vsNone": 7.571772093650964,
+    "seen": 3.178711483973353
+   }
+  ]
+ ],
+ "false_moves": null,
+ "true_found": null,
+ "net_moves": 9
+}

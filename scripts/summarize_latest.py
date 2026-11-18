@@ -5,7 +5,9 @@
 출력: reports/track_real_<영상>_summary.json
 
 설정 (추적기를 돌리기 전에 고정)
-  strict = 지금 앱 기본 (4점 / 8점, 예외 없음)         ← 대표 값
+  gate   = 지금 앱 기본 (strict + 자세 이탈 게이트 offGate 1.0, 2026-11-18). 문턱은 개발 영상으로만 정했고
+           두 시험 영상은 이 설정으로 한 번씩만 쟀다                ← 대표 값
+  strict = 2026-11-18 전까지의 앱 기본 (4점 / 8점, 예외 없음)
   pre    = 확정 규칙 전 (파이썬판 규칙)                  --opts {"snapVsNone":-1e9,"snapOtherVsNone":-1e9}
   post   = 4점 / 8점 + 20프레임 예외 (지난번 기본)      --opts {"relaxWithin":20}
 구간: scripts/track_video.py 의 LATEST_GT, LATEST2_GT
@@ -30,7 +32,7 @@ CONF = {
 }[VID]
 
 R = ROOT / "reports"
-CFGS = ["strict", "pre", "post"]
+CFGS = ["gate", "strict", "pre", "post"]
 SEEDS = range(5)
 
 
@@ -63,8 +65,8 @@ for seg in CONF["정확도"]:
     out["정확도"][seg] = {c: acc(load(c, seg), seg) for c in CFGS}
 for seg in ["Z1", "Z1b", "Z2", "Z3"]:
     out["가짜_회전"][seg] = {c: false(load(c, seg)) for c in CFGS}
-fr = load("strict", "free")
-out["정답_없는_구간"][f"free({GT['free'][0]:.0f}~{fr[0]['seconds'] + GT['free'][0]:.0f}초, strict)"] = {
+fr = load("gate", "free")
+out["정답_없는_구간"][f"free({GT['free'][0]:.0f}~{fr[0]['seconds'] + GT['free'][0]:.0f}초, gate)"] = {
     "판정_회전_수": [r["detected_moves"] for r in fr], "추적_비율": [round(r["tracked_ratio"], 3) for r in fr],
     "놓친_횟수": [r["lost_episodes"] for r in fr], "초": fr[0]["seconds"]}
 # 이어서 잰 구간은 편집 거리 정확도가 부푼다(가짜가 우연히 정답과 겹침). 동작 구간 안 판정만 정답과 짝짓고, 밖 판정은 따로 센다.
@@ -117,10 +119,12 @@ for seg, g in [(k, v[2]) for k, v in WIN.items()]:
         got = matched_events(r["events"], g)
         per.append([len(got), sum(1 for e in got if len(e) > 3 and e[3].get("vsNone", 99) < 4)])
     out["확정_규칙이_거를_진짜_회전"][seg] = {"시드별_[짝지은_판정, 그_가운데_4점_미만]": per}
-if VID == "latest2":  # 결과를 본 뒤 더한 구간 (지금 기본만): 두 동작 끝까지 이어서
-    for seg, name in [("app", "app(51~134.5초, 면 보여 주기를 마친 뒤부터, 결과를 본 뒤 더함, strict만)"),
-                      ("afterscan", "afterscan(32.86~134.5초, 면 읽기를 고친 뒤 앱이 읽기를 마치는 시각부터, 결과를 본 뒤 더함, strict만)")]:
-        rs = load("strict", seg)
+if VID == "latest2":  # 결과를 본 뒤 더한 구간: 두 동작 끝까지 이어서 (strict, 그리고 지금 기본 gate)
+    for cfg, seg, name in [("strict", "app", "app(51~134.5초, 면 보여 주기를 마친 뒤부터, 결과를 본 뒤 더함, strict)"),
+                           ("strict", "afterscan", "afterscan(32.86~134.5초, 면 읽기를 고친 뒤 앱이 읽기를 마치는 시각부터, 결과를 본 뒤 더함, strict)"),
+                           ("gate", "app", "app(51~134.5초, gate)"),
+                           ("gate", "afterscan", "afterscan(32.86~134.5초, gate)")]:
+        rs = load(cfg, seg)
         out["정확도"][name] = acc(rs, seg)
         m, o = [], []
         for r in rs:

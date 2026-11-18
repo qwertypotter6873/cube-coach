@@ -1,0 +1,110 @@
+{
+ "video": "sexy_move.mov",
+ "tracker": "ts",
+ "stride": 1,
+ "seed": 3,
+ "segment": null,
+ "frames": 355,
+ "seconds": 11.8,
+ "detected_moves": 2,
+ "expected_moves": 0,
+ "move_acc": -1.0,
+ "edit_distance": 2,
+ "final_state_ok": false,
+ "first_lock_t": 7.7,
+ "tracked_ratio": 0.9211267605633803,
+ "lost_episodes": 5,
+ "recover_frames_mean": 5.6,
+ "recover_frames_max": 19,
+ "lost_tail": 0,
+ "pan": 0.0,
+ "pan_hz": 0.25,
+ "jump": 0.0,
+ "fast": true,
+ "follow": "",
+ "bank": 1500,
+ "ms_per_frame": 29.356217048537562,
+ "relocks": 0,
+ "local_relocks": 2,
+ "inits": 4,
+ "rejected_turns": 5,
+ "off_rejected": 0,
+ "reverts": 0,
+ "opts": "",
+ "cover": false,
+ "settle": 0,
+ "moving_frames": 1,
+ "events": [
+  [
+   2,
+   3,
+   10.17,
+   {
+    "via": "snap",
+    "back": 0,
+    "held": false,
+    "turnFrames": 1,
+    "q": 0.8571428571428571,
+    "body": 1.9971538745829591,
+    "gain": 3.4643586205716197,
+    "bodyGain": -5.875079414993621,
+    "vsNone": 7.148786510755375,
+    "seen": 3
+   }
+  ],
+  [
+   2,
+   1,
+   13.9,
+   {
+    "via": "snapOther",
+    "back": 0,
+    "held": false,
+    "turnFrames": 6,
+    "q": 0.6923076923076923,
+    "body": 4.3301942277031165,
+    "gain": 8.775131275232262,
+    "bodyGain": -6.570658061344874,
+    "vsNone": 14.481496378016539,
+    "seen": 12.482176346234798
+   }
+  ],
+  [
+   0,
+   1,
+   13.93,
+   {
+    "via": "snap",
+    "back": 0,
+    "held": false,
+    "turnFrames": 1,
+    "q": 0.9966459342224114,
+    "body": 6.255887789152787,
+    "gain": 22.287353331179155,
+    "bodyGain": -8.683621955245126,
+    "vsNone": 33.53719773288062,
+    "seen": 7.917250335251932
+   }
+  ],
+  [
+   2,
+   1,
+   18.87,
+   {
+    "via": "snap",
+    "back": 0,
+    "held": false,
+    "turnFrames": 30,
+    "q": 0.75,
+    "body": 10.595968824601611,
+    "gain": 3.9629498484048575,
+    "bodyGain": -14.10965335629207,
+    "vsNone": 14.522464712932535,
+    "seen": 3
+   }
+  ]
+ ],
+ "false_moves": null,
+ "true_found": null,
+ "net_moves": 2
+}

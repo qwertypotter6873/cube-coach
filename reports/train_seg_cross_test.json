@@ -1,0 +1,50 @@
+{
+ "v2 @ synth3d_v2": {
+  "pixel_acc": 0.9796,
+  "miou": 0.8051,
+  "sticker_acc": 0.9183,
+  "sticker_f1": 0.933,
+  "center_recall": 0.9761,
+  "n_stickers": 20840.0
+ },
+ "w32 @ synth3d_v2": {
+  "pixel_acc": 0.9816,
+  "miou": 0.8195,
+  "sticker_acc": 0.922,
+  "sticker_f1": 0.9346,
+  "center_recall": 0.9796,
+  "n_stickers": 20840.0
+ },
+ "v3w24 @ synth3d_v2": {
+  "pixel_acc": 0.9794,
+  "miou": 0.8016,
+  "sticker_acc": 0.9108,
+  "sticker_f1": 0.9274,
+  "center_recall": 0.976,
+  "n_stickers": 20840.0
+ },
+ "v2 @ synth3d_v3": {
+  "pixel_acc": 0.9801,
+  "miou": 0.7989,
+  "sticker_acc": 0.9188,
+  "sticker_f1": 0.9337,
+  "center_recall": 0.9771,
+  "n_stickers": 20633.0
+ },
+ "w32 @ synth3d_v3": {
+  "pixel_acc": 0.9821,
+  "miou": 0.814,
+  "sticker_acc": 0.922,
+  "sticker_f1": 0.9358,
+  "center_recall": 0.9798,
+  "n_stickers": 20633.0
+ },
+ "v3w24 @ synth3d_v3": {
+  "pixel_acc": 0.9799,
+  "miou": 0.7959,
+  "sticker_acc": 0.9137,
+  "sticker_f1": 0.9295,
+  "center_recall": 0.9762,
+  "n_stickers": 20633.0
+ }
+}

@@ -1,0 +1,127 @@
+{
+ "video": "sexy_move.mov",
+ "tracker": "ts",
+ "stride": 1,
+ "seed": 9,
+ "segment": null,
+ "frames": 355,
+ "seconds": 11.8,
+ "detected_moves": 5,
+ "expected_moves": 0,
+ "move_acc": -4.0,
+ "edit_distance": 5,
+ "final_state_ok": false,
+ "first_lock_t": 7.7,
+ "tracked_ratio": 0.9098591549295775,
+ "lost_episodes": 11,
+ "recover_frames_mean": 2.909090909090909,
+ "recover_frames_max": 19,
+ "lost_tail": 0,
+ "pan": 0.0,
+ "pan_hz": 0.25,
+ "jump": 0.0,
+ "fast": true,
+ "follow": "",
+ "bank": 1500,
+ "ms_per_frame": 19.309867267877284,
+ "relocks": 0,
+ "local_relocks": 3,
+ "inits": 2,
+ "rejected_turns": 11,
+ "off_rejected": 3,
+ "reverts": 0,
+ "opts": "",
+ "cover": false,
+ "settle": 0,
+ "moving_frames": 22,
+ "events": [
+  [
+   3,
+   3,
+   9.3,
+   {
+    "via": "snap",
+    "back": 0,
+    "held": false,
+    "turnFrames": 3,
+    "q": 0.875,
+    "body": 2.3287759112119653,
+    "gain": 3.0488653926884197,
+    "bodyGain": -17.79836917851957,
+    "vsNone": 5.408212879606868,
+    "seen": 3
+   }
+  ],
+  [
+   4,
+   2,
+   16.27,
+   {
+    "via": "doubt",
+    "back": 2,
+    "held": null,
+    "turnFrames": 0,
+    "q": 0.6666666666666666,
+    "body": 5.551941917657081,
+    "gain": 0,
+    "bodyGain": 0,
+    "vsNone": 6.188733828786264,
+    "seen": 3.0264683024681713
+   }
+  ],
+  [
+   3,
+   1,
+   9.53,
+   {
+    "via": "snap",
+    "back": 0,
+    "held": false,
+    "turnFrames": 6,
+    "q": 0.9523139568899707,
+    "body": 5.260706135877681,
+    "gain": 4.487919695491167,
+    "bodyGain": -13.719595258779773,
+    "vsNone": 11.82940935066389,
+    "seen": 6
+   }
+  ],
+  [
+   1,
+   3,
+   16.03,
+   {
+    "via": "snap",
+    "back": 0,
+    "held": false,
+    "turnFrames": 4,
+    "q": 0.8747021581884203,
+    "body": 8.409711899532796,
+    "gain": 6.013269133248212,
+    "bodyGain": 1.6504718945303694,
+    "vsNone": 14.470438680292435,
+    "seen": 3.9817164948648403
+   }
+  ],
+  [
+   2,
+   1,
+   18.7,
+   {
+    "via": "snapOther",
+    "back": 0,
+    "held": false,
+    "turnFrames": 3,
+    "q": 0.3333333333333333,
+    "body": 6.108976392233529,
+    "gain": 4.758523585164225,
+    "bodyGain": 3.743807433760324,
+    "vsNone": 10.203081403246514,
+    "seen": 3
+   }
+  ]
+ ],
+ "false_moves": null,
+ "true_found": null,
+ "net_moves": 5
+}

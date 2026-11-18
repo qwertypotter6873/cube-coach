@@ -16,6 +16,7 @@ data/synth3d*/
 # 학습한 가중치는 작아서(1MB 미만) 저장소에 둔다
 !models/*.pt
 !models/v1/*.pt
+!models/exp/*.pt
 .env
 .env.*
 vendor/

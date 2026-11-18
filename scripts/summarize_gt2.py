@@ -8,7 +8,12 @@
 설정
   pre    = 확정 규칙 전 (파이썬판 규칙)   --opts {"snapVsNone":-1e9,"snapOtherVsNone":-1e9}
   post   = 4점 / 8점 + 20프레임 예외 (정답 고치기 전의 기본)
-  strict = 20프레임 예외 없이 늘 엄격 = 정답을 고친 뒤 바꾼 지금 앱 기본 (relaxWithin 0)
+  strict = 20프레임 예외 없이 늘 엄격 (relaxWithin 0) = 2026-11-18 전까지의 앱 기본
+  gate   = strict + 자세 이탈 게이트 (offGate 1.0) = 2026-11-18부터 지금 앱 기본
+           reports/track_real_gt2_gate_{seg}_s{0..4}.json
+앱처럼 시작한 재기 (면 읽기가 끝나는 7.7초에 추적기를 만든다, 2026-11-18):
+  들고 있기 7.7~19.5초, 시드 0~14: reports/track_real_pf_hold_{off,g10}_s*.json (off = 게이트 끔 = strict)
+  끝까지 이어서 7.7~90초(app 구간), 시드 0~9: reports/track_real_gt2_app{off,gate}_s*.json
 """
 
 import json
@@ -18,6 +23,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 R = ROOT / "reports"
 CFGS = ["pre", "post", "strict"]
+NEW = "gate"
 OLD = {"pre": "전", "post": "후", "strict": "엄격만"}
 
 
@@ -54,6 +60,25 @@ for seg in ["A", "AB"]:
     out["정확도"][seg] = {c: acc(load(c, seg)) for c in CFGS}
 for seg in ["B", "all"]:
     out["정확도"][seg] = {c: old["회전열_정확도"][seg][OLD[c]] for c in ["pre", "post"]} | {"strict": acc(load("strict", seg))}
+# 지금 기본(gate): 같은 구간·시드로 다시 잰 것
+for seg in ["Z1b", "Z1", "Z2"]:
+    out["가짜_회전"][seg][NEW] = false(load(NEW, seg))
+for seg in ["A", "AB", "B", "all"]:
+    out["정확도"][seg][NEW] = acc(load(NEW, seg))
+
+# 앱처럼 시작한 재기: 8.2초에 새 추적기를 만드는 Z1b 는 유난히 유리한 시작이었다 (시작 프레임에 따라 평균 3.6~6.8)
+def hold(cfg: str) -> dict:
+    raw, drop = [], []
+    for s in range(15):
+        ev = [e for e in json.loads((R / f"track_real_pf_hold_{cfg}_s{s}.json").read_text())["events"] if 8.2 <= e[2] <= 19.5]
+        raw.append(len(ev))
+        drop.append(any(e[0] == 0 and e[1] == 1 and 12.5 <= e[2] <= 15.0 for e in ev))
+    return {"판정_수_평균": round(st.mean(raw), 2), "범위": [min(raw), max(raw)], "시드별": raw, "떨어뜨림_회전_찾음": sum(drop)}
+
+
+out["앱처럼_시작_들고_있기(7.7~19.5초, 8.2~19.5초 판정 수, 시드 15개)"] = {"strict": hold("off"), NEW: hold("g10")}
+out["앱처럼_시작_끝까지(7.7~90초, 시드 10개)"] = {c: acc([json.loads((R / f"track_real_gt2_app{t}_s{s}.json").read_text()) for s in range(10)])
+                                                for c, t in (("strict", "off"), (NEW, "gate"))}
 (R / "track_real_gt2_summary.json").write_text(json.dumps(out, ensure_ascii=False, indent=1))
 
 for seg, v in out["가짜_회전"].items():

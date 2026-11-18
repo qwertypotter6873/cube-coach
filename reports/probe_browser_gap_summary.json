@@ -1,0 +1,685 @@
+{
+ "설명": "probe (측정만): 브라우저 8.2~19.5초 회전 수(9~12)와 파이썬 하네스(Z1b) 차이. 모든 수는 8.2~19.5초에 판정 시각이 든 회전 개수(떨어뜨림 회전 포함, browser_sample_runs.json 과 같은 셈). 2026-11-18, GPU 학습·다른 작업과 함께 돈 기계.",
+ "Q1_hold_counts_by_config": {
+  "z1b": {
+   "desc": "fresh tracker at 8.2 s, mov, cv2 crop (= README Z1b harness)",
+   "n_seeds": 15,
+   "hold_counts_by_seed": [
+    2,
+    5,
+    4,
+    1,
+    5,
+    2,
+    3,
+    3,
+    5,
+    6,
+    1,
+    3,
+    2,
+    5,
+    7
+   ],
+   "mean": 3.6,
+   "median": 3.0,
+   "min": 1,
+   "max": 7,
+   "frac_runs_ge_9": 0.0,
+   "seed2": 4
+  },
+  "movL": {
+   "desc": "app start 7.7 s, mov, cv2 crop",
+   "n_seeds": 15,
+   "hold_counts_by_seed": [
+    3,
+    6,
+    10,
+    4,
+    5,
+    4,
+    5,
+    8,
+    14,
+    4,
+    14,
+    11,
+    5,
+    1,
+    5
+   ],
+   "mean": 6.6,
+   "median": 5.0,
+   "min": 1,
+   "max": 14,
+   "frac_runs_ge_9": 0.27,
+   "seed2": 10,
+   "MWU_p_greater_than_z1b": 0.0137
+  },
+  "mp4L": {
+   "desc": "app start 7.7 s, sample mp4, cv2 crop",
+   "n_seeds": 15,
+   "hold_counts_by_seed": [
+    6,
+    2,
+    7,
+    10,
+    3,
+    8,
+    6,
+    9,
+    7,
+    4,
+    8,
+    7,
+    7,
+    1,
+    10
+   ],
+   "mean": 6.33,
+   "median": 7.0,
+   "min": 1,
+   "max": 10,
+   "frac_runs_ge_9": 0.2,
+   "seed2": 7,
+   "MWU_p_greater_than_z1b": 0.0027
+  },
+  "mp4B": {
+   "desc": "app start 7.7 s, sample mp4, area/box crop (browser-like input)",
+   "n_seeds": 15,
+   "hold_counts_by_seed": [
+    3,
+    14,
+    6,
+    3,
+    5,
+    10,
+    2,
+    8,
+    7,
+    12,
+    1,
+    4,
+    5,
+    9,
+    6
+   ],
+   "mean": 6.33,
+   "median": 6.0,
+   "min": 1,
+   "max": 14,
+   "frac_runs_ge_9": 0.27,
+   "seed2": 6,
+   "MWU_p_greater_than_z1b": 0.0156
+  },
+  "movB": {
+   "desc": "app start 7.7 s, mov, area/box crop",
+   "n_seeds": 15,
+   "hold_counts_by_seed": [
+    1,
+    6,
+    4,
+    8,
+    5,
+    4,
+    12,
+    7,
+    8,
+    5,
+    13,
+    4,
+    4,
+    6,
+    8
+   ],
+   "mean": 6.33,
+   "median": 6.0,
+   "min": 1,
+   "max": 13,
+   "frac_runs_ge_9": 0.13,
+   "seed2": 4,
+   "MWU_p_greater_than_z1b": 0.0057
+  }
+ },
+ "Q1_browser_prod_from_report": {
+  "UI": [
+   11,
+   12,
+   11,
+   9,
+   11,
+   12
+  ],
+  "direct": [
+   7,
+   10,
+   8,
+   6,
+   6,
+   7
+  ],
+  "note": "UI 6회는 전체가 같은 회전열 3가지뿐(r1=r3=fc1 24수 동일, r2=fc3 26수 동일, r4), 6회 모두 첫 3수(10.09 빨', 10.35 빨, 12.63 파') 같음. 직접 연 6회도 4가지, 첫 2수(11.22, 12.58) 같음. 독립 표본이 아니다."
+ },
+ "Q1_browser_dev_5180_probe": {
+  "ui1": {
+   "hold": 5,
+   "frames": 1354,
+   "skipped": 0,
+   "frames_never_delivered": 23,
+   "scanT": 7.761
+  },
+  "dir1": {
+   "hold": 3,
+   "frames": 1369,
+   "skipped": 0,
+   "frames_never_delivered": 11,
+   "scanT": 7.714
+  },
+  "ui2": "버림: 기계 부하로 면 읽기가 31.8초에야 끝남 (148프레임 미전달)"
+ },
+ "Q1_start_time_sweep_mov_seeds0_4": {
+  "7.700": {
+   "hold_counts_s0_4": [
+    3,
+    6,
+    10,
+    4,
+    5
+   ],
+   "blobOff_8.2_8.7_s0_4": [
+    1.77,
+    1.74,
+    1.93,
+    1.69,
+    1.9
+   ],
+   "frac_hold_frames_off_gt1": [
+    0.29,
+    0.73,
+    0.71,
+    0.34,
+    0.68
+   ]
+  },
+  "7.733": {
+   "hold_counts_s0_4": [
+    4,
+    1,
+    12,
+    1,
+    7
+   ],
+   "blobOff_8.2_8.7_s0_4": [
+    1.87,
+    1.0,
+    1.89,
+    1.05,
+    1.94
+   ],
+   "frac_hold_frames_off_gt1": [
+    0.4,
+    0.03,
+    0.4,
+    0.31,
+    0.43
+   ]
+  },
+  "7.767": {
+   "hold_counts_s0_4": [
+    2,
+    9,
+    10,
+    6,
+    6
+   ],
+   "blobOff_8.2_8.7_s0_4": [
+    1.78,
+    1.49,
+    1.62,
+    1.31,
+    1.93
+   ],
+   "frac_hold_frames_off_gt1": [
+    0.58,
+    0.71,
+    0.44,
+    0.81,
+    0.24
+   ]
+  },
+  "7.800": {
+   "hold_counts_s0_4": [
+    6,
+    10,
+    3,
+    9,
+    1
+   ],
+   "blobOff_8.2_8.7_s0_4": [
+    0.36,
+    1.09,
+    1.76,
+    1.75,
+    0.39
+   ],
+   "frac_hold_frames_off_gt1": [
+    0.41,
+    0.71,
+    0.66,
+    0.76,
+    0.23
+   ]
+  },
+  "7.867": {
+   "hold_counts_s0_4": [
+    1,
+    4,
+    5,
+    4,
+    6
+   ],
+   "blobOff_8.2_8.7_s0_4": [
+    0.35,
+    0.32,
+    1.34,
+    0.44,
+    0.34
+   ],
+   "frac_hold_frames_off_gt1": [
+    0.11,
+    0.14,
+    0.87,
+    0.02,
+    0.39
+   ]
+  },
+  "8.000": {
+   "hold_counts_s0_4": [
+    7,
+    1,
+    7,
+    5,
+    9
+   ],
+   "blobOff_8.2_8.7_s0_4": [
+    0.39,
+    0.34,
+    0.39,
+    0.36,
+    0.45
+   ],
+   "frac_hold_frames_off_gt1": [
+    0.37,
+    0.01,
+    0.28,
+    0.14,
+    0.36
+   ]
+  },
+  "8.200 (Z1b)": {
+   "hold_counts_s0_4": [
+    2,
+    5,
+    4,
+    1,
+    5
+   ],
+   "blobOff_8.2_8.7_s0_4": [
+    0.35,
+    0.36,
+    0.35,
+    0.36,
+    0.39
+   ],
+   "frac_hold_frames_off_gt1": [
+    0.15,
+    0.18,
+    0.26,
+    0.05,
+    0.36
+   ]
+  }
+ },
+ "Q1_start_mechanism": {
+  "blobOff_8.2_8.7_mean": {
+   "fresh_8.2": 0.36,
+   "app_7.7": 1.58
+  },
+  "runs_slid_gt1_cubie_at_8.2_8.7": {
+   "fresh_8.2": "0/7",
+   "app_7.7": "6/7"
+  },
+  "spearman_frac_hold_frames_blobOff_gt1_vs_hold_count": {
+   "14 runs (7 fresh + 7 app)": [
+    0.85,
+    0.00013
+   ],
+   "39 runs (incl. start sweep)": [
+    0.62,
+    2.7e-05
+   ],
+   "69 runs (all traj runs)": [
+    0.6,
+    6.4e-08
+   ]
+  },
+  "blobOff_at_events": {
+   "hold_false (n=198)": {
+    "median": 1.1,
+    "gt1": 0.56
+   },
+   "B_true (n=80, seeds0-2)": {
+    "median": 0.19,
+    "gt1": 0.0
+   },
+   "A_true (n=20)": {
+    "median": 0.15,
+    "gt1": 0.0
+   }
+  },
+  "image": "/private/tmp/claude-501/-Users-bookend-------26--2---------------------/c5da763f-a0b1-472f-a551-26bbfd8e3ea0/scratchpad/probeB/pose_8p43.jpg",
+  "note": "미끄러짐은 7.7~7.77초 출발에서만 흔하다(15/15). 회전 수 차이의 원인은 아님(Q1_start_time_sweep_extended)."
+ },
+ "Q1_map_comparison_tracked_frames_300_378_480_541_1200": {
+  "ranges_min_max": {
+   "browser_vs_torch(same input)": {
+    "argmax_diff_all": [
+     0.0,
+     0.0
+    ],
+    "argmax_diff_cube": [
+     0.0,
+     0.0
+    ],
+    "colour_diff_stickers": [
+     0.0,
+     0.0
+    ],
+    "heat_mae": [
+     0.0,
+     0.0
+    ],
+    "heat_max": [
+     0.0,
+     0.0
+    ]
+   },
+   "browser_vs_ortpy(same input)": {
+    "argmax_diff_all": [
+     0.0,
+     0.0
+    ],
+    "argmax_diff_cube": [
+     0.0,
+     0.0
+    ],
+    "colour_diff_stickers": [
+     0.0,
+     0.0
+    ],
+    "heat_mae": [
+     0.0,
+     0.0
+    ],
+    "heat_max": [
+     0.0,
+     0.0
+    ]
+   },
+   "browser_vs_torch(py crop of chrome frame)": {
+    "argmax_diff_all": [
+     0.0122,
+     0.0339
+    ],
+    "argmax_diff_cube": [
+     0.0797,
+     0.3713
+    ],
+    "colour_diff_stickers": [
+     0.0222,
+     0.0642
+    ],
+    "heat_mae": [
+     0.0061,
+     0.0108
+    ],
+    "heat_max": [
+     0.2082,
+     0.4517
+    ]
+   },
+   "browser_vs_torch(py mp4)": {
+    "argmax_diff_all": [
+     0.0182,
+     0.0425
+    ],
+    "argmax_diff_cube": [
+     0.1053,
+     0.4695
+    ],
+    "colour_diff_stickers": [
+     0.0476,
+     0.2222
+    ],
+    "heat_mae": [
+     0.0067,
+     0.0114
+    ],
+    "heat_max": [
+     0.2572,
+     0.502
+    ]
+   },
+   "browser_vs_torch(py mov)  [full gap]": {
+    "argmax_diff_all": [
+     0.02,
+     0.0634
+    ],
+    "argmax_diff_cube": [
+     0.1165,
+     0.474
+    ],
+    "colour_diff_stickers": [
+     0.0528,
+     0.2323
+    ],
+    "heat_mae": [
+     0.0077,
+     0.0172
+    ],
+    "heat_max": [
+     0.2975,
+     0.4604
+    ]
+   },
+   "torch py mov vs py mp4": {
+    "argmax_diff_all": [
+     0.0069,
+     0.0412
+    ],
+    "argmax_diff_cube": [
+     0.0472,
+     0.3545
+    ],
+    "colour_diff_stickers": [
+     0.0073,
+     0.0351
+    ],
+    "heat_mae": [
+     0.0037,
+     0.0133
+    ],
+    "heat_max": [
+     0.1172,
+     0.424
+    ]
+   },
+   "torch py mov: AREA(box) vs warp-linear": {
+    "argmax_diff_all": [
+     0.0165,
+     0.059
+    ],
+    "argmax_diff_cube": [
+     0.0957,
+     0.4459
+    ],
+    "colour_diff_stickers": [
+     0.0263,
+     0.0568
+    ],
+    "heat_mae": [
+     0.0075,
+     0.0167
+    ],
+    "heat_max": [
+     0.2269,
+     0.5455
+    ]
+   },
+   "NOISE FLOOR torch py mov frame n vs n+1": {
+    "argmax_diff_all": [
+     0.0343,
+     0.1094
+    ],
+    "argmax_diff_cube": [
+     0.2201,
+     0.9375
+    ],
+    "colour_diff_stickers": [
+     0.0984,
+     0.4024
+    ],
+    "heat_mae": [
+     0.0149,
+     0.0409
+    ],
+    "heat_max": [
+     0.4381,
+     0.7933
+    ]
+   }
+  },
+  "onnx_web_vs_torch_same_input": "argmax 0% 다름, max|dlogp| <= 1.8e-5, max|dheat| <= 1.9e-6",
+  "resampler_MAE_vs_browser_input": {
+   "cv2_warp_linear(crop)": [
+    4.68,
+    9.18
+   ],
+   "pil_bilinear_aa": [
+    2.48,
+    5.4
+   ],
+   "pil_box": [
+    1.78,
+    3.51
+   ],
+   "pil_bicubic_aa": [
+    2.01,
+    4.31
+   ],
+   "pil_lanczos": [
+    2.06,
+    4.39
+   ]
+  },
+  "decode_chrome_vs_cv2_mp4_MAE": [
+   1.8008273654513889,
+   2.1980050998263887
+  ],
+  "cv2_warpAffine_INTER_AREA_equals_INTER_LINEAR": true
+ },
+ "Q2_tables_script": "scratchpad/probeB/q2.py, q2_thresh.py",
+ "Q1_start_time_sweep_extended": {
+  "8.0": {
+   "n": 15,
+   "counts": [
+    7,
+    1,
+    7,
+    5,
+    9,
+    7,
+    9,
+    5,
+    5,
+    4,
+    8,
+    6,
+    3,
+    5,
+    5
+   ],
+   "mean": 5.7,
+   "slid": "0/15",
+   "MWU_p_greater_than_8.2": 0.006
+  },
+  "8.1": {
+   "n": 10,
+   "counts": [
+    3,
+    12,
+    5,
+    1,
+    7,
+    1,
+    3,
+    7,
+    8,
+    6
+   ],
+   "mean": 5.3,
+   "slid": "0/10",
+   "MWU_p_greater_than_8.2": 0.098
+  },
+  "8.3": {
+   "n": 10,
+   "counts": [
+    7,
+    7,
+    3,
+    2,
+    11,
+    6,
+    6,
+    7,
+    10,
+    9
+   ],
+   "mean": 6.8,
+   "slid": "0/10",
+   "MWU_p_greater_than_8.2": 0.003
+  },
+  "결론": "8.2초 새 출발(평균 3.6)만 유난히 유리한 프레임이다. 7.7~8.3초 다른 출발은 평균 5.3~6.8. 7.7초 출발의 자세 미끄러짐(8.2~8.7초 blobOff>1)은 실재하지만, 미끄러지지 않은 8.0·8.3초 출발도 5.7·6.8이라 차이의 원인은 아니다."
+ },
+ "blobOff_causality": {
+  "prev_frame_blobOff_at_hold_false_turns (n=361)": {
+   "median": 1.04,
+   "gt0.7": 0.65,
+   "gt0.8": 0.61,
+   "gt1": 0.51
+  },
+  "prev_frame_blobOff_at_true_turns": {
+   "B (n=80)": {
+    "median": 0.24,
+    "max": 0.57
+   },
+   "A (n=20)": {
+    "median": 0.29,
+    "max": 0.64
+   }
+  },
+  "mean_blobOff_10_frames_before_vs_after_false_turns": [
+   1.16,
+   1.18
+  ],
+  "first_false_turn_preceded_by_offcube_pose": "29/60 runs",
+  "해석": "가짜 회전 뒤에 자세가 벗어나는 것이 아니라(전후 같음), 벗어난 상태에서 가짜 회전의 절반이 나온다. 진짜 회전(A·B)은 직전 프레임 blobOff 최대 0.64."
+ },
+ "Q2_back_insert_denominators": {
+  "saved strict A": "61 events, back>0 1 (false)",
+  "saved strict B": "147 events, back>0 1 (false)",
+  "saved strict AB": "back>0 16, LCS로 정답과 짝지어진 것 2",
+  "saved strict all": "back>0 17, 짝지어진 것 6 (반복 회전열이라 우연 짝짓기일 수 있음)",
+  "prod UI (report)": "inserted 2/24, 4/26, 2/24, 4/21"
+ }
+}

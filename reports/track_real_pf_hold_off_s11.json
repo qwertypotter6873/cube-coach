@@ -1,0 +1,229 @@
+{
+ "video": "sexy_move.mov",
+ "tracker": "ts",
+ "stride": 1,
+ "seed": 11,
+ "segment": null,
+ "frames": 355,
+ "seconds": 11.8,
+ "detected_moves": 6,
+ "expected_moves": 0,
+ "move_acc": -5.0,
+ "edit_distance": 6,
+ "final_state_ok": false,
+ "first_lock_t": 7.7,
+ "tracked_ratio": 0.9154929577464789,
+ "lost_episodes": 8,
+ "recover_frames_mean": 3.75,
+ "recover_frames_max": 19,
+ "lost_tail": 0,
+ "pan": 0.0,
+ "pan_hz": 0.25,
+ "jump": 0.0,
+ "fast": true,
+ "follow": "",
+ "bank": 1500,
+ "ms_per_frame": 29.413346169700084,
+ "relocks": 0,
+ "local_relocks": 1,
+ "inits": 4,
+ "rejected_turns": 15,
+ "off_rejected": 0,
+ "reverts": 0,
+ "opts": "",
+ "cover": false,
+ "settle": 0,
+ "moving_frames": 11,
+ "events": [
+  [
+   3,
+   3,
+   8.67,
+   {
+    "via": "snap",
+    "back": 0,
+    "held": false,
+    "turnFrames": 1,
+    "q": 0.8,
+    "body": 7.74001307990252,
+    "gain": 4.9808481108467575,
+    "bodyGain": 1.920914430792358,
+    "vsNone": 7.06062823220898,
+    "seen": 9.635281044299841
+   }
+  ],
+  [
+   5,
+   3,
+   14.2,
+   {
+    "via": "doubt",
+    "back": 2,
+    "held": null,
+    "turnFrames": 0,
+    "q": 0.752886726709685,
+    "body": 6.108641224324049,
+    "gain": 0,
+    "bodyGain": 0,
+    "vsNone": 5.405571721496802,
+    "seen": 3.1492774054326422
+   }
+  ],
+  [
+   3,
+   1,
+   9.33,
+   {
+    "via": "snap",
+    "back": 0,
+    "held": false,
+    "turnFrames": 1,
+    "q": 1,
+    "body": 7.422292772593063,
+    "gain": 9.34312067660686,
+    "bodyGain": 1.934784126210796,
+    "vsNone": 4.102290864924935,
+    "seen": 12
+   }
+  ],
+  [
+   0,
+   2,
+   13.87,
+   {
+    "via": "snap",
+    "back": 0,
+    "held": true,
+    "turnFrames": 6,
+    "q": 1,
+    "body": 12.328943345347193,
+    "gain": 7.742671592768765,
+    "bodyGain": -1.4607113832541465,
+    "vsNone": 4.700905745333138,
+    "seen": 3
+   }
+  ],
+  [
+   0,
+   1,
+   15.27,
+   {
+    "via": "snap",
+    "back": 0,
+    "held": false,
+    "turnFrames": 30,
+    "q": 1,
+    "body": 3.9562655531674378,
+    "gain": 5.094155097732353,
+    "bodyGain": -2.45643499042478,
+    "vsNone": 10.626191018494149,
+    "seen": 4.795786235136223
+   }
+  ],
+  [
+   0,
+   3,
+   15.9,
+   {
+    "via": "snap",
+    "back": 0,
+    "held": false,
+    "turnFrames": 3,
+    "q": 0.8006175936791198,
+    "body": 5.246399949831922,
+    "gain": 6.885529345465393,
+    "bodyGain": 7.701135811379455,
+    "vsNone": 8.109582977719754,
+    "seen": 3.1198763251891677
+   }
+  ],
+  [
+   0,
+   1,
+   16.37,
+   {
+    "via": "snap",
+    "back": 0,
+    "held": false,
+    "turnFrames": 5,
+    "q": 0.8674239221558747,
+    "body": 4.347724607853134,
+    "gain": 9.676152326787772,
+    "bodyGain": 9.59491786346355,
+    "vsNone": 19.732150930440064,
+    "seen": 11.233810969647246
+   }
+  ],
+  [
+   5,
+   1,
+   16.67,
+   {
+    "via": "snap",
+    "back": 0,
+    "held": true,
+    "turnFrames": 1,
+    "q": 1,
+    "body": 22.953375807515997,
+    "gain": 3.077771537387818,
+    "bodyGain": 0.7232456384770671,
+    "vsNone": 11.311515203576151,
+    "seen": 3
+   }
+  ],
+  [
+   4,
+   3,
+   17.4,
+   {
+    "via": "snapOther",
+    "back": 0,
+    "held": false,
+    "turnFrames": 16,
+    "q": 0.6001288256860462,
+    "body": 10.195404786811382,
+    "gain": 3.0244572171056285,
+    "bodyGain": -4.124154056777773,
+    "vsNone": 8.094392064411686,
+    "seen": 3
+   }
+  ],
+  [
+   4,
+   1,
+   17.83,
+   {
+    "via": "snap",
+    "back": 0,
+    "held": true,
+    "turnFrames": 1,
+    "q": 1,
+    "body": 31.75885110464434,
+    "gain": 6.963167020893725,
+    "bodyGain": -0.6428054756663997,
+    "vsNone": 4.652461583104596,
+    "seen": 3
+   }
+  ],
+  [
+   3,
+   1,
+   18.87,
+   {
+    "via": "snap",
+    "back": 0,
+    "held": true,
+    "turnFrames": 1,
+    "q": 1,
+    "body": 27.12211715195994,
+    "gain": 3.8557022121401037,
+    "bodyGain": -0.08378335093797062,
+    "vsNone": 5.949444991688772,
+    "seen": 3
+   }
+  ]
+ ],
+ "false_moves": null,
+ "true_found": null,
+ "net_moves": 6
+}

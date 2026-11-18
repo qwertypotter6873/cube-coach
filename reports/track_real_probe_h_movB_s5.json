@@ -1,0 +1,109 @@
+{
+ "video": "sexy_move.mov",
+ "tracker": "ts",
+ "stride": 1,
+ "seed": 5,
+ "segment": null,
+ "frames": 355,
+ "seconds": 11.8,
+ "detected_moves": 4,
+ "expected_moves": 0,
+ "move_acc": -3.0,
+ "edit_distance": 4,
+ "final_state_ok": false,
+ "first_lock_t": 7.7,
+ "tracked_ratio": 0.9183098591549296,
+ "lost_episodes": 10,
+ "recover_frames_mean": 2.9,
+ "recover_frames_max": 17,
+ "lost_tail": 0,
+ "pan": 0.0,
+ "pan_hz": 0.25,
+ "jump": 0.0,
+ "fast": true,
+ "follow": "",
+ "bank": 1500,
+ "ms_per_frame": 28.945552127462037,
+ "relocks": 0,
+ "local_relocks": 1,
+ "inits": 4,
+ "rejected_turns": 6,
+ "reverts": 0,
+ "opts": "",
+ "cover": false,
+ "settle": 0,
+ "moving_frames": 15,
+ "events": [
+  [
+   2,
+   3,
+   14.33,
+   {
+    "via": "snap",
+    "back": 0,
+    "held": true,
+    "turnFrames": 5,
+    "q": 0.4444444444444444,
+    "body": 5.499398124419291,
+    "gain": 3.6083174564630216,
+    "bodyGain": -7.53723618816446,
+    "vsNone": 6.597287335984284,
+    "seen": 12
+   }
+  ],
+  [
+   0,
+   3,
+   17.13,
+   {
+    "via": "snapOther",
+    "back": 0,
+    "held": false,
+    "turnFrames": 52,
+    "q": 0.8197509859502571,
+    "body": 8.26389568727168,
+    "gain": 11.865269170980259,
+    "bodyGain": 9.489288933473167,
+    "vsNone": 12.448394756181438,
+    "seen": 1.8386228210402087
+   }
+  ],
+  [
+   2,
+   1,
+   18.37,
+   {
+    "via": "snap",
+    "back": 0,
+    "held": false,
+    "turnFrames": 1,
+    "q": 0.804044308526692,
+    "body": 9.112394086915822,
+    "gain": 13.141213533521572,
+    "bodyGain": -4.840227424714767,
+    "vsNone": 22.619980272801413,
+    "seen": 5.926142717518051
+   }
+  ],
+  [
+   0,
+   1,
+   18.4,
+   {
+    "via": "snap",
+    "back": 0,
+    "held": false,
+    "turnFrames": 1,
+    "q": 0.9404854000279422,
+    "body": 5.98686521127683,
+    "gain": 5.829763151741531,
+    "bodyGain": -18.432868550154733,
+    "vsNone": 11.450426357906075,
+    "seen": 3
+   }
+  ]
+ ],
+ "false_moves": null,
+ "true_found": null,
+ "net_moves": 4
+}
